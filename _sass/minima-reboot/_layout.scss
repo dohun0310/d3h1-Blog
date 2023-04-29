@@ -1,0 +1,91 @@
+$layout-color-border: #e9ecef !default;
+$layout-color-background: #fdfdfd !default;
+$layout-color-syntax-highlighting-background: #f8f9fa !default;
+$layout-responsive-nav-cutoff: 768px !default;
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  background-color: $layout-color-background;
+  font-family: 'Noto Sans KR';
+}
+
+#nav-header {
+  font-family: 'Noto Sans KR';
+  border-top: 5px solid !important;
+  border-bottom: 1px solid $layout-color-border !important;
+}
+
+#nav-container {
+  height: 3.5rem;
+  a {
+    text-decoration-color: #000000;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+  }
+}
+
+#nav-trigger:checked ~ #nav-menu {
+  display: block !important;
+}
+
+#content {
+  h1, h2, h3, h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-family: 'Noto Sans KR';
+    text-align: left;
+  }
+  p {
+    opacity: 40%;
+    font-family: 'Noto Sans KR';
+  }
+}
+
+#site-footer {
+  background-color: #F0F0F0;
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .h5 {
+    margin: 0;
+    padding: 12px 0;
+    color: #909090;
+    font-size: 18px;
+  }
+  a {
+    margin-top: 18px;
+    margin-right: 16px;
+    text-decoration: none;
+    svg:hover {
+      fill: #5C5C5C;
+      transition: all 0.5s ease-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.highlight pre {
+  border: 1px solid $layout-color-border;
+  border-radius: .25rem;
+  background-color: $layout-color-syntax-highlighting-background;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
