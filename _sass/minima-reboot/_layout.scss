@@ -1,7 +1,11 @@
-$layout-color-border: #e9ecef !default;
-$layout-color-background: #fdfdfd !default;
-$layout-color-syntax-highlighting-background: #f8f9fa !default;
-$layout-responsive-nav-cutoff: 768px !default;
+$layout-color-border-light: #e6e6e6 !default;
+$layout-color-footer-light: #e6e6e6 !default;
+$layout-color-background-light: #f0f0f0 !default;
+$layout-color-syntax-highlighting-background-light: #f8f9fa !default;
+$layout-color-border-dark: #2c2c2c !default;
+$layout-color-footer-dark: #232323 !default;
+$layout-color-background-dark: #151515 !default;
+$layout-color-syntax-highlighting-background-dark: #f8f9fa !default;
 
 @font-face {
 	font-family: 'Noto Sans KR';
@@ -11,14 +15,24 @@ $layout-responsive-nav-cutoff: 768px !default;
 }
 
 body {
-  background-color: $layout-color-background;
+  background-color: $layout-color-background-light;
   font-family: 'Noto Sans KR';
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+
+header {
+  img {
+    margin-left: 2px;
+    width: 20px;
+  }
 }
 
 #nav-header {
   font-family: 'Noto Sans KR';
-  border-top: 5px solid !important;
-  border-bottom: 1px solid $layout-color-border !important;
+  border-bottom: 1px solid $layout-color-border-light !important;
 }
 
 #nav-container {
@@ -41,23 +55,23 @@ body {
   h1, h2, h3, h4 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-weight: 500;
+    font-weight: bold;
+    size: 26px;
     font-family: 'Noto Sans KR';
     text-align: left;
   }
+  a {
+    color: #000000;
+  }
   p {
-    opacity: 40%;
+    color: #999999;
     font-family: 'Noto Sans KR';
   }
 }
 
 #site-footer {
-  background-color: #F0F0F0;
-  position: fixed;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  background-color: $layout-color-footer-light;
+  padding:1rem 0;
   .container {
     display: flex;
     justify-content: space-between;
@@ -73,19 +87,64 @@ body {
     margin-top: 18px;
     margin-right: 16px;
     text-decoration: none;
-    svg:hover {
-      fill: #5C5C5C;
-      transition: all 0.5s ease-out;
-      cursor: pointer;
-    }
+  }
+  svg:hover {
+    fill: #5c5c5c;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
   }
 }
 
 .highlight pre {
-  border: 1px solid $layout-color-border;
+  border: 1px solid $layout-color-border-light;
   border-radius: .25rem;
-  background-color: $layout-color-syntax-highlighting-background;
+  background-color: $layout-color-syntax-highlighting-background-light;
   padding: 0.75rem;
   margin-bottom: 1rem;
   white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $layout-color-background-dark;
+    font-family: 'Noto Sans KR';
+    h1 {
+      color: #ffffff;
+    }
+  }
+
+  #nav-header {
+    font-family: 'Noto Sans KR';
+    border-bottom: 1px solid $layout-color-border-dark !important;
+  }
+
+  #content {
+    a {
+      color: #ffffff;
+    }
+    p {
+      color: #737373;
+    }
+  }
+
+  #site-footer {
+    background-color: $layout-color-footer-dark;
+    svg {
+      fill: #4f4f4f;
+    }
+    svg:hover {
+      fill: #7b7b7b;
+      transition: all 0.5s ease-out;
+      cursor: pointer;
+    }
+  }
+
+  .highlight pre {
+    border: 1px solid $layout-color-border-dark;
+    border-radius: .25rem;
+    background-color: $layout-color-syntax-highlighting-background-dark;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+  }
 }
