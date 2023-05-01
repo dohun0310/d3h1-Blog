@@ -1,6 +1,6 @@
 $layout-color-border-light: #e6e6e6 !default;
 $layout-color-footer-light: #e6e6e6 !default;
-$layout-color-background-light: #f0f0f0 !default;
+$layout-color-background-light: #ffffff !default;
 $layout-color-syntax-highlighting-background-light: #f8f9fa !default;
 $layout-color-border-dark: #2c2c2c !default;
 $layout-color-footer-dark: #232323 !default;
@@ -26,14 +26,19 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 100px;
-  h1 {
+  .header {
+    padding-top: 48px;
+    padding-bottom: 20px;
     font-size: 26px;
     font-weight: bold;
+    .content-header {
+      margin: 0;
+    }
   }
 }
 
 header {
-  img {
+  svg {
     margin-left: 2px;
     width: 30px;
   }
@@ -74,6 +79,13 @@ header {
     color: #999999;
     font-family: 'Noto Sans KR';
   }
+  .post-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .post {
+
+  }
 }
 
 #site-footer {
@@ -100,6 +112,11 @@ header {
     margin-top: 18px;
     margin-left: 16px;
     text-decoration: none;
+  }
+  nav {
+    a {
+      color: #1755b1;
+    }
   }
   svg:hover {
     fill: #5c5c5c;
@@ -129,6 +146,9 @@ header {
   #nav-header {
     font-family: 'Noto Sans KR';
     border-bottom: 1px solid $layout-color-border-dark !important;
+    svg {
+      fill: #ffffff;
+    }
   }
 
   #content {
@@ -170,6 +190,21 @@ header {
 
 @media (max-width: 520px) {
   #site-footer {
-    display: flex;
+    .container {
+      display: grid;
+      justify-self: right;
+    }
+    .h5 {
+      padding: 0px;
+      padding-bottom: 10px;
+      font-size: 12px;
+    }
+    a {
+      margin: 0px;
+      margin-right: 10px;
+    }
+    svg {
+      width: 28px;
+    }
   }
 }

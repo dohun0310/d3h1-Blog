@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header class="pt-3 mb-3">
+<header class="header">
   {{ content }}
 </header>
 
@@ -14,10 +14,10 @@ layout: default
     {% assign posts = site.posts %}
   {% endif %}
 
-  <ul class="list-unstyled m-0">
+  <ul class="post-list">
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
     {% for post in posts %}
-      <li class="py-2">
+      <li class="post">
         <span class="text-secondary">{{ post.date | date: date_format }}</span>
 
         <h1 class="mt-1 mb-3 h3">
