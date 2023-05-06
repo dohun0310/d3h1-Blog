@@ -7,14 +7,10 @@ $layout-color-footer-dark: #232323 !default;
 $layout-color-background-dark: #151515 !default;
 $layout-color-syntax-highlighting-background-dark: #222222 !default;
 
-@font-face {
-	font-family: 'Noto Sans KR';
-	src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
 
 html {
+  font-family: 'Noto Sans KR';
   height: 100%;
   margin: 0;
   padding: 0;
@@ -45,7 +41,6 @@ header {
 }
 
 #nav-header {
-  font-family: 'Noto Sans KR';
   border-bottom: 1px solid $layout-color-border-light !important;
 }
 
@@ -67,9 +62,7 @@ header {
 
 #content {
   h1, h2, h3, h4 {
-    font-weight: bold;
     size: 26px;
-    font-family: 'Noto Sans KR';
     text-align: left;
   }
   a {
@@ -97,7 +90,6 @@ header {
   .title {
     color: #000000;
     font-size: 18px;
-    font-weight: bold;
   }
   .excerpt {
     p {
@@ -126,7 +118,6 @@ header {
     justify-content: center;
     gap: 8px;
     margin-top: 4rem;
-    padding-left: 2rem;
     .page-item {
       &.disabled {
         .page-link {
@@ -149,12 +140,11 @@ header {
         border: none;
         color: #000000;
         cursor: pointer;
-        font-size: 1rem;
-        font-weight: 400;
+        font-size: 14px;
         line-height: 1.5;
         height: 38px;
         width: 38px;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease-out;
         &:hover {
           background-color: #f0f0f0;
           color: #000000;
@@ -213,14 +203,12 @@ header {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: $layout-color-background-dark;
-    font-family: 'Noto Sans KR';
     h1 {
       color: #ffffff;
     }
   }
 
   #nav-header {
-    font-family: 'Noto Sans KR';
     border-bottom: 1px solid $layout-color-border-dark !important;
     svg {
       fill: #ffffff;
