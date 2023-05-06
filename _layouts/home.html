@@ -18,6 +18,12 @@ layout: default
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
     {% for post in posts %}
       <li class="post">
+        <div class="teaser">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"></img>
+          </a>
+        </div>
+
         <span class="date">{{ post.date | date: date_format }}</span>
 
         <h1 class="title">
@@ -31,9 +37,12 @@ layout: default
     {% endfor %}
   </ul>
 
+</div>
+
+<div id="navigation">
+
   <nav class="nav-content">
     <ul class="pagination align-items-center">
-      <!-- left arrow -->
       {% if paginator.previous_page %}
         {% assign prev_url = paginator.previous_page_path | relative_url %}
       {% else %}
@@ -48,7 +57,6 @@ layout: default
         </a>
       </li>
     
-      <!-- page numbers -->
       {% assign left_ellipsis = false %}
       {% assign right_ellipsis = false %}
     
@@ -77,12 +85,10 @@ layout: default
         {% endif %}
     
         {% if show %}
-          <!-- show number -->
           <li class="page-item {% if i == paginator.page %} active{% endif %}">
             <a class="page-link btn-box-shadow" href="{% if i > 1 %}{{ site.paginate_path | replace: ':num', i | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ i }}</a>
           </li>
         {% else %}
-          <!-- hide number -->
           {% if i < pre and left_ellipsis == false %}
             <li class="page-item disabled">
               <span class="page-link btn-box-shadow">...</span>
@@ -98,7 +104,6 @@ layout: default
           
       {% endfor %}
           
-      <!-- right arrow -->
       {% if paginator.next_page_path %}
         {% assign next_url = paginator.next_page_path | relative_url %}
       {% else %}
@@ -114,4 +119,5 @@ layout: default
       </li>
     </ul>
   </nav>
+
 </div>

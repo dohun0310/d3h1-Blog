@@ -2,6 +2,8 @@ title: d3h1 Blog
 author: dohun0310
 email: d3h1@d3h1.com
 
+permalink: :title
+
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate
