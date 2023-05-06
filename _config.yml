@@ -12,7 +12,7 @@ minima_reboot:
   date_format: "%Y년 %-m월 %-d일"
   date_format_short: "%-m월 %-d일"
 
-paginate: 5
+paginate: 8
 
 markdown: kramdown
 

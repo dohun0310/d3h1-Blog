@@ -5,7 +5,7 @@ $layout-color-syntax-highlighting-background-light: #f8f9fa !default;
 $layout-color-border-dark: #2c2c2c !default;
 $layout-color-footer-dark: #232323 !default;
 $layout-color-background-dark: #151515 !default;
-$layout-color-syntax-highlighting-background-dark: #f8f9fa !default;
+$layout-color-syntax-highlighting-background-dark: #222222 !default;
 
 @font-face {
 	font-family: 'Noto Sans KR';
@@ -75,17 +75,97 @@ header {
   a {
     color: #000000;
   }
-  p {
-    color: #999999;
-    font-family: 'Noto Sans KR';
+  nav {
+    a {
+      color: #1755b1;
+    }
   }
   .post-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    padding-left: 0;
+    padding: 0px;
+    gap: 24px;
   }
   .post {
-
+    width: calc(25% - 18px);
   }
+  .date {
+    color: #666666;
+    font-size: 12px;
+  }
+  .title {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .excerpt {
+    p {
+      display: inline-block;
+      color: #666666;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      line-height: 1.2;
+      max-height: 42px;
+      text-align: left;
+      word-wrap: break-word;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .nav-content {
+    display: flex;
+    justify-content: center;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4rem;
+    padding-left: 2rem;
+    .page-item {
+      &.disabled {
+        .page-link {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+      &.active {
+        .page-link {
+          background-color: #000000;
+          border: none;
+          color: #ffffff;
+        }
+      }
+      .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        color: #000000;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        height: 38px;
+        width: 38px;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: #f0f0f0;
+          color: #000000;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+      }
+    }
+  }  
 }
 
 #site-footer {
@@ -100,6 +180,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px;
   }
   .h5 {
     margin: 0;
@@ -112,11 +193,6 @@ header {
     margin-top: 18px;
     margin-left: 16px;
     text-decoration: none;
-  }
-  nav {
-    a {
-      color: #1755b1;
-    }
   }
   svg:hover {
     fill: #5c5c5c;
@@ -160,8 +236,25 @@ header {
     }
     nav {
       color: #ffffff;
-      a {
-        color: #1755b1;
+    }
+    .pagination {
+      .page-item {
+        &.active {
+          .page-link {
+            background-color: #ffffff;
+            border: none;
+            color: #000000;
+          }
+        }
+        .page-link {
+          background-color: #151515;
+          border: none;
+          color: #ffffff;
+          &:hover {
+            background-color: #232323;
+            color: #ffffff;
+          }
+        }
       }
     }
   }
@@ -187,12 +280,23 @@ header {
     white-space: pre-wrap;
   }
 }
-
+  
 @media (max-width: 520px) {
+  #content {
+    .post-list {
+      display: block;
+    }
+    .post {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
   #site-footer {
     .container {
       display: grid;
       justify-self: right;
+      padding-left: 15px;
     }
     .h5 {
       padding: 0px;
