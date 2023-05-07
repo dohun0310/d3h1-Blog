@@ -509,7 +509,9 @@ main {
     .post {
       width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      p {
+        margin-bottom: 20px;
+      }
     }
 
     .teaser {

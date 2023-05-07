@@ -2,27 +2,35 @@
 layout: default
 ---
 <header class="header">
-    <h1 class="content-header">
-        {{ page.title }}
-    </h1>
+  <h1 class="content-header">
+      {{ page.title }}
+  </h1>
 </header>
   
 <div id="content">
-
   <ul class="category">
+    <li>
+      <a class="category-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/">
+        메인
+      </a>
+    </li>
     {% assign pages_list = site.pages %}
     {% for node in pages_list %}
         {% if node.title != null %}
         {% if node.layout == "category" %}
-          <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
-          href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+          <li>
+            <a class="category-link {% if page.url == node.url %} active{% endif %}"href="{{ site.baseurl }}{{ node.url }}">
+              {{ node.title }}
+            </a>
+          </li>
         {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
 
   {% if site.paginate %}
-    {% assign posts = paginator.posts %}
+    {% assign posts = paginator
+      .posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
@@ -50,7 +58,7 @@ layout: default
       </a>
     {% endfor %}
   </ul>
-
+  
 </div>
 
 <div id="navigation">
