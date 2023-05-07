@@ -95,11 +95,7 @@ main {
   }
   a {
     color: #000000;
-  }
-  nav {
-    a {
-      color: #1755b1;
-    }
+    text-decoration: none;
   }
   .post-list {
     display: flex;
@@ -111,13 +107,21 @@ main {
   }
   .post {
     width: calc(25% - 18px);
+    &:hover {
+      .teaser {
+        border: 1px solid #cccccc;
+        transition: all 0.5s ease-out;
+      }
+      .title {
+        text-decoration: underline;
+      }
+    }
   }
   .teaser {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 140px;
-    padding: 24px;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     transition: all 0.5s ease-out;
@@ -128,10 +132,6 @@ main {
       object-fit: cover;
       border-radius: 8px;
     }
-    &:hover {
-      border: 1px solid #cccccc;
-      transition: all 0.5s ease-out;
-    }
   }
   .date {
     color: #666666;
@@ -140,6 +140,9 @@ main {
   .title {
     color: #000000;
     font-size: 18px;
+    :hover {
+      text-decoration: underline;
+    }
   }
   .excerpt {
     p {
@@ -166,10 +169,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 45px;
   }
   .pagination {
     display: flex;
     justify-content: center;
+    margin: 0;
     gap: 8px;
     .page-item {
       &.disabled {
@@ -279,14 +284,27 @@ main {
     a {
       color: #ffffff;
     }
-    p {
-      color: #737373;
+    .post {
+      width: calc(25% - 18px);
+      &:hover {
+        .teaser {
+          border: 1px solid #444444;
+          transition: all 0.5s ease-out;
+        }
+      }
     }
     .teaser {
       border: 1px solid #2c2c2c;
-      &:hover {
-        border: 1px solid #444444;
-        transition: all 0.5s ease-out;
+    }
+    .date {
+      color: #a1a1a1;
+    }
+    .title {
+      color: #ffffff;
+    }
+    .excerpt {
+      p {
+        color: #737373;
       }
     }
   }
@@ -340,11 +358,20 @@ main {
 }
   
 @media (max-width: 520px) {
+  body {
+    .header {
+      padding-top: 20px;
+    }
+  }
+  main {
+    padding-bottom: 20px;
+  }
   #nav-container {
     .search-bar {
       width: 168px;
     }
   }
+
   #content {
     .post-list {
       display: block;
@@ -356,6 +383,13 @@ main {
       margin-bottom: 20px;
     }
   }
+
+  #navigation {
+    .nav-content {
+      padding-top: 20px;
+    }
+  }
+
   #site-footer {
     .container {
       display: grid;

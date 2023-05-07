@@ -17,23 +17,23 @@ layout: default
   <ul class="post-list">
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
     {% for post in posts %}
-      <li class="post">
+      <a href="{{ post.url | relative_url }}" class="post">
         <div class="teaser">
-          <a href="{{ post.url | relative_url }}">
-            <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"></img>
-          </a>
+          <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"/>
         </div>
 
-        <span class="date">{{ post.date | date: date_format }}</span>
+        <span class="date">
+          {{ post.date | date: date_format }}
+        </span>
 
         <h1 class="title">
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          {{ post.title | escape }}
         </h1>
 
         <div class="excerpt">
           {{ post.excerpt }}
         </div>
-      </li>
+      </a>
     {% endfor %}
   </ul>
 
