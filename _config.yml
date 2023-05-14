@@ -18,6 +18,12 @@ paginate: 8
 
 markdown: kramdown
 
+comments:
+  provider: disqus
+
+disqus:
+  shortname: d3h1
+
 exclude:
   - Gemfile
   - Gemfile.lock
