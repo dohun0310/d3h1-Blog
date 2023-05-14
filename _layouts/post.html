@@ -3,6 +3,18 @@ layout: default
 ---
 <head>
   <title>{{ page.title }} | d3h1 Blog</title>
+  <meta name="title" content="{{ page.title }} | d3h1 Blog">
+  <meta name="description" content="{{ post.excerpt }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blog.d3h1.com/">
+  <meta property="og:title" content="{{ page.title }} | d3h1 Blog">
+  <meta property="og:description" content="{{ post.excerpt }}">
+  <meta property="og:image" content="{{ post.teaser }}">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://blog.d3h1.com/">
+  <meta property="twitter:title" content="{{ page.title }} | d3h1 Blog">
+  <meta property="twitter:description" content="{{ post.excerpt }}">
+  <meta property="twitter:image" content="{{ post.teaser }}">
 </head>
 
 <main aria-label="Content">
