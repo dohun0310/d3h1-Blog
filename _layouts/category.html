@@ -7,59 +7,62 @@ layout: default
   </h1>
 </header>
   
-<div id="content">
-  <ul class="category">
-    <li>
-      <a class="category-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/">
-        메인
-      </a>
-    </li>
-    {% assign pages_list = site.pages %}
-    {% for node in pages_list %}
-        {% if node.title != null %}
-        {% if node.layout == "category" %}
-          <li>
-            <a class="category-link {% if page.url == node.url %} active{% endif %}"href="{{ site.baseurl }}{{ node.url }}">
-              {{ node.title }}
-            </a>
-          </li>
+<main aria-label="Content">
+  <div id="content">
+
+    <ul class="category">
+      <li>
+        <a class="category-link {% if page.url == "/" or page.url == "/page2/" %} active{% endif %}" href="{{ site.baseurl }}/">
+          메인
+        </a>
+      </li>
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+          {% if node.title != null %}
+          {% if node.layout == "category" %}
+            <li>
+              <a class="category-link {% if page.url == node.url %} active{% endif %}"href="{{ site.baseurl }}{{ node.url }}">
+                {{ node.title }}
+              </a>
+            </li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
 
-  {% if site.paginate %}
-    {% assign posts = paginator
-      .posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+    {% if site.paginate %}
+      {% assign posts = paginator
+        .posts %}
+    {% else %}
+      {% assign posts = site.posts %}
+    {% endif %}
 
-  <ul class="post-list">
-    {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-    {% assign category = page.category | default: page.title %}
-    {% for post in site.categories[category] %}
-      <a href="{{ post.url | relative_url }}" class="post">
-        <div class="teaser">
-          <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"/>
-        </div>
+    <ul class="post-list">
+      {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+      {% assign category = page.category | default: page.title %}
+      {% for post in site.categories[category] %}
+        <a href="{{ post.url | relative_url }}" class="post">
+          <div class="teaser">
+            <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"/>
+          </div>
 
-        <span class="date">
-          {{ post.date | date: date_format }}
-        </span>
+          <span class="date">
+            {{ post.date | date: date_format }}
+          </span>
 
-        <h1 class="title">
-          {{ post.title | escape }}
-        </h1>
+          <h1 class="title">
+            {{ post.title | escape }}
+          </h1>
 
-        <div class="excerpt">
-          {{ post.excerpt }}
-        </div>
-      </a>
-    {% endfor %}
-  </ul>
-  
-</div>
+          <div class="excerpt">
+            {{ post.excerpt }}
+          </div>
+        </a>
+      {% endfor %}
+    </ul>
+
+  </div>
+</main>
 
 <div id="navigation">
 
@@ -141,5 +144,5 @@ layout: default
       </li>
     </ul>
   </nav>
-
+  
 </div>

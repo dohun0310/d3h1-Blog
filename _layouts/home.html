@@ -9,7 +9,7 @@ layout: default
 <div id="content">
   <ul class="category">
     <li>
-      <a class="category-link {% if page.url == "/" %} active{% endif %}" href="{{ site.baseurl }}/">
+      <a class="category-link {% if page.url == "/" or page.url contains "page" %} active{% endif %}" href="{{ site.baseurl }}/">
         메인
       </a>
     </li>
