@@ -5,7 +5,6 @@ email: d3h1@d3h1.com
 permalink: :title
 
 plugins:
-  - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-feed
   - jekyll-redirect-from
@@ -20,9 +19,8 @@ markdown: kramdown
 
 comments:
   provider: disqus
-
-disqus:
-  shortname: d3h1
+  disqus:
+    shortname: d3h1
 
 exclude:
   - Gemfile
