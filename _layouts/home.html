@@ -25,5 +25,28 @@ layout: default
       {% endif %}
     {% endfor %}
   </ul>
-  
+
+  <ul class="post-list">
+    {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+    {% for post in posts %}
+      <a href="{{ post.url | relative_url }}" class="post">
+        <div class="teaser">
+          <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"/>
+        </div>
+
+        <span class="date">
+          {{ post.date | date: date_format }}
+        </span>
+
+        <h1 class="title">
+          {{ post.title | escape }}
+        </h1>
+
+        <div class="excerpt">
+          {{ post.excerpt }}
+        </div>
+      </a>
+    {% endfor %}
+  </ul>
+
 </div>
