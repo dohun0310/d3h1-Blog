@@ -42,8 +42,10 @@ layout: default
           {{ post.title | escape }}
         </h1>
 
-        <div class="excerpt">
-          {{ post.excerpt }}
+        <div class="description">
+          <p>  
+            {{ post.description }}
+          </p>
         </div>
       </a>
     {% endfor %}
