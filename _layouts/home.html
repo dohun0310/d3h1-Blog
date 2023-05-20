@@ -28,7 +28,7 @@ layout: default
 
   <ul class="post-list">
     {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-    {% for post in posts %}
+    {% for post in site.posts %}
       <a href="{{ post.url | relative_url }}" class="post">
         <div class="teaser">
           <img src="{{ post.teaser }}" alt="{{ post.title }} teaser image"/>

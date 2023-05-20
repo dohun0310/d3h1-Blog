@@ -5,7 +5,6 @@ email: d3h1@d3h1.com
 permalink: :title
 
 plugins:
-  - jekyll-paginate
   - jekyll-feed
   - jekyll-redirect-from
 
