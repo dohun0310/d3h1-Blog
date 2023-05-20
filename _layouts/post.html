@@ -1,54 +1,26 @@
 ---
 layout: default
 ---
-<main aria-label="Content">
-  <article itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="pt-4 pb-3">
-      <h1 itemprop="name headline">{{ page.title | escape }}</h1>
-      <p class="text-secondary">
-        {% if page.author %}
-          {% if page.author_url %}
-            <a href="{{ page.author_url }}">
-          {% endif %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-          {% if page.author_url %}
-            </a>
-          {% endif %}
-          &bull;
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="pt-4 pb-3">
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="text-secondary">
+      {% if page.author %}
+        {% if page.author_url %}
+          <a href="{{ page.author_url }}">
         {% endif %}
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-          {{ page.date | date: date_format }}
-        </time>
-      </p>
-    </header>
-
-    <div class="text-justify" itemprop="articleBody" id="content">
-      {{ content }}
-    </div>
-
-    {% if page.comments %}
-      <div id="disqus_thread"></div>
-      <script>
-          /**
-          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-          /*
-          var disqus_config = function () {
-          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          */
-          (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
-          s.src = 'https://d3h1.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-      </script>
-      <noscript>댓글을 확인하시려면 JavaScript를 활성화해주세요. <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    {% endif %}
-
-  </article>
-</main>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+        {% if page.author_url %}
+          </a>
+        {% endif %}
+        &bull;
+      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+    </p>
+  </header>
+  <div class="text-justify" itemprop="articleBody" id="content">
+    {{ content }}
+</article>

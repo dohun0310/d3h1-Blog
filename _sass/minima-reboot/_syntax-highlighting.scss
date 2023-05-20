@@ -37,29 +37,15 @@
     font-weight: bold;
   }
 
-  .k,
-  .kn,
-  .kp,
-  .kr,
-  .kv {
+  .k, .kn, .kp, .kr, .kv {
     color: #ae81ff;
   }
 
-  .kc,
-  .kt,
-  .kd {
+  .kc, .kt, .kd {
     color: #fd971f;
   }
 
-  .s,
-  .sb,
-  .sc,
-  .dl,
-  .sd,
-  .s2,
-  .sh,
-  .sx,
-  .s1 {
+  .s, .sb, .sc, .dl, .sd, .s2, .sh, .sx, .s1 {
     color: #a6e22e;
   }
 
@@ -71,14 +57,11 @@
     color: #a1efe4;
   }
 
-  .si,
-  .se {
+  .si, .se {
     color: #cc6633;
   }
 
-  .nn,
-  .nc,
-  .no {
+  .nn, .nc, .no {
     color: #f4bf75;
   }
 
@@ -86,14 +69,7 @@
     color: #66d9ef;
   }
 
-  .m,
-  .mb,
-  .mf,
-  .mh,
-  .mi,
-  .il,
-  .mo,
-  .mx {
+  .m, .mb, .mf, .mh, .mi, .il, .mo, .mx {
     color: #a6e22e;
   }
 
@@ -109,7 +85,6 @@
     &,
     .w {
       color: #f8f8f2;
-      background-color: #272822;
     }
   
     .err, .nf {
