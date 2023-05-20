@@ -295,7 +295,7 @@ main {
 
 .highlight pre {
   border: 1px solid $layout-color-border-light;
-  border-radius: .25rem;
+  border-radius: 1rem;
   background-color: $layout-color-syntax-highlighting-background-light;
   padding: 0.75rem;
   margin-bottom: 1rem;
@@ -457,12 +457,6 @@ main {
 
     .teaser {
       height: 200px;
-    }
-  }
-
-  #navigation {
-    .nav-content {
-      padding-top: 20px;
     }
   }
 
