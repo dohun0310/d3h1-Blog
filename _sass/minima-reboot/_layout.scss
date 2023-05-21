@@ -151,7 +151,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80%;
+    height: 65%;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     transition: all 0.5s ease-out;
@@ -196,63 +196,6 @@ main {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-    }
-  }
-}
-
-#navigation {
-  .nav-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 28px;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    gap: 8px;
-
-    .page-item {
-      &.disabled {
-        .page-link {
-          opacity: 0.5;
-          pointer-events: none;
-        }
-      }
-
-      &.active {
-        .page-link {
-          background-color: #000000;
-          border: none;
-          color: #ffffff;
-
-          &:hover {
-            background-color: #000000;
-            color: #ffffff;
-          }
-        }
-      }
-
-      .page-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: none;
-        color: #000000;
-        cursor: pointer;
-        font-size: 14px;
-        height: 32px;
-        width: 32px;
-        transition: all 0.5s ease-out;
-
-        &:hover {
-          background-color: #f0f0f0;
-          color: #000000;
-        }
-      }
     }
   }
 }
@@ -385,41 +328,6 @@ main {
       }
     }
   }
-  
-  #navigation {
-    nav {
-      color: #ffffff;
-    }
-
-    .pagination {
-      .page-item {
-        &.active {
-          .page-link {
-            background-color: #ffffff;
-            border: none;
-            color: #000000;
-
-            &:hover {
-              background-color: #ffffff;
-              color: #000000;
-            }
-          }
-        }
-        
-        .page-link {
-          background-color: #151515;
-          border: none;
-          color: #ffffff;
-          fill: #ffffff;
-
-          &:hover {
-            background-color: #232323;
-            color: #ffffff;
-          }
-        }
-      }
-    }
-  }
 
   #site-footer {
     background-color: $layout-color-footer-dark;
@@ -468,12 +376,6 @@ main {
       p {
         margin-bottom: 20px;
       }
-    }
-  }
-
-  #navigation {
-    .nav-content {
-      padding-top: 20px;
     }
   }
 
