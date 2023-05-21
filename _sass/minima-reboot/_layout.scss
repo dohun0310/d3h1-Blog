@@ -82,6 +82,13 @@ main {
     text-decoration: none;
   }
 
+  p {
+    a{
+      color: #3081f7;
+      text-decoration: solid underline;
+    }
+  }
+
   .category {
     list-style: none;
     padding: 0px;
@@ -151,7 +158,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 65%;
+    height: 55%;
     border: 1px solid #e6e6e6;
     border-radius: 8px;
     transition: all 0.5s ease-out;
@@ -266,12 +273,10 @@ main {
   }
 
   #content {
-    a {
-      color: #ffffff;
-    }
+    color: #ffffff;
 
-    p {
-      color: #ffffff;
+    hr {
+      border-top: 1px solid #2c2c2c;
     }
 
     .category {
