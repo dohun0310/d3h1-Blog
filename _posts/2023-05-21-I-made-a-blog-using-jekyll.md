@@ -269,62 +269,15 @@ title: 원하는 카테고리 이름
 </header>
 ```
 
-그후 아래와 같이 `scss`를 작성하면 블로그가 완성됩니다.
+이제 html 수정을 맞쳤으니 `scss`를 작성 해보겠습니다. 먼저 `header`를 화면에 계속 표시하고 블러를 적용하겠습니다.
 
 ```scss
-$layout-color-border-light: #e6e6e6 !default;
-$layout-color-footer-light: #e6e6e6 !default;
-$layout-color-background-light: #ffffff !default;
-$layout-color-syntax-highlighting-background-light: #f8f9fa !default;
-$layout-color-border-dark: #2c2c2c !default;
-$layout-color-footer-dark: #232323 !default;
-$layout-color-background-dark: #151515 !default;
-$layout-color-syntax-highlighting-background-dark: #222222 !default;
-
-@import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
-
-html {
-  font-family: 'Noto Sans KR';
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: $layout-color-background-light;
-  font-family: 'Noto Sans KR';
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 100px;
-  .header {
-    padding-top: 48px;
-    font-size: 26px;
-    font-weight: bold;
-    .content-header {
-      position: flex;
-      margin: 0;
-    }
-  }
-}
-
-header {
-  svg {
-    margin-left: 2px;
-    width: 30px;
-  }
-}
-
-main {
-  padding-top: 76px;
-  padding-bottom: 16px;
-}
-
 #nav-header {
   position: fixed;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   width: 100%;
-  border-bottom: 1px solid $layout-color-border-light !important;
+  border-bottom: 1px solid #f8f9fa
 }
 
 #nav-container {
@@ -342,10 +295,12 @@ main {
     color: #000000;
   }
 }
+```
 
+다음은 `home`에 대한 `scss`를 적용해보겠습니다.
+
+```scss
 #content {
-  padding-bottom: 20px;
-
   h1, h2, h3, h4 {
     size: 26px;
     text-align: left;
@@ -480,208 +435,9 @@ main {
     }
   }
 }
-
-#site-footer {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-  bottom: 0;
-  background-color: $layout-color-footer-light;
-  padding: 1rem 0;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-  }
-
-  .h5 {
-    margin: 0;
-    padding: 1.5rem;
-    padding-left: 0; 
-    color: #909090;
-    font-size: 16px;
-  }
-
-  a {
-    margin-top: 18px;
-    margin-left: 16px;
-    text-decoration: none;
-  }
-
-  svg {
-    &:hover {
-      fill: #5c5c5c;
-      transition: all 0.5s ease-out;
-      cursor: pointer;
-    }
-  } 
-}
-
-.highlight pre {
-  border: 1px solid $layout-color-border-light;
-  border-radius: 1rem;
-  background-color: $layout-color-syntax-highlighting-background-light;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  white-space: pre-wrap;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: $layout-color-background-dark;
-
-    h1 {
-      color: #ffffff;
-    }
-  }
-
-  #nav-header {
-    border-bottom: 1px solid $layout-color-border-dark !important;
-
-    svg {
-      fill: #ffffff;
-    }
-  }
-
-  #content {
-    color: #ffffff;
-
-    hr {
-      border-top: 1px solid #2c2c2c;
-    }
-
-    .category {
-      li{
-        a.category-link {
-          background-color: #151515;
-          color: #ffffff;
-          border: 1px solid #2c2c2c;
-
-          &.active {
-            border: none;
-            background-color: #ffffff;
-            color: #000000;
-            
-            &:hover {
-              background-color: #ffffff;
-              color: #000000;
-            }
-          }
-          
-          &:hover {
-            background-color: #232323;
-          }
-        }
-      }
-    }
-
-    .post {
-      width: calc(25% - 18px);
-
-      &:hover {
-        .teaser {
-          border: 1px solid #444444;
-          transition: all 0.5s ease-out;
-        }
-      }
-    }
-
-    .teaser {
-      border: 1px solid #2c2c2c;
-    }
-
-    .date {
-      color: #a1a1a1;
-    }
-
-    .title {
-      color: #ffffff;
-    }
-
-    .description {
-      p {
-        color: #737373;
-      }
-    }
-  }
-
-  #site-footer {
-    background-color: $layout-color-footer-dark;
-
-    svg {
-      fill: #4f4f4f;
-
-      &:hover {
-        fill: #7b7b7b;
-        transition: all 0.5s ease-out;
-        cursor: pointer;
-      }
-    }
-  }
-
-  .highlight pre {
-    border: 1px solid $layout-color-border-dark;
-    border-radius: 1rem;
-    background-color: $layout-color-syntax-highlighting-background-dark;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    white-space: pre-wrap;
-  }
-}
-  
-@media (max-width: 520px) {
-  body {
-    .header {
-      padding-top: 20px;
-    }
-  }
-
-  main {
-    padding-bottom: 20px;
-  }
-
-  #content {
-    .post-list {
-      display: block;
-      padding: 0;
-    }
-
-    .post {
-      width: 100%;
-      height: auto;
-      p {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  #site-footer {
-    .container {
-      display: grid;
-      justify-self: right;
-      padding-left: 15px;
-    }
-
-    .h5 {
-      padding: 0px;
-      padding-bottom: 10px;
-      font-size: 12px;
-    }
-
-    a {
-      margin: 0px;
-      margin-right: 10px;
-    }
-
-    svg {
-      width: 28px;
-    }
-  }
-}
 ```
+
+위 코드는 다음과 같은 역활을 합니다. `content`에 표시되는 `page title`의 글자 크기를 26px로 지정하고, 왼쪽 정렬하게 만듭니다. `category`가 `active`일 때 검정색으로 나오게 만들고 `hover` 시 `ease-out` 효과와 함께 `#f0f0f0`으로 표시되게 만듭니다. `post`의 간격을 8px로 설정하고 `post`에 `hover`시 `teaser`의 `outline`에 애니메이션과 색 변환을 합니다. 이 외에도 모든 스타일링에 관여합니다.
 
 코드블럭을 조금 더 이쁘게 강조하고 싶다면, [Rouge Theme Preview Page](https://spsarolkar.github.io/rouge-theme-preview/)를 사용하여서 자신이 원하는 테마를 찾고 적용하면 됩니다.
 <br/><br/>
