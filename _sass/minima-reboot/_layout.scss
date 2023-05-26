@@ -385,11 +385,10 @@ main {
   }
 
   #site-footer {
-    align-items: center;
-
     .container {
-      display: grid;
-      justify-self: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding-left: 15px;
     }
 
