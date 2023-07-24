@@ -11,6 +11,8 @@ const Giscus = memo(() => (
         scriptElement.async = true;
         scriptElement.setAttribute("data-repo", "dohun0310/d3h1-Blog-comment");
         scriptElement.setAttribute("data-repo-id", "R_kgDOJ-0RuA");
+        scriptElement.setAttribute("data-category", "General");
+        scriptElement.setAttribute("data-category-id", "DIC_kwDOJ-0RuM4CYGS5");
         scriptElement.setAttribute("data-mapping", "pathname");
         scriptElement.setAttribute("data-reactions-enabled", "1");
         scriptElement.setAttribute("data-emit-metadata", "0");

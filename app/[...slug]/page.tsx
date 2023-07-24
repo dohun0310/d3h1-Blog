@@ -8,8 +8,9 @@ import { Footer, Giscus } from "@/components";
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ params: { slug: post._raw.flattenedPath.split('/') }}))
 
-export const generateMetadata = ({ params }: any) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+export const generateMetadata = ({ params }: { params: { slug: string[] } }) => {
+  const slug = params.slug.join('/');
+  const post = allPosts.find((post) => post._raw.flattenedPath === slug)
 
   if (!post) {
     return {}
@@ -25,7 +26,7 @@ export const generateMetadata = ({ params }: any) => {
       description: post.description,
       siteName: "d3h1 Blog",
       images: [{
-        url: "/opengraph.png",
+        url: post.teaser,
       }],
     },
     twitter: {
@@ -34,7 +35,7 @@ export const generateMetadata = ({ params }: any) => {
       title: post.title,
       description: post.description,
       images: [{
-        url: "/opengraph.png",
+        url: post.teaser,
       }],
     },
   }
