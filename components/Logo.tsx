@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 import { useTransition } from "@/tools";
 
-const StyledLogo = styled.svg(({ theme }: { theme?: any }) => `
+const StyledLogo = styled.svg(({ theme }) => `
   width: 15%;
   height: auto;
 

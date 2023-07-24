@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 
 import { StyledPost } from "./style";
-import { Footer } from "@/components";
+import { Footer, Giscus } from "@/components";
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ params: { slug: post._raw.flattenedPath.split('/') }}))
 
@@ -57,6 +57,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
           <h1 className="post-title">{post.title}</h1>
           <time dateTime={post.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
           <Content />
+          <Giscus />
         </article>
         <Footer />
       </div>

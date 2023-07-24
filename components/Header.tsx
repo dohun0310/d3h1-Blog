@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Logo } from ".";
 import { useTransition } from "@/tools";
 
-const StyledHeader = styled.header(({ theme }: { theme?: any }) => `
+const StyledHeader = styled.header(({ theme }) => `
   position: fixed;
   width: 100%;
   height: 80px;

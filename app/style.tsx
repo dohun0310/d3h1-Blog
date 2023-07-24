@@ -57,6 +57,12 @@ const StyledHome = styled.main (({ theme }) => `
       & a {
         text-decoration: none;
         color: inherit;
+
+        &:hover {
+          & .post-title {
+            text-decoration: underline;
+          }
+        }
       }
 
       & p, h1 {

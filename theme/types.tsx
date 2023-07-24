@@ -7,12 +7,12 @@ export type ThemeMode = 'light' | 'dark';
 export type UserThemeMode = ThemeMode | 'auto';
 
 export interface ColorObject {
-    [key: string]: ColorWithOpacity;
+  [key: string]: ColorWithOpacity;
 }
 
 export interface Theme {
-    mode: ThemeMode;
-    colors: ColorObject;
-    change: (mode: UserThemeMode) => void;
-    isChanging: boolean;
+  mode: ThemeMode;
+  colors: ColorObject;
+  change: (mode: UserThemeMode) => void;
+  isChanging: boolean;
 }
