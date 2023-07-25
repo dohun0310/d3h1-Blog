@@ -42,10 +42,19 @@ export const StyledPost = styled.main(({ theme }: { theme?: any }) => `
         font-size: 26px;
         font-weight: bold; 
       }
-    
-      & .post-description {
-        font-size: 18px;
-        border-bottom: 1px solid ${theme.colors.text(10)};
+
+      & div[data-rehype-pretty-code-fragment] {
+        width: 100%;
+        vertical-align: baseline;
+        border-radius: 8px;
+        background-color: #2c2c2c;
+        word-break: break-all;
+
+        & pre {
+          margin: 1.5rem;
+          padding: 1rem;
+          overflow: auto;
+        }
       }
     }
   }

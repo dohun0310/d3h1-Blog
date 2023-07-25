@@ -5,7 +5,6 @@ import { Theme } from "./types";
 
 const global = (theme: Theme) => css`
   :root {
-    font-family: var(--font);
     font-size: 14px;
     background-color: ${theme.colors.background(100)};
     ${theme.isChanging &&
@@ -16,14 +15,12 @@ const global = (theme: Theme) => css`
     color: ${theme.colors.text()};
     color-scheme: ${theme.mode};
     -webkit-tap-highlight-color: transparent;
-    user-select: none;
     touch-action: manipulation;
     word-break: keep-all;
     box-sizing: border-box;
   }
 
   input, button, select {
-    font-family: var(--font);
     box-sizing: border-box;
     &:focus-visible {
       outline: 1px dashed ${theme.colors.text(10)};
