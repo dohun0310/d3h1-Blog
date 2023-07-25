@@ -26,7 +26,6 @@ const StyledFooter = styled.footer(({ theme }) => `
       align-items: center;
       padding: 8px;
       border: 1px solid ${theme.colors.text(10)};
-      ${() => useTransition("fill 0.1s", "")};
       border-radius: 50%;
 
       & svg {
@@ -42,7 +41,6 @@ const StyledFooter = styled.footer(({ theme }) => `
 
     & p {
       color: ${theme.colors.text(40)};
-      ${() => useTransition("fill 0.1s", "")};
     }
   }
 

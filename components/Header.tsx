@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 
 import { Logo } from ".";
-import { useTransition } from "@/tools";
 
 const StyledHeader = styled.header(({ theme }) => `
   position: fixed;
@@ -13,7 +12,6 @@ const StyledHeader = styled.header(({ theme }) => `
   top: 0;
   left: 0;
   border-bottom: 1px solid ${theme.colors.text(10)};
-  ${() => useTransition("fill 0.1s", "")};
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 20;

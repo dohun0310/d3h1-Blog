@@ -6,7 +6,6 @@ import Image from "next/image";
 
 import { allPosts } from "contentlayer/generated";
 import { useState } from "react";
-import { useTransition } from "@/tools";
 
 const StyledCategoryList = styled.div(({ theme }) => `
   display: flex;
@@ -22,19 +21,14 @@ const StyledCategoryList = styled.div(({ theme }) => `
     align-items: center;
     justify-content: center;
     border: 1px solid ${theme.colors.text(10)};
-    ${() => useTransition("fill 0.1s", "")};
     border-radius: 100px;
     color: ${theme.colors.text()};
-    ${() => useTransition("fill 0.1s", "")};
     background-color: ${theme.colors.background(100)};
-    ${() => useTransition("fill 0.1s", "")};
   }
 
   & .active {
     color: ${theme.colors.background()};
-    ${() => useTransition("fill 0.1s", "")};
     background-color: ${theme.colors.text()};
-    ${() => useTransition("fill 0.1s", "")};
   }
 `)
 
