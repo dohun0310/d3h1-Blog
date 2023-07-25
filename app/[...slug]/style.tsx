@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 
-export const StyledPost = styled.main(({ theme }: { theme?: any }) => `
+export const StyledPost = styled.main(({ theme }) => `
   padding-top: 112px;
 
   & .post-container {
@@ -41,6 +41,10 @@ export const StyledPost = styled.main(({ theme }: { theme?: any }) => `
         margin-bottom: 0;
         font-size: 26px;
         font-weight: bold; 
+      }
+
+      & hr {
+        border-color: ${theme.colors.text(10)};
       }
 
       & div[data-rehype-pretty-code-fragment] {
