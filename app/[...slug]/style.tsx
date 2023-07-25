@@ -2,8 +2,6 @@
 
 import styled from "@emotion/styled";
 
-import { useTransition } from "@/tools";
-
 export const StyledPost = styled.main(({ theme }: { theme?: any }) => `
   padding-top: 112px;
 
@@ -48,10 +46,7 @@ export const StyledPost = styled.main(({ theme }: { theme?: any }) => `
       & .post-description {
         font-size: 18px;
         border-bottom: 1px solid ${theme.colors.text(10)};
-        ${() => useTransition("fill 0.1s", "")};
       }
-
-
     }
   }
 `)

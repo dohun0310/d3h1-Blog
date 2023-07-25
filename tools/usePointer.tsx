@@ -2,13 +2,34 @@
 
 import { useState } from "react";
 
-const usePointer = () => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [isHover, setIsHover] = useState(false);
-  const [isTouched, setIsTouched] = useState(false);
+const usePointer = (): {
+  pointerEvents: {
+    onPointerEnter: () => void;
+    onPointerLeave: () => void;
+    onTouchStart: () => void;
+    onTouchEnd: () => void;
+    onPointerDown: () => void;
+    onPointerUp: () => void;
+  },
+  pointerValues: {
+    isClicked: boolean;
+    isHover: boolean;
+    isTouched: boolean;
+  },
+  utilities: {
+    setIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsHover: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsTouched: React.Dispatch<React.SetStateAction<boolean>>;
+    upTime: number;
+    downTime: number;
+  }
+} => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [isHover, setIsHover] = useState<boolean>(false);
+  const [isTouched, setIsTouched] = useState<boolean>(false);
 
-  const [downTime, setDownTime] = useState(0);
-  const [upTime, setUpTime] = useState(0);
+  const [downTime, setDownTime] = useState<number>(0);
+  const [upTime, setUpTime] = useState<number>(0);
 
   const pointerEvents = {
     onPointerEnter: () => setIsHover(true),
@@ -36,9 +57,9 @@ const usePointer = () => {
   };
 
   const utilities = {
-    setIsClicked,
-    setIsHover,
-    setIsTouched,
+    setIsClicked: setIsClicked,
+    setIsHover: setIsHover,
+    setIsTouched: setIsTouched,
     upTime,
     downTime,
   };

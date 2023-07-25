@@ -1,16 +1,20 @@
 import StyledHome from "./style";
-import { Footer, Posts } from "@/components";
+import { allPosts } from "contentlayer/generated";
 
-const Home = () => (
-  <StyledHome>
-    <div className="contents-container">
-      <div className="articles">
-        <h1 className="page-title">홈</h1>
-        <Posts />
+import { Footer, PostList } from "@/components";
+
+const Home = () => {
+  return (
+    <StyledHome>
+      <div className="contents-container">
+        <div className="articles">
+          <h1 className="page-title">홈</h1>
+          <PostList allPosts={allPosts} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  </StyledHome>
-);
+    </StyledHome>
+  );
+};
 
 export default Home;
