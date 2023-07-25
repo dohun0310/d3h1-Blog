@@ -32,9 +32,8 @@ export const StyledPost = styled.main(({ theme }) => `
         height: auto;
       }
 
-      & h1 {
-        font-size: 26px;
-        font-weight: bold;
+      h1 {
+        font-size: 24px;
       }
     
       & .post-title {
