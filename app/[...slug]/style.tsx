@@ -46,17 +46,43 @@ export const StyledPost = styled.main(({ theme }) => `
         border-color: ${theme.colors.text(10)};
       }
 
+      & blockquote {
+        background-color: ${theme.colors.text(10)};
+        margin: 24px 0;
+        padding: 16px;
+        border-radius: 8px;
+        border-left: 8px solid ${theme.colors.purple()};
+
+        & p {
+          margin: 0;
+          word-break: keep-all;
+          line-height: 1.7;
+          font-size: 18px;
+        }
+      }
+
+      & code {
+        border-radius: 4px;
+        padding: 4px 8px;
+        background-color: ${theme.colors.text(10)};
+      }
+
       & div[data-rehype-pretty-code-fragment] {
+        font-family: var(--font);
         width: 100%;
         vertical-align: baseline;
         border-radius: 8px;
-        background-color: #2c2c2c;
+        background-color: #2d2d2d;
         word-break: break-all;
 
         & pre {
           margin: 1.5rem;
           padding: 1rem;
           overflow: auto;
+
+          & code {
+            background-color: transparent;
+          }
         }
       }
     }

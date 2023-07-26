@@ -26,7 +26,7 @@ description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 
 ---
 
-ReactJS를 사용할지 NextJS를 사용할지 생각하다가 '백엔드는 어떻게 하지?'라는 생각이 들었습니다. 사실 ReactJS나 NextJS를 이용해 프론트엔드를 작업하고 포스팅할 때마다 js 파일을 생성하면 백엔드 작업이 그렇게 복잡해지지 않을 텐데 그러면 뭔가 별로라는 생각이 들어 다른 대안이 있지 않을까 열심히 검색해 보았습니다.
+`ReactJS`를 사용할지 `NextJS`를 사용할지 생각하다가 '백엔드는 어떻게 하지?'라는 생각이 들었습니다. 사실 `ReactJS`나 `NextJS`를 이용해 프론트엔드를 작업하고 포스팅할 때마다 js 파일을 생성하면 백엔드 작업이 그렇게 복잡해지지 않을 텐데 그러면 뭔가 별로라는 생각이 들어 다른 대안이 있지 않을까 열심히 검색해 보았습니다.
 
 <br/>
 
@@ -38,14 +38,14 @@ ReactJS를 사용할지 NextJS를 사용할지 생각하다가 '백엔드는 어
 
 ---
 
-저는 WSL2를 이용해 VSC를 사용하는 개발 환경입니다. 제 환경에서 Jekyll 프로젝트를 시작하기 위해서는 아래와 같은 명령을 터미널에 입력해 필요한 패키지를 설치하면 되었습니다.
+저는 `WSL2`를 이용해 `VSC`를 사용하는 개발 환경입니다. 제 환경에서 `Jekyll` 프로젝트를 시작하기 위해서는 아래와 같은 명령을 터미널에 입력해 필요한 패키지를 설치하면 되었습니다.
 
 ```bash
 sudo apt install ruby-full build-essential zlib1g-dev
 sudo gem install jekyll bundler
 ```
 
-필요한 패키지들을 모두 설치하였으면 Jekyll 프로젝트를 만들고 싶은 경로에 진입하여 아래와 같은 명령어를 입력하면 Jekyll 프로젝트가 생성됩니다.
+필요한 패키지들을 모두 설치하였으면 `Jekyll` 프로젝트를 만들고 싶은 경로에 진입하여 아래와 같은 명령어를 입력하면 `Jekyll` 프로젝트가 생성됩니다.
 
 ```bash
 jekyll new 프로젝트명
@@ -58,7 +58,7 @@ sudo bundle install
 jekyll serve
 ```
 
-이렇게 하고 [127.0.0.1:4000](127.0.0.1:4000)를 웹 브라우저의 주소창에 입력하고 접속하면 Jekyll의 기본 테마인 minima가 적용된 Jekyll 화면을 아래와 같이 확인 할 수 있습니다.
+이렇게 하고 [127.0.0.1:4000](127.0.0.1:4000)를 웹 브라우저의 주소창에 입력하고 접속하면 `Jekyll`의 기본 테마인 `minima`가 적용된 `Jekyll` 화면을 아래와 같이 확인 할 수 있습니다.
 
 ![minima](/Jekyll-Minima.png)
 
@@ -68,7 +68,7 @@ jekyll serve
 
 ---
 
-이렇게 Jekyll 프로젝트를 처음 만들게 되면 심심하다 못해 재미없어 보이는 Jekyll의 기본 테마가 적용된 모습을 확인할 수 있는데요. 하지만 저는 이런 재미없는 테마보다는 더욱 개성 있고 이쁜 테마를 Jekyll에 적용해 보고 싶었습니다. 그래서 Jekyll의 테마가 모여있는 [Jekyll Themes](http://jekyllthemes.org/)에 접속하여 인기 있는 테마 몇몇 개를 적용해 보았습니다.
+이렇게 `Jekyll` 프로젝트를 처음 만들게 되면 심심하다 못해 재미없어 보이는 Jekyll의 기본 테마가 적용된 모습을 확인할 수 있는데요. 하지만 저는 이런 재미없는 테마보다는 더욱 개성 있고 이쁜 테마를 `Jekyll`에 적용해 보고 싶었습니다. 그래서 `Jekyll`의 테마가 모여있는 [Jekyll Themes](http://jekyllthemes.org/)에 접속하여 인기 있는 테마 몇몇 개를 적용해 보았습니다.
 
 <br/>
 
@@ -86,27 +86,27 @@ jekyll serve
 
 ---
 
-저는 PWA(Progressive Web App)을 매우 좋아하는 편이여서 가장 먼저 적용하기로 하였습니다. [PWABuilder](https://www.pwabuilder.com/imageGenerator)를 사용하여서 PWA에 사용할 manifest.json과 아이콘 파일들을 다운로드해서 manifest.json은 Jekyll 프로젝트 경로 최상단에, 아이콘 파일들은 assets 폴더에 저장하였습니다. 그다음 head.html의 head 태그가 끝나기 전 아래와 같은 코드 한 줄을 추가해 주면 PWA는 활성화됩니다.
+저는 `PWA(Progressive Web App)`을 매우 좋아하는 편이여서 가장 먼저 적용하기로 하였습니다. [PWABuilder](https://www.pwabuilder.com/imageGenerator)를 사용하여서 PWA에 사용할 manifest.json과 아이콘 파일들을 다운로드해서 `manifest.json`은 `Jekyll` 프로젝트 경로 최상단에, 아이콘 파일들은 `assets` 폴더에 저장하였습니다. 그다음 `head.html`의 `head` 태그가 끝나기 전 아래와 같은 코드 한 줄을 추가해 주면 PWA는 활성화됩니다.
 
 ```html
 <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
 ```
 
-head.html을 건드린 김에 OpenGraph와 favicon, title도 적용해 보겠습니다.
+`head.html`을 건드린 김에 `OpenGraph`와 `favicon`, `title`도 적용해 보겠습니다.
 
 <br/>
 
-먼저 favicon을 적용시켜보겠습니다. [Favicon & App Icon Generator](https://www.favicon-generator.org/)를 사용하여 favicon.ico 파일을 얻습니다. 그 후, 얻은 favicon.ico 파일을 assets 폴더에 favicon.ico 파일을 저장하고, head.html의 head 태그가 끝나기 전 아래와 같은 코드 한 줄을 추가해 주면 favicon이 표시되는 것을 확인할 수 있습니다.
+먼저 `favicon`을 적용시켜보겠습니다. [Favicon & App Icon Generator](https://www.favicon-generator.org/)를 사용하여 `favicon.ico` 파일을 얻습니다. 그 후, 얻은 `favicon.ico` 파일을 `assets` 폴더에 `favicon.ico` 파일을 저장하고, `head.html`의 `head` 태그가 끝나기 전 아래와 같은 코드 한 줄을 추가해 주면 `favicon`이 표시되는 것을 확인할 수 있습니다.
 
 ```html
 <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" type="image/x-icon" sizes="32x32">
 ```
 
-이제 OpenGraph와 title을 적용시켜보겠습니다.
+이제 `OpenGraph`와 `title`을 적용시켜보겠습니다.
 
 <br/>
 
-OpenGraph에서 표시될 이미지를 opengraph.png로 이름을 변경 후 assets 파일 안에 저장하고, head.html의 head 태그가 끝나기 전 아래와 같은 코드들을 추가 후 알맞게 수정해 준다면 OpenGraph와 title이 표시될 것입니다.
+`OpenGraph`에서 표시될 이미지를 `opengraph.png`로 이름을 변경 후 `assets` 파일 안에 저장하고, `head.html`의 `head` 태그가 끝나기 전 아래와 같은 코드들을 추가 후 알맞게 수정해 준다면 `OpenGraph`와 `title`이 표시될 것입니다.
 
 ```html
 {% raw %}{% if page.teaser %}
@@ -145,7 +145,7 @@ OpenGraph에서 표시될 이미지를 opengraph.png로 이름을 변경 후 ass
 <meta property="twitter:url" content="블로그 주소">{% endraw %}
 ```
 
-이 코드는 _post에 작성될 글에 아래와 같이 선언되어 있어야 완벽하게 작동합니다.
+이 코드는 `_post`에 작성될 글에 아래와 같이 선언되어 있어야 완벽하게 작동합니다.
 
 ```yaml
 ---
@@ -157,7 +157,7 @@ description: "설명"
 ---
 ```
 
-이제, 외관을 꾸며보겠습니다. 먼저 home.html부터 수정해 보겠습니다.
+이제, 외관을 꾸며보겠습니다. 먼저 `home.html`부터 수정해 보겠습니다.
 
 ```html
 {% raw %}---
@@ -217,7 +217,7 @@ layout: default
 </div>{% endraw %}
 ```
 
-category 버튼들은 a 태그를 사용해 만들고 해당 category 페이지에 있을 때 active 되어서 다른 버튼들과는 다르게 표시됩니다. 위에서처럼 _posts 폴더에 작성될 글에 잘 선언이 되어 있다면 post-list에 teaser와 date, title, description까지 정상적으로 출력됩니다. 또한 category 기능이 정상적으로 동작하기 위해서는 category.html이라는 파일을 _layouts 폴더 안에 아래와 같이 작성해야 합니다.
+`category` 버튼들은 `a` 태그를 사용해 만들고 해당 category 페이지에 있을 때 `active` 되어서 다른 버튼들과는 다르게 표시됩니다. 위에서처럼 `_posts` 폴더에 작성될 글에 잘 선언이 되어 있다면 post-list에 teaser와 date, title, description까지 정상적으로 출력됩니다. 또한 `category` 기능이 정상적으로 동작하기 위해서는 `category.html`이라는 파일을 `_layouts` 폴더 안에 아래와 같이 작성해야 합니다.
 
 ```html
 {% raw %}---
@@ -280,7 +280,7 @@ layout: default
 </div>{% endraw %}
 ```
 
-category.html까지 작성이 완료 되었다면, Jekyll 프로젝트의 최상단에 category라는 폴더를 생성 후 그 폴더 밑에 원하는 카테고리 이름.md라는 파일을 생성 후 그 파일을 다음과 같이 작성하면 됩니다.
+`category.html`까지 작성이 완료 되었다면, `Jekyll` 프로젝트의 최상단에 `category`라는 폴더를 생성 후 그 폴더 밑에 원하는 `카테고리 이름.md`라는 파일을 생성 후 그 파일을 다음과 같이 작성하면 됩니다.
 
 ```yaml
 ---
@@ -289,7 +289,7 @@ title: 원하는 카테고리 이름
 ---
 ```
 
-header.html은 다음과 같이 작성하면 됩니다.
+`header.html`은 다음과 같이 작성하면 됩니다.
 
 ```html
 <header id="nav-header" class="border-dark border-left-0 border-right-0">
@@ -328,7 +328,7 @@ header.html은 다음과 같이 작성하면 됩니다.
 }
 ```
 
-다음은 home에 대한 scss를 적용해보겠습니다.
+다음은 `home`에 대한 `scss`를 적용해보겠습니다.
 
 ```scss
 #content {
@@ -468,7 +468,7 @@ header.html은 다음과 같이 작성하면 됩니다.
 }
 ```
 
-위 코드는 다음과 같은 역활을 합니다. content에 표시되는 page title의 글자 크기를 26px로 지정하고, 왼쪽 정렬하게 만듭니다. category가 active일 때 검정색으로 나오게 만들고 hover 시 ease-out 효과와 함께 #f0f0f0으로 표시되게 만듭니다. post의 간격을 8px로 설정하고 post에 hover시 teaser의 outline에 애니메이션과 색 변환을 합니다. 이 외에도 모든 스타일링에 관여합니다.
+위 코드는 다음과 같은 역활을 합니다. `content`에 표시되는 `page title`의 글자 크기를 26px로 지정하고, 왼쪽 정렬하게 만듭니다. `category`가 `active`일 때 검정색으로 나오게 만들고 `hover` 시 `ease-out` 효과와 함께 `#f0f0f0`으로 표시되게 만듭니다. `post`의 간격을 8px로 설정하고 `post`에 `hover` 시 teaser의 `outline`에 애니메이션과 색 변환을 합니다. 이 외에도 모든 스타일링에 관여합니다.
 
 코드블럭을 조금 더 이쁘게 강조하고 싶다면, [Rouge Theme Preview Page](https://spsarolkar.github.io/rouge-theme-preview/)를 사용하여서 자신이 원하는 테마를 찾고 적용하면 됩니다.
 
@@ -476,4 +476,4 @@ header.html은 다음과 같이 작성하면 됩니다.
 
 <br/>
 
-이렇게 제가 jekyll를 활용해 블로그를 만든 경험을 공유해 보았습니다. 아직 블로그가 완성되었다고 보기에는 어려운 부분이 많습니다. 아직 paginate도 적용하지 못하였고, 검색바도 완성하지 못하였고 광고 등 제가 원했던 기능들을 귀찮거나 어려워서 아직 넣지 못하였는데, 블로그를 일단 어느 정도 완성시킨 후 시간이 날 때마다 관련 내용을 포스팅하며 완성시키는 것도 좋을 것 같아 필수적인 부분들만 완성해 보았습니다. 아직 블로그에 무엇을 주제로 올릴지 결정하지 못해 블로그가 조금 난해해질 수도 있는데, 이쁘게 완성시킨 블로그인 만큼 천천히 시간을 들여가며 이쁘게 사용해 보겠습니다. 긴 글 읽어주셔서 감사합니다!
+이렇게 제가 `Jekyll`를 활용해 블로그를 만든 경험을 공유해 보았습니다. 아직 블로그가 완성되었다고 보기에는 어려운 부분이 많습니다. 아직 `paginate`도 적용하지 못하였고, 검색바도 완성하지 못하였고 광고 등 제가 원했던 기능들을 귀찮거나 어려워서 아직 넣지 못하였는데, 블로그를 일단 어느 정도 완성시킨 후 시간이 날 때마다 관련 내용을 포스팅하며 완성시키는 것도 좋을 것 같아 필수적인 부분들만 완성해 보았습니다. 아직 블로그에 무엇을 주제로 올릴지 결정하지 못해 블로그가 조금 난해해질 수도 있는데, 이쁘게 완성시킨 블로그인 만큼 천천히 시간을 들여가며 이쁘게 사용해 보겠습니다. 긴 글 읽어주셔서 감사합니다!
