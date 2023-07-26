@@ -28,6 +28,11 @@ const StyledFooter = styled.footer(({ theme }) => `
       border: 1px solid ${theme.colors.text(10)};
       border-radius: 50%;
 
+      &:hover {
+        background-color: ${theme.colors.text(10)};
+        transition: background-color 0.2s;
+      }
+
       & svg {
         padding: 0;
         margin: 0;

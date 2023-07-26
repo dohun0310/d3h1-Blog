@@ -90,11 +90,21 @@ const StyledCategoryList = styled.div(({ theme }) => `
       border-radius: 100px;
       color: ${theme.colors.text()};
       background-color: ${theme.colors.background(100)};
+      
+      &:hover {
+        background-color: ${theme.colors.text(10)};
+        transition: background-color 0.2s;
+      }
     }
-
+    
     & .active {
       color: ${theme.colors.background()};
       background-color: ${theme.colors.text()};
+
+      &:hover {
+        color: ${theme.colors.background()};
+        background-color: ${theme.colors.text()};
+      }
     }
   }
 `)
