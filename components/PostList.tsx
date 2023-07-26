@@ -70,6 +70,7 @@ const StyledPostList = styled.div(({ theme }) => `
 `)
 
 const StyledCategoryList = styled.div(({ theme }) => `
+  max-width: 652px;
   width: 100%;
   margin: 0 auto;
   user-select: none;

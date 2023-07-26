@@ -15,21 +15,21 @@ const StyledHeader = styled.header(({ theme }) => `
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 20;
-
+  
   & .header-container {
     position: relative;
-    max-width: 1200px;
     width: 100%;
     max-height: 100%;
     height: 100%;
     display: flex;
-    justify-content: between;
+    justify-content: space-between;
     align-items: center;
     padding: 0 30px;
     box-sizing: border-box;
 
     & svg {
-      width: 15%;
+      min-width: 24px;
+      width: 28px;
       height: auto;
 
       & path {
