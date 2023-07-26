@@ -72,6 +72,7 @@ const StyledPostList = styled.div(({ theme }) => `
 const StyledCategoryList = styled.div(({ theme }) => `
   width: 100%;
   margin: 0 auto;
+  user-select: none;
 
   & .category-container {
     display: flex;
@@ -93,7 +94,7 @@ const StyledCategoryList = styled.div(({ theme }) => `
       
       &:hover {
         background-color: ${theme.colors.text(10)};
-        transition: background-color 0.2s;
+        transition: background-color 0.3s;
       }
     }
     
@@ -113,9 +114,10 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   const categories: { title: string; keyword: string }[] = [
-    { title: '전체', keyword: '' },
-    { title: '개발', keyword: '개발' },
-    { title: '잡담', keyword: '잡담' },
+    { title: "전체", keyword: "" },
+    { title: "개발", keyword: "개발" },
+    { title: "후기", keyword: "후기" },
+    { title: "잡담", keyword: "잡담" },
   ]
 
   const Posts = allPosts.sort((a: { date: Date; }, b: { date: Date; }) => Number(new Date(b.date)) - Number(new Date(a.date))).filter((post: { category: string | string[]; }) => post.category.includes(selectedCategory))

@@ -74,11 +74,11 @@ jekyll serve
 
 하지만 제 마음에 드는 테마가 없었고 그래서 제 블로그를 제 입맛에 맞게 제가 직접 한번 꾸며보려고 하였습니다. 마침 주변에 멋진 디자인을 만드는 멋진 사람이 있었고 부탁을 해 마음에 꼭 맞는 디자인을 받아볼 수 있었습니다.
 
-![first-design](/Blog-First-Design.png)
+![first design](/Blog-First-Design.png)
 
 만들기 어려워보이는 부분이 있어 제가 조금 다듬고 그것에 맞추어 저만의 블로그를 만들기 시작했습니다.
 
-![light-design](/Blog-Light-Design.png)![dark-design](/Blog-Dark-Design.png)
+![light design](/Blog-Light-Design.png)![dark design](/Blog-Dark-Design.png)
 
 <br />
 

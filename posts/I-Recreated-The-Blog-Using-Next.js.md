@@ -20,7 +20,7 @@ description: Next.JS를 이용해 블로그를 갈아 엎은 경험을 공유합
 
 이제 뭐 쓸지 다 정했으니까 디자인 받아와야겠죠? 전에 디자인해 주신 분께 모바일 어떻게 만들어야 할지 모르겠다고 말하니까 또 금방 하나 찍어내주셨어요. 멋진 걸로요.
 
-![new-design](/Blog-New-Design.png)
+![new design](/Blog-New-Design.png)
 
 <br />
 
@@ -41,11 +41,11 @@ npm install contentlayer next-contentlayer rehype-highlight rehype-pretty-code s
 
 혹은
 
-yarn add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shiki next-sitemap @emotion/styled @emotion/css @emotion/reac
+yarn add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shiki next-sitemap @emotion/styled @emotion/css @emotion/react
 
 혹은
 
-pnpm add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shiki next-sitemap @emotion/styled @emotion/css @emotion/reac
+pnpm add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shiki next-sitemap @emotion/styled @emotion/css @emotion/react
 ```
 
 자신이 사용하는 패키지 매니저에 따라서 알아서 해주시면 되고요. 이 모듈들은 블로그 제작을 돕고 `JS in CSS`를 할 수 있게 해주고 `코드 블록`을 이쁘게 꾸며주는 플러그인들입니다.

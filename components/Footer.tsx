@@ -30,7 +30,7 @@ const StyledFooter = styled.footer(({ theme }) => `
 
       &:hover {
         background-color: ${theme.colors.text(10)};
-        transition: background-color 0.2s;
+        transition: background-color 0.3s
       }
 
       & svg {

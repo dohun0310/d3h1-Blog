@@ -63,8 +63,9 @@ export const StyledPost = styled.main(({ theme }) => `
 
       & code {
         border-radius: 4px;
-        padding: 4px 8px;
+        padding: 2px 4px;
         background-color: ${theme.colors.text(10)};
+        transition: background-color 0.3s
       }
 
       & div[data-rehype-pretty-code-fragment] {
@@ -72,7 +73,7 @@ export const StyledPost = styled.main(({ theme }) => `
         width: 100%;
         vertical-align: baseline;
         border-radius: 8px;
-        background-color: #2d2d2d;
+        background-color: ${theme.colors.text(10)};
         word-break: break-all;
 
         & pre {
@@ -81,6 +82,8 @@ export const StyledPost = styled.main(({ theme }) => `
           overflow: auto;
 
           & code {
+            border-radius: none;
+            padding: none;
             background-color: transparent;
           }
         }
