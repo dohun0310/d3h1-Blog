@@ -5,7 +5,7 @@ import { ThemeProvider } from "../theme";
 
 const noto_sans_kr = Noto_Sans_KR({
   subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900']
+  weight: ['100', '300', '400', '500', '700', '900'],
 })
 
 export const metadata = {
