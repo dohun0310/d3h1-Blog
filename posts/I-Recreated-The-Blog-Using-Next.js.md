@@ -48,7 +48,7 @@ yarn add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shik
 pnpm add contentlayer next-contentlayer rehype-highlight rehype-pretty-code shiki next-sitemap @emotion/styled @emotion/css @emotion/react
 ```
 
-자신이 사용하는 패키지 매니저에 따라서 알아서 해주시면 되고요. 이 모듈들은 블로그 제작을 돕고 `JS in CSS`를 할 수 있게 해주고 `코드 블록`을 이쁘게 꾸며주는 플러그인들입니다.
+자신이 사용하는 패키지 매니저에 따라서 알아서 해주시면 되고요. 이 모듈들은 블로그 제작을 돕고 `CSS in JS`를 할 수 있게 해주고 `코드 블록`을 이쁘게 꾸며주는 플러그인들입니다.
 
 모듈 설치다 했으면 이제 본격적으로 코드 짜봐야겠죠. 그전에 설정부터 먼저 해줍시다.
 
@@ -260,7 +260,7 @@ warning ../package.json: No license field
 $ next dev
 ```
 
-이 문구 밑에 뜨는 `- ready ~~~`를 주목하세요. 거기에 `url: `이라고 되어 있는데에 어떤 주소가 있을텐데 그곳을 `Ctrl +  클릭`하면 브라우저 창이 하나 열릴겁니다. 주소 뒤에 `/example`을 입력하고 접속해보면 우리가 쓴 글이 잘 렌더링 된 것을 확인 할 수 있죠. 마음에 안드는 부분은 `page.tsx`에 `@emotion/styled`를 바로 가져와서 사용하거나 따로 `style.tsx`로 빼서 스타일링 해서 사용하시면 됩니다. 나는 `JS in CSS`가 싫다고 하시면 알아서 하시면 되고요.
+이 문구 밑에 뜨는 `- ready ~~~`를 주목하세요. 거기에 `url: `이라고 되어 있는데에 어떤 주소가 있을텐데 그곳을 `Ctrl +  클릭`하면 브라우저 창이 하나 열릴겁니다. 주소 뒤에 `/example`을 입력하고 접속해보면 우리가 쓴 글이 잘 렌더링 된 것을 확인 할 수 있죠. 마음에 안드는 부분은 `page.tsx`에 `@emotion/styled`를 바로 가져와서 사용하거나 따로 `style.tsx`로 빼서 스타일링 해서 사용하시면 됩니다. 나는 `CSS in JS`가 싫다고 하시면 알아서 하시면 되고요.
 
 <br />
 

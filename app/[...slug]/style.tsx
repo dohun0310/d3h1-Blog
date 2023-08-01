@@ -57,7 +57,6 @@ export const StyledPost = styled.main(({ theme }) => `
           margin: 0;
           word-break: keep-all;
           line-height: 1.7;
-          font-size: 18px;
         }
       }
 
@@ -83,7 +82,7 @@ export const StyledPost = styled.main(({ theme }) => `
 
           & code {
             border-radius: none;
-            padding: none;
+            padding: 0;
             background-color: transparent;
           }
         }
