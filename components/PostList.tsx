@@ -3,12 +3,10 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 import Image from "next/image";
-import { Key, useState } from "react";
+import { useState } from "react";
 
 const StyledPostList = styled.div(({ theme }) => `
-  max-width: 652px;
   width: 100%;
-  margin: 0 auto;
 
   & .articles-container {
     display: grid;
@@ -70,9 +68,7 @@ const StyledPostList = styled.div(({ theme }) => `
 `)
 
 const StyledCategoryList = styled.div(({ theme }) => `
-  max-width: 652px;
   width: 100%;
-  margin: 0 auto;
   user-select: none;
 
   & .category-container {
@@ -141,7 +137,7 @@ const PostList = ({ allPosts }: { allPosts: any }) => {
       </StyledCategoryList>
       <StyledPostList>
         <div className="articles-container">
-          {Posts.map((post: { _id: Key | null | undefined; url: string; teaser: string; alt: string; title: string; category: string; description: string; }) => (
+          {Posts.map((post: { _id: any; url: string; teaser: string; alt: string; title: string; category: string; description: string; }) => (
             <article key={post._id}>
               <Link href={post.url}>
                 <Image src={post.teaser} alt={post.title} width={640} height={360} />

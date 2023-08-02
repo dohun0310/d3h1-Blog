@@ -3,8 +3,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 
-import { useTransition } from "@/tools";
-
 const StyledFooter = styled.footer(({ theme }) => `
   display: block;
 
@@ -39,7 +37,6 @@ const StyledFooter = styled.footer(({ theme }) => `
 
         & path {
           fill: ${theme.colors.text()};
-          ${() => useTransition("fill 0.1s", "")};
         }
       }
     }

@@ -3,8 +3,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 
-import { useTransition } from "@/tools";
-
 const StyledHeader = styled.header(({ theme }) => `
   position: fixed;
   width: 100%;
@@ -34,7 +32,6 @@ const StyledHeader = styled.header(({ theme }) => `
 
       & path {
         fill: ${theme.colors.text()};
-        ${() => useTransition("fill 0.1s", "")};
       }
     }
   }

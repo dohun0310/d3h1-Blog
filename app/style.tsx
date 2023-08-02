@@ -21,6 +21,12 @@ const StyledHome = styled.main (() => `
       grid-template-columns: 1fr 240px;
       column-gap: 48px;
     }
+
+    & .articles {
+      max-width: 652px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 `)
 
