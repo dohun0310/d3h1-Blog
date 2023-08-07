@@ -30,7 +30,7 @@ Apple Store 올 때마다 느끼는 거지만 통유리로 하고 가로를 넓�
 
 ---
 
-이번엔 진짜로 구경을 해봤습니다. 제 iPhone 12 mini도 충전할 겸 iPhone 14 Pro Max을 봤습니다. 혹시 제가 잠시 안온 사이에 홈 앱 문제를 고쳐놨나 싶지만 그렇진 않더라고요. 뭐 체험용 갤럭시 Z 플립 5 커버 화면 위젯에 SmartThings 아무 앱이나 눌러보고 있었는데 메시지를 들어왔고요. 근데 이게 iMessage 주소가 다 보이더라고요? 커버 화면 위젯에 SmartThings 박아놓고 활성화 안 시키는 삼성도 메시지 연락처는 다 채워놓던데 아쉬웠습니다.
+이번엔 진짜로 구경을 해봤습니다. 제 iPhone 12 mini도 충전할 겸 iPhone 14 Pro Max을 봤습니다. 혹시 제가 잠시 안온 사이에 홈 앱 문제를 고쳐놨나 싶지만 그렇진 않더라고요. 뭐 체험용 갤럭시 Z 플립5 커버 화면 위젯에 SmartThings 아무 앱이나 눌러보고 있었는데 메시지를 들어왔고요. 근데 이게 iMessage 주소가 다 보이더라고요? 커버 화면 위젯에 SmartThings 박아놓고 활성화 안 시키는 삼성도 메시지 연락처는 다 채워놓던데 아쉬웠습니다.
 
 ![iPhone Message App](/Review-Apple-Gangnam-iPhone-Message-App.jpg)
 
@@ -63,5 +63,7 @@ Apple Watch도 봤는데 삼성 강남보다 전시 방식이 더 나은 거 같
 ![Apple Watch Bands](/Review-Apple-Gangnam-Apple-Watch-Bands.jpg)
 
 # 마무리
+
+---
 
 Apple Store는 언제 놀러와도 재미있는 거 같고요. 또 나중에 시간 나면 놀러오도록 하겠습니다.

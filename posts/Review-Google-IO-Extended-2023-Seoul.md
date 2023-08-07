@@ -257,4 +257,8 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 ![Google Extended t-shirts](/Google-IO-Extended-Google-Extended-T-Shirts.jpg)
 ![Google Extended sticker](/Google-IO-Extended-Google-Extended-Sticker.jpg)
 
-정말 재밌었고요. 다음에는 누구랑 같이 가면 더 재밌을 거 같다는 생각이 들었습니다. 긴 글 읽어주셔서 감사합니다.
+# 마무리
+
+---
+
+정말 재밌었고요. 매우 유익하다는 생각이 들었습니다. 다음에는 누구랑 같이 가면 더 재밌을 거 같다는 생각이 들었습니다. 그리고 보조배터리와 키보드를 사용 가능한 큰 기기를 가져와야 할거 같다는 생각도 했고요. 긴 글 읽어주셔서 감사합니다.

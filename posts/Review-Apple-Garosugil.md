@@ -14,8 +14,6 @@ description: Apple 가로수길 가서 별거 다 하고 왔습니다.
 
 ![Today at Apple Ticket](/Today-at-Apple-Ticket.jpg)
 
-<br />
-
 # 간단한 구경
 
 ---
@@ -33,8 +31,6 @@ Touch ID 데모 배경이 iOS 15 것이 적용 되어 있지만 iPadOS는 최신
 
 뭐 이것도 그럴 수 있다고 생각하고 iPad Pro로 제 코드 서버에 들어와서 코딩 좀 하고 있으니까 Apple Store 직원분께서 오셔서 저한테 프로크리에이트 써본 적 있냐고 말을 거시더라고요. 예전에 Apple 여의도에서 Today at Apple 하면서 써본 적 있다고 하니까 프로크리에이트로 금손처럼 하늘 그림 그리는 법 알려주셔서 같이 하늘을 그렸고요. 그 다음에 갤럭시 밖에 안쓰냐, iPad로 어떤거 자주 하시냐 이런 이야기 하다가 저한테 Today at Apple 세션 참가할 생각이 없냐 물어봐주셔서 이미 예약을 했다고 말씀드렸고 체크인 후 기다렸습니다.
 
-<br />
-
 # Today at Apple
 
 ---
@@ -45,6 +41,8 @@ Touch ID 데모 배경이 iOS 15 것이 적용 되어 있지만 iPadOS는 최신
 
 ![Apple Garosugil Today at Apple iPad Memo App](Apple-Garosugil-Today-at-Apple-iPad-Memo-App.jpg)
 
-<br/>
+# 마무리
 
-이거 다 마친 다음에 Mac들 좀 구경 하다가 볼 일 보러 갔습니다. 재밌었고요. 다음에도 시간 남을 때 또 구경하러 가면 재밌을 거 같습니다.
+---
+
+이거 다 마친 다음에 Mac들 좀 구경 하다가 볼 일 보러 갔습니다. 재밌었고요. 다음에도 시간 남을 때 또 구경하러 오거나 Today at Apple 하면 재밌을 거 같습니다.

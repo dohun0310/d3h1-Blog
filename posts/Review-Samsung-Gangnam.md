@@ -38,7 +38,7 @@ Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬
 
 ![Kartrider Drift OLED G9](/Review-Samsung-Gangnam-Kartrider-Drift-OLED-G9.JPEG)
 
-그 옆에 갤럭시 Z 플립 5랑 갤럭시 탭 S9 Ultra가 있었는데 Z 플립 5는 가로 게임 띄워놨으면 좀 가로로 돌려놨으면 좋았을 거 같습니다.
+그 옆에 갤럭시 Z 플립5랑 갤럭시 탭 S9 Ultra가 있었는데 Z 플립5는 가로 게임 띄워놨으면 좀 가로로 돌려놨으면 좋았을 거 같습니다.
 
 ![Kartrider Drift Galaxy Z Flip5 Galaxy Tap S9 Ultra](/Review-Samsung-Gangnam-Kartrider-Drift-Galaxy-Z-Flip5-Galaxy-Tap-S9-Ultra.JPEG)
 
