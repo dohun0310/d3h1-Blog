@@ -10,6 +10,8 @@ description: Apple 강남가서 구경만하고 왔습니다.
 
 ![Galaxy Z Fold/Flip5 Ads](Review-Apple-Gangnam-Galaxy-Z-FoldFlip5-Ads.JPEG)
 
+<br />
+
 # 도착
 
 ---
@@ -25,6 +27,8 @@ Apple Store 올 때마다 느끼는 거지만 통유리로 하고 가로를 넓�
 또 어질어질해졌지만 폰 두 개를 사용한다는 이야기를 했고, 예리하신 직원분께서 제가 갤럭시 워치를 사용한다는 것을 말해주시면서 작은 건 삼성, 큰 것들은 애플 제품을 쓴다는 이야기를 했고요. 이분은 행사에 관심을 가지시길래 Google I/O Extended 2023 Seoul에서 준 것들도 보여드렸고요. 그리고 또 아까 처음 뵀던 직원분도 오셔서 궁금하다고 하시길래 구경시켜드렸고요. 그 과정에서 스티커에 엄청 관심 가지시길래 원하시면 가지셔도 된다고 했더니 하나 가지고 가셨어요. 저 이런 거 받아놓고 관상용으로 쓰고 붙이지도 않고 스티커가 아까워서 드린 게 스티커에게도 저에게도 직원분에게도 아주 좋았을 겁니다.
 
 ![Stiker](/Review-Apple-Gangnam-Sticker.jpg)
+
+<br />
 
 # 구경
 
@@ -61,6 +65,8 @@ Apple Watch도 봤는데 삼성 강남보다 전시 방식이 더 나은 거 같
 아 그리고 이렇게 밴드들도 이쁘게 걸어놨는데 호들갑 좀 더하자면 엄청 비싼 박물관에 가서 전시를 보는 느낌이었습니다.
 
 ![Apple Watch Bands](/Review-Apple-Gangnam-Apple-Watch-Bands.jpg)
+
+<br />
 
 # 마무리
 

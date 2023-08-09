@@ -8,6 +8,8 @@ description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 
 안녕하세요. 오늘은 블로그를 개설하고 처음 제대로 된 글을 작성해보려고 합니다. 이 블로그를 만든 경험과 사용된 코드들을 공유하려고도 합니다.
 
+<br />
+
 # 블로그가 가지고 싶어!
 
 ---
@@ -20,15 +22,19 @@ description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 
 그래서 그냥 직접 만들기로 하였습니다.
 
+<br />
+
 # 블로그를 만들자!
 
 ---
 
-`ReactJS`를 사용할지 `NextJS`를 사용할지 생각하다가 '백엔드는 어떻게 하지?'라는 생각이 들었습니다. 사실 `ReactJS`나 `NextJS`를 이용해 프론트엔드를 작업하고 포스팅할 때마다 js 파일을 생성하면 백엔드 작업이 그렇게 복잡해지지 않을 텐데 그러면 뭔가 별로라는 생각이 들어 다른 대안이 있지 않을까 열심히 검색해 보았습니다.
+`React.JS`를 사용할지 `Next.JS`를 사용할지 생각하다가 '백엔드는 어떻게 하지?'라는 생각이 들었습니다. 사실 `React.JS`나 `Next.JS`를 이용해 프론트엔드를 작업하고 포스팅할 때마다 js 파일을 생성하면 백엔드 작업이 그렇게 복잡해지지 않을 텐데 그러면 뭔가 별로라는 생각이 들어 다른 대안이 있지 않을까 열심히 검색해 보았습니다.
 
 <br/>
 
 검색을 한 결과 [Jekyll](https://jekyllrb.com/)를 이용해서 블로그를 만들면 제가 원하는 블로그를 만들 수 있다는 결과에 도달했습니다. 테마가 다양하고, 내 입맛대로 커스텀 할 수 있고, 수익 창출이 가능하고 제가 등록만 한다면 모든 포털 사이트에 제 블로그를 노출시킬 수 있는 방법이었으니까요.
+
+<br />
 
 # Jekyll 시작하기
 
@@ -56,7 +62,9 @@ jekyll serve
 
 이렇게 하고 [127.0.0.1:4000](127.0.0.1:4000)를 웹 브라우저의 주소창에 입력하고 접속하면 `Jekyll`의 기본 테마인 `minima`가 적용된 `Jekyll` 화면을 아래와 같이 확인 할 수 있습니다.
 
-![minima](/Jekyll-Minima.png)
+![Minima](/Jekyll-Minima.png)
+
+<br />
 
 # Jekyll 프로젝트에 테마 적용하기?
 
@@ -68,11 +76,13 @@ jekyll serve
 
 하지만 제 마음에 드는 테마가 없었고 그래서 제 블로그를 제 입맛에 맞게 제가 직접 한번 꾸며보려고 하였습니다. 마침 주변에 멋진 디자인을 만드는 멋진 사람이 있었고 부탁을 해 마음에 꼭 맞는 디자인을 받아볼 수 있었습니다.
 
-![first design](/Blog-First-Design.png)
+![First design](/Blog-First-Design.png)
 
 만들기 어려워보이는 부분이 있어 제가 조금 다듬고 그것에 맞추어 저만의 블로그를 만들기 시작했습니다.
 
-![light design](/Blog-Light-Design.png)![dark design](/Blog-Dark-Design.png)
+![Light design](/Blog-Light-Design.png)![Dark design](/Blog-Dark-Design.png)
+
+<br />
 
 # Jekyll 프로젝트 완성하기
 
@@ -463,6 +473,8 @@ title: 원하는 카테고리 이름
 위 코드는 다음과 같은 역활을 합니다. `content`에 표시되는 `page title`의 글자 크기를 26px로 지정하고, 왼쪽 정렬하게 만듭니다. `category`가 `active`일 때 검정색으로 나오게 만들고 `hover` 시 `ease-out` 효과와 함께 `#f0f0f0`으로 표시되게 만듭니다. `post`의 간격을 8px로 설정하고 `post`에 `hover` 시 teaser의 `outline`에 애니메이션과 색 변환을 합니다. 이 외에도 모든 스타일링에 관여합니다.
 
 코드블럭을 조금 더 이쁘게 강조하고 싶다면, [Rouge Theme Preview Page](https://spsarolkar.github.io/rouge-theme-preview/)를 사용하여서 자신이 원하는 테마를 찾고 적용하면 됩니다.
+
+<br />
 
 # 마무리
 
