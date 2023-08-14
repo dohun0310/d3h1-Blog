@@ -14,7 +14,7 @@ description: 학생이라면 Termius의 모든 기능들을 무료로 이용해 
 
 ---
 
-이번에는 놀랍도록 간단합니다. [https://account.termius.com/student](account.termius.com/student)에 접속합니다. 접속하면 `Termius` 계정으로 로그인하라고 할 수도 있는데, 로그인해 줍니다. 로그인하면 아래와 같은 화면이 표시될겁니다.
+이번에는 놀랍도록 간단합니다. [account.termius.com/student](https://account.termius.com/student)에 접속합니다. 접속하면 `Termius` 계정으로 로그인하라고 할 수도 있는데, 로그인해 줍니다. 로그인하면 아래와 같은 화면이 표시될겁니다.
 
 ![Link GitHub](/How-To-Get-Termius-For-Students-Premium-Link-GitHub.png)
 
