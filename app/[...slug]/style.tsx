@@ -72,7 +72,7 @@ export const StyledPost = styled.main(({ theme }) => `
         width: 100%;
         vertical-align: baseline;
         border-radius: 8px;
-        background-color: ${theme.colors.text(10)};
+        background-color: #2d2d2d;
         word-break: break-all;
 
         & pre {
