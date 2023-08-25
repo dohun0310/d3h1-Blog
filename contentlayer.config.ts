@@ -21,6 +21,8 @@ const Post = defineDocumentType(() => ({
   },
 }))
 
+const currentTheme = typeof window !== "undefined" ? localStorage.getItem("theme-mode") : "light";
+
 const contentSource = makeSource({
   contentDirPath: "posts",
   documentTypes: [Post],
@@ -30,7 +32,7 @@ const contentSource = makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark"
+          theme: currentTheme === "light" ? "github-light" : "github-dark"
         },
       ],
       highlight,

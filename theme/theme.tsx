@@ -55,7 +55,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const change = (mode: SetStateAction<any>) => {
     setIsChanging(true);
     setUserMode(mode);
-    localStorage.setItem("theme-mode", mode);
+    localStorage.setItem(THEME_MODE, mode);
   };
 
   const theme: Theme = {
