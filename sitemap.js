@@ -1,14 +1,14 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 const getFileNames = () => {
-  const postsDirectory = path.join(process.cwd(), 'posts');
+  const postsDirectory = path.join(process.cwd(), "posts");
   return fs.readdirSync(postsDirectory);
 };
 
 const extractFrontmatter = (fileContent) => {
   const frontmatter = {};
-  const lines = fileContent.split('\n');
+  const lines = fileContent.split("\n");
   for (const line of lines) {
     const match = line.match(/^(\w+):\s?(.+)/);
     if (match) {
@@ -24,8 +24,8 @@ const extractFrontmatter = (fileContent) => {
 const getRealTime = () => {
   const date = new Date();
   date.setHours(date.getHours() + 9);
-  const offset = '+09:00';
-  return date.toISOString().split('.')[0] + offset;
+  const offset = "+09:00";
+  return date.toISOString().split(".")[0] + offset;
 };
 
 const main = () => {
@@ -33,12 +33,12 @@ const main = () => {
   const realTime = getRealTime();
 
   const urls = filenames.map((filename) => {
-    const filePath = path.join(process.cwd(), 'posts', filename);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const filePath = path.join(process.cwd(), "posts", filename);
+    const fileContent = fs.readFileSync(filePath, "utf8");
     const frontmatter = extractFrontmatter(fileContent);
 
-    const url = `https://blog.d3h1.com/posts/${filename.replace('.md', '')}`;
-    const lastmod = frontmatter.date || '';
+    const url = `https://blog.d3h1.com/${filename.replace(".md", "")}`;
+    const lastmod = frontmatter.date || "";
     return { realTime, url, lastmod };
   });
 
@@ -57,11 +57,11 @@ const main = () => {
             </url>
           `;
         })
-        .join('')}
+        .join("")}
     </urlset>
   `;
 
-  fs.writeFileSync('public/sitemap.xml', sitemap);
+  fs.writeFileSync("public/sitemap.xml", sitemap);
 };
 
 main();
