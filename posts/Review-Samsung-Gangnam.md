@@ -2,7 +2,7 @@
 teaser: /Review-Samsung-Gangnam-Teaser.JPEG
 category: 후기
 title: 삼성 강남 갔다 왔습니다.
-date: 2023-08-01
+date: 2023-08-01T00:39:00+09:00
 description: 삼성 강남가서 갤럭시 Z 폴드/플립5 구경하고 왔습니다.
 ---
 

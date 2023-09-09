@@ -2,7 +2,7 @@
 teaser: /I-Made-Blog-Official-App-Teaser.jpg
 category: 잡담
 title: 블로그 공식 앱 출시
-date: 2023-08-14
+date: 2023-08-14T21:50:00+09:00
 description: 안드로이드 용 블로그 공식 앱이 출시되었습니다.
 ---
 

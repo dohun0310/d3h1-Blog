@@ -2,7 +2,7 @@
 teaser: /I-Recreated-The-Blog-Using-Next.js-Teaser.jpg
 category: 개발
 title: Next.JS로 블로그를 다시 만들었습니다.
-date: 2023-07-26
+date: 2023-07-26T05:50:00+09:00
 description: Next.JS를 이용해 블로그를 갈아 엎은 경험을 공유합니다.
 ---
 

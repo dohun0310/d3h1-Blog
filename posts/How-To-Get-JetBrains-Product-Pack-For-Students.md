@@ -2,7 +2,7 @@
 teaser: /How-To-Get-JetBrains-Product-Pack-For-Students-Teaser.jpg
 category: 개발
 title: JetBrains 무료 교육용 라이선스 받기
-date: 2023-08-09
+date: 2023-08-09T02:43:00+09:00
 description: 학생이라면 JetBrains IDE들을 무료로 이용해 봅시다.
 ---
 

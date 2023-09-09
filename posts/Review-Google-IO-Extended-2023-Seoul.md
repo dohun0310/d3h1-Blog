@@ -2,7 +2,7 @@
 teaser: /Review-Google-IO-Extended-2023-Seoul-Teaser.png
 category: 후기
 title: Google I/O Extended 2023 Seoul 다녀왔습니다.
-date: 2023-07-30
+date: 2023-07-30T06:33:00+09:00
 description: Google I/O Extended 2023 Seoul 가서 놀고 왔습니다.
 ---
 

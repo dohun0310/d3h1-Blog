@@ -2,7 +2,7 @@
 teaser: /I-Made-The-Blog-Using-Jekyll-Teaser.jpg
 category: 개발
 title: Jekyll를 이용해 블로그를 만들었습니다.
-date: 2023-05-21
+date: 2023-05-21T20:20:00+09:00
 description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 ---
 

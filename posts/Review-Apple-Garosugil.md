@@ -2,7 +2,7 @@
 teaser: /Review-Apple-Garosugil-Teaser.jpg
 category: 후기
 title: Apple 가로수길 갔다 왔습니다.
-date: 2023-07-27
+date: 2023-07-27T00:00:00+09:00
 description: Apple 가로수길 가서 별거 다 하고 왔습니다.
 ---
 

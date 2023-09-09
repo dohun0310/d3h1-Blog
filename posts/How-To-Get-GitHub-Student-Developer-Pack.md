@@ -2,7 +2,7 @@
 teaser: /How-To-Get-GitHub-Student-Developer-Pack-Teaser.jpg
 category: 개발
 title: GitHub Student Developer Pack 받기
-date: 2023-08-08
+date: 2023-08-08T03:28:00+09:00
 description: GitHub Student Developer Pack를 받아 여러 혜택을 누려봅시다.
 ---
 

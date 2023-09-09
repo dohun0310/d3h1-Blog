@@ -2,7 +2,7 @@
 teaser: /How-To-Get-Termius-For-Students-Premium-Teaser.jpg
 category: 개발
 title: Termius 학생 인증 받기
-date: 2023-08-10
+date: 2023-08-10T02:44:00+09:00
 description: 학생이라면 Termius의 모든 기능들을 무료로 이용해 봅시다.
 ---
 

@@ -2,7 +2,7 @@
 teaser: /Review-Apple-Gangnam-Teaser.jpg
 category: 후기
 title: Apple 강남 갔다 왔습니다.
-date: 2023-08-02
+date: 2023-08-02T03:04:00+09:00
 description: Apple 강남가서 구경만하고 왔습니다.
 ---
 
