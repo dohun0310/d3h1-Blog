@@ -2,7 +2,7 @@
 teaser: /How-To-Make-Sitemap-In-Next.js-Teaser.jpg
 category: 개발
 title: Next.JS 블로그 사이트맵 만들기
-date: 2023-09-09T21:50:00+09:00
+date: 2023-09-09T19:30:00+09:00
 description: 복잡해 보이는 사이트맵 간편하게 만들어 봅시다.
 ---
 
@@ -125,7 +125,7 @@ const main = () => {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const frontmatter = extractFrontmatter(fileContent);
 
-    const url = `https://blog.d3h1.com/posts/${filename.replace(".md", "")}`;
+    const url = `https://blogurl.com/${filename.replace(".md", "")}`;
     const lastmod = frontmatter.date || "";
     return { url, lastmod };
   });
@@ -133,7 +133,7 @@ const main = () => {
   const sitemap = `
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://blog.d3h1.com/</loc>
+        <loc>https://blogurl.com/</loc>
       </url>
       ${urls
         .map(({ url, lastmod }) => {
