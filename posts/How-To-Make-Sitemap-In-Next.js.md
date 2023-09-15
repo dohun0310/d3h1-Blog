@@ -89,6 +89,50 @@ const main = () => {
 main();
 ```
 
+또한 메인 블로그 페이지와 글들의 우선순위를 지정하고 사이트 변경 횟수를 지정해줍니다.
+
+```javascript
+const main = () => {
+  const filenames = getFileNames();
+
+  const urls = filenames.map((filename) => {
+    const filePath = path.join(process.cwd(), "posts", filename);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const frontmatter = extractFrontmatter(fileContent);
+
+    const url = `https://blogurl.com/${filename.replace(".md", "")}`;
+    const lastmod = frontmatter.date || "";
+    return { url, lastmod };
+  });
+
+  const sitemap = `
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://blogurl.com/</loc>
+        <changefreq>always</changefreq>
+        <priority>1.00</priority>
+      </url>
+      ${urls
+        .map(({ url, lastmod }) => {
+          return `
+            <url>
+              <loc>${url}</loc>
+              <lastmod>${lastmod}</lastmod>
+              <changefreq>always</changefreq>
+              <priority>0.80</priority>
+            </url>
+          `;
+        })
+        .join("")}
+    </urlset>
+  `;
+
+  fs.writeFileSync("public/sitemap.xml", sitemap);
+};
+
+main();
+```
+
 이제 위에서 정의한 `getFileNames`를 이용해서 파일 이름을 가져온 후 `filenames`에 저장하여 블로그 주소 뒤에 추가합니다. `extractFrontmatter`를 이용하여 프론트매터를 가져온 후 `lastmod`에 저장합니다. 이제 이 정보들을 사용하여서 `XML` 형식의 `sitemap`을 생성해서 `/public`에 저장합니다.
 
 완성된 `sitemap.js`은 아래와 같습니다.
@@ -134,6 +178,8 @@ const main = () => {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
         <loc>https://blogurl.com/</loc>
+        <changefreq>always</changefreq>
+        <priority>1.00</priority>
       </url>
       ${urls
         .map(({ url, lastmod }) => {
@@ -141,6 +187,8 @@ const main = () => {
             <url>
               <loc>${url}</loc>
               <lastmod>${lastmod}</lastmod>
+              <changefreq>always</changefreq>
+              <priority>0.80</priority>
             </url>
           `;
         })

@@ -47,6 +47,7 @@ const main = () => {
       <url>
         <loc>https://blog.d3h1.com/</loc>
         <lastmod>${realTime}</lastmod>
+        <changefreq>always</changefreq>
         <priority>1.00</priority>
       </url>
       ${urls
@@ -55,7 +56,8 @@ const main = () => {
             <url>
               <loc>${url}</loc>
               <lastmod>${lastmod}</lastmod>
-              <priority>1.00</priority>
+              <changefreq>always</changefreq>
+              <priority>0.80</priority>
             </url>
           `;
         })
