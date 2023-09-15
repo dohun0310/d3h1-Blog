@@ -47,6 +47,7 @@ const main = () => {
       <url>
         <loc>https://blog.d3h1.com/</loc>
         <lastmod>${realTime}</lastmod>
+        <priority>1.00</priority>
       </url>
       ${urls
         .map(({ url, lastmod }) => {
@@ -54,6 +55,7 @@ const main = () => {
             <url>
               <loc>${url}</loc>
               <lastmod>${lastmod}</lastmod>
+              <priority>1.00</priority>
             </url>
           `;
         })
