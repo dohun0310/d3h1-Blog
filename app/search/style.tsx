@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 
-export const StyledHome = styled.main (() => `
+export const StyledSearch = styled.main (() => `
   padding-top: 112px;
 
   & .contents-container {
@@ -26,10 +26,6 @@ export const StyledHome = styled.main (() => `
       max-width: 652px;
       width: 100%;
       margin: 0 auto;
-
-      & div .search-container {
-        display: none;
-      }
     }
   }
 `)
