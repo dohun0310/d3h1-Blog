@@ -39,7 +39,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const MediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const listener = (event: { matches: any; }) => {
+    const listener = (event: MediaQueryListEvent) => {
       if (event.matches) setMode("dark");
       else setMode("light");
     };
@@ -52,7 +52,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [userMode]);
 
-  const change = (mode: SetStateAction<any>) => {
+  const change = (mode: UserThemeMode) => {
     setIsChanging(true);
     setUserMode(mode);
     localStorage.setItem("theme-mode", mode);
