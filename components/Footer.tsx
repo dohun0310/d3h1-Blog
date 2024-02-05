@@ -94,7 +94,7 @@ const Footer = () => (
         </Link>
       </div>
       <div className="footer-ad" />
-      <p>© 2023 d3h1. 모든 권리 보유.</p>
+      <p>© 2023-2024 d3h1. 모든 권리 보유.</p>
     </div>
   </StyledFooter>
 )
