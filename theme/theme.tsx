@@ -1,7 +1,7 @@
 "use client"
 
 import { Global, ThemeProvider as EmotionProvider } from "@emotion/react";
-import { SetStateAction, useEffect, useLayoutEffect, useState, ReactNode } from "react";
+import { useEffect, useLayoutEffect, useState, ReactNode } from "react";
 
 import { colors, global } from ".";
 import { Theme, ThemeMode, UserThemeMode } from "./types";
