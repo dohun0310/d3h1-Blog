@@ -66,10 +66,10 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <>
+    <html lang="ko">
       <EmotionProvider theme={theme}>{children}</EmotionProvider>
       <Global styles={global(theme)} />
-    </>
+    </html>
   );
 };
 

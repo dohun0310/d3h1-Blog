@@ -38,13 +38,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
-      <ThemeProvider>
-        <body className={noto_sans_kr.className}>
-          <Header />
-          {children}
-        </body>
-      </ThemeProvider>
-    </html>
+    <ThemeProvider>
+      <body className={noto_sans_kr.className}>
+        <Header />
+        {children}
+      </body>
+    </ThemeProvider>
   )
 }
