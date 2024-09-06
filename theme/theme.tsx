@@ -1,10 +1,12 @@
 "use client"
 
 import { Global, ThemeProvider as EmotionProvider } from "@emotion/react";
-import { useEffect, useLayoutEffect, useState, ReactNode } from "react";
+import { useEffect, useState, ReactNode } from "react";
 
 import { colors, global } from ".";
 import { Theme, ThemeMode, UserThemeMode } from "./types";
+
+const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const THEME_MODE = "theme-mode";
@@ -13,12 +15,17 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [mode, setMode] = useState<ThemeMode>("light");
   const [isChanging, setIsChanging] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const savedTheme = localStorage.getItem(THEME_MODE);
     setUserMode(savedTheme ? (savedTheme as UserThemeMode) : "auto");
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem(THEME_MODE);
+    setUserMode(savedTheme ? (savedTheme as UserThemeMode) : "auto");
+  }, []);
+  
+  useEffect(() => {
     if (window.matchMedia) {
       if (userMode === "auto") {
         window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -30,25 +37,23 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     } else {
       setMode("dark");
     }
-  }, [userMode]);
+  }, [userMode]);  
 
   useEffect(() => {
     if (isChanging) setTimeout(() => setIsChanging(false), 300);
   }, [isChanging]);
 
   useEffect(() => {
-    const MediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
     const listener = (event: MediaQueryListEvent) => {
       if (event.matches) setMode("dark");
       else setMode("light");
     };
 
-    if (userMode === "auto")
-      MediaQuery && MediaQuery.addEventListener("change", listener);
+    if (userMode === "auto") 
+      mediaQuery.addListener(listener);
 
     return () => {
-      MediaQuery && MediaQuery.removeEventListener("change", listener);
+      mediaQuery.removeListener(listener);
     };
   }, [userMode]);
 
@@ -62,14 +67,14 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     mode,
     colors: { ...colors[mode as keyof typeof colors], ...colors["common"] },
     change,
-    isChanging
+    isChanging,
   };
 
   return (
-    <html lang="ko">
-      <EmotionProvider theme={theme}>{children}</EmotionProvider>
+    <EmotionProvider theme={theme}>
+      {children}
       <Global styles={global(theme)} />
-    </html>
+    </EmotionProvider>
   );
 };
 
