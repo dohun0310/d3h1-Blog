@@ -6,8 +6,6 @@ import { useEffect, useState, ReactNode } from "react";
 import { colors, global } from ".";
 import { Theme, ThemeMode, UserThemeMode } from "./types";
 
-const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const THEME_MODE = "theme-mode";
 
@@ -21,21 +19,25 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem(THEME_MODE);
-    setUserMode(savedTheme ? (savedTheme as UserThemeMode) : "auto");
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem(THEME_MODE);
+      setUserMode(savedTheme ? (savedTheme as UserThemeMode) : "auto");
+    }
   }, []);
   
   useEffect(() => {
-    if (window.matchMedia) {
-      if (userMode === "auto") {
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? setMode("dark")
-          : setMode("light");
+    if (typeof window !== "undefined") {
+      if (window.matchMedia) {
+        if (userMode === "auto") {
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? setMode("dark")
+            : setMode("light");
+        } else {
+          setMode(userMode);
+        }
       } else {
-        setMode(userMode);
+        setMode("dark");
       }
-    } else {
-      setMode("dark");
     }
   }, [userMode]);  
 
@@ -44,17 +46,20 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [isChanging]);
 
   useEffect(() => {
-    const listener = (event: MediaQueryListEvent) => {
-      if (event.matches) setMode("dark");
-      else setMode("light");
-    };
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const listener = (event: MediaQueryListEvent) => {
+        if (event.matches) setMode("dark");
+        else setMode("light");
+      };
 
-    if (userMode === "auto") 
-      mediaQuery.addListener(listener);
+      if (userMode === "auto") 
+        mediaQuery.addListener(listener);
 
-    return () => {
-      mediaQuery.removeListener(listener);
-    };
+      return () => {
+        mediaQuery.removeListener(listener);
+      };
+    }
   }, [userMode]);
 
   const change = (mode: UserThemeMode) => {
