@@ -1,7 +1,8 @@
-import { StyledHome } from "./style";
+import styles from "./page.module.css";
 import { allPosts } from "contentlayer/generated";
 
-import { Footer, PostList } from "@/components";
+import Footer from "@/components/Footer";
+import PostList from "@/components/PostList";
 
 export const metadata = {
   title: "홈 | d3h1 Blog",
@@ -29,15 +30,13 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <StyledHome>
-      <div className="contents-container">
-        <div className="articles">
-          <h1 className="page-title">홈</h1>
-          <PostList allPosts={allPosts} />
-        </div>
-        <Footer />
+    <main className={styles.main}>
+      <div className={styles.articles}>
+        <h1 className="page-title">홈</h1>
+        <PostList allPosts={allPosts} />
       </div>
-    </StyledHome>
+      <Footer />
+    </main>
   );
 };
 

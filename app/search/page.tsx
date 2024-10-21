@@ -1,7 +1,8 @@
-import { StyledSearch } from "./style";
+import styles from "./page.module.css";
 import { allPosts } from "contentlayer/generated";
 
-import { Footer, PostList } from "@/components";
+import Footer from "@/components/Footer";
+import PostList from "@/components/PostList";
 
 export const metadata = {
   title: "검색 | d3h1 Blog",
@@ -29,14 +30,12 @@ export const metadata = {
 
 const Search = () => {
   return (
-    <StyledSearch>
-      <div className="contents-container">
-        <div className="articles">
-          <PostList allPosts={allPosts} />
-        </div>
-        <Footer />
+    <main className={styles.main}>
+      <div className={styles.articles}>
+        <PostList allPosts={allPosts} />
       </div>
-    </StyledSearch>
+      <Footer />
+    </main>
   );
 };
 
