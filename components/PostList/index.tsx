@@ -1,9 +1,9 @@
 "use client"
 
-import styles from "./postlist.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import styles from "./postlist.module.css";
 
 export default function PostList({ allPosts }: { allPosts: any }) {  
   const [selectedCategory, setSelectedCategory] = useState<string>("");

@@ -2,8 +2,8 @@ import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
-
 import styles from "./page.module.css";
+
 import Footer from "@/components/Footer";
 import Giscus from "@/components/Giscus";
 
