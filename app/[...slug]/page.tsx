@@ -56,7 +56,7 @@ const PostLayout = ({ params }: { params: { slug: string[] } }) => {
     <main className={styles.main}>
       <article className={styles.article}>
         <h1 className={styles.title}>{post.title}</h1>
-        <time dateTime={post.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
+        <time dateTime={styles.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
         <Content />
         <Giscus />
       </article>

@@ -73,7 +73,7 @@
   word-break: break-all;
 }
 
-.article div[data-rehype-pretty-code-fragment] > pre {
+.article div[data-rehype-pretty-code-fragment] pre {
   margin: 1.5rem;
   padding: 1rem;
   overflow: auto;
@@ -83,4 +83,10 @@
   border-radius: none;
   padding: 0;
   background-color: transparent;
+}
+
+.date {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-top: 16px;
 }
