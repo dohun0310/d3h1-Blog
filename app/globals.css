@@ -56,7 +56,7 @@ input, button, select {
 }
   
 input:focus-visible, button:focus-visible, select:focus-visible {
-  outline: 1px dashed var(--text-color-light);
+  outline: 1px dashed var(--border-color);
   outline-offset: 4px;
 }
   
