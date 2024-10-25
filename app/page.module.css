@@ -24,6 +24,11 @@
   margin: 0 auto;
 }
 
+.title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .main input {
   display: none;
 }

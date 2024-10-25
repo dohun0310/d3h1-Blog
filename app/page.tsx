@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <div className={styles.articles}>
-        <h1 className="page-title">홈</h1>
+        <h1 className={styles.title}>홈</h1>
         <PostList allPosts={allPosts} />
       </div>
       <Footer />
