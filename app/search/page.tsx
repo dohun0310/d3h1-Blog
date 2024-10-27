@@ -1,7 +1,6 @@
 import { allPosts } from "contentlayer/generated";
 import styles from "./page.module.css";
 
-import Footer from "@/components/Footer";
 import PostList from "@/components/PostList";
 
 export const metadata = {
@@ -30,12 +29,7 @@ export const metadata = {
 
 const Search = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.articles}>
-        <PostList allPosts={allPosts} />
-      </div>
-      <Footer />
-    </main>
+    <PostList allPosts={allPosts} />
   );
 };
 

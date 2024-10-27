@@ -22,7 +22,7 @@ export default function PostList({ allPosts }: { allPosts: any }) {
     .filter((post: { title: string; description: string }) => searchKeyword === "" ? true : post.title.toLowerCase().includes(searchKeyword.toLowerCase()) || post.description.toLowerCase().includes(searchKeyword.toLowerCase()));
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
       <input 
         className={styles.search}
         placeholder="검색어를 입력하세요."
@@ -54,6 +54,6 @@ export default function PostList({ allPosts }: { allPosts: any }) {
           </article>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

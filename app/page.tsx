@@ -1,7 +1,6 @@
 import { allPosts } from "contentlayer/generated";
 import styles from "./page.module.css";
 
-import Footer from "@/components/Footer";
 import PostList from "@/components/PostList";
 
 export const metadata = {
@@ -28,16 +27,11 @@ export const metadata = {
   },
 }
 
-const Home = () => {
+export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.articles}>
-        <h1 className={styles.title}>홈</h1>
-        <PostList allPosts={allPosts} />
-      </div>
-      <Footer />
-    </main>
+    <div className={styles.articles}>
+      <h1 className={styles.title}>홈</h1>
+      <PostList allPosts={allPosts} />
+    </div>
   );
 };
-
-export default Home;
