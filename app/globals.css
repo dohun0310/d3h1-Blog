@@ -91,7 +91,7 @@ main {
 @media (min-width: 972px) {
   main {
     display: grid;
-    grid-template-columns: 1fr 652px;
+    grid-template-columns: 1fr 240px;
     column-gap: 48px;
   }
 }
