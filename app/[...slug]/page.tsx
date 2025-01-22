@@ -23,12 +23,12 @@ export function generateMetadata({ params }: { params: { slug: string[] } }) {
   }
   
   return {
-    title: `${post.title} | d3h1 Blog`,
+    title: `${post.title}`,
     description: post.description,
     openGraph: {
       type: "website",
       url: "https://blog.d3h1.com",
-      title: `${post.title} | d3h1 Blog`,
+      title: `${post.title}`,
       description: post.description,
       siteName: "d3h1 Blog",
       images: [{
@@ -38,7 +38,7 @@ export function generateMetadata({ params }: { params: { slug: string[] } }) {
     twitter: {
       card: "summary_large_image",
       site: "https://blog.d3h1.com",
-      title: `${post.title} | d3h1 Blog`,
+      title: `${post.title}`,
       description: post.description,
       images: [{
         url: post.teaser,

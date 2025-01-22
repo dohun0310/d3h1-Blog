@@ -4,12 +4,12 @@ import styles from "./page.module.css";
 import PostList from "@/components/PostList";
 
 export const metadata = {
-  title: "검색 | d3h1 Blog",
+  title: "검색",
   description: "새로운 것을 즐기고, 변화를 만들고",
   openGraph: {
     type: "website",
     url: "https://blog.d3h1.com",
-    title: "검색 | d3h1 Blog",
+    title: "검색",
     description: "새로운 것을 즐기고, 변화를 만들고",
     siteName: "d3h1 Blog",
     images: [{
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "https://blog.d3h1.com",
-    title: "검색 | d3h1 Blog",
+    title: "검색",
     description: "새로운 것을 즐기고, 변화를 만들고",
     images: [{
       url: "/opengraph.png",

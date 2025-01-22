@@ -11,12 +11,19 @@ const noto_sans_kr = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: "d3h1 Blog",
+  title: {
+    template: "%s | d3h1 Blog",
+    default: "d3h1 Blog",
+  },
   description: "새로운 것을 즐기고, 변화를 만들고",
+  metadataBase: new URL("https://blog.d3h1.com"),
   openGraph: {
     type: "website",
     url: "https://blog.d3h1.com",
-    title: "d3h1 Blog",
+    title: {
+      template: "%s | d3h1 Blog",
+      default: "d3h1 Blog",
+    },
     description: "새로운 것을 즐기고, 변화를 만들고",
     siteName: "d3h1 Blog",
     images: [{
@@ -26,7 +33,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "https://blog.d3h1.com",
-    title: "d3h1 Blog",
+    title: {
+      template: "%s | d3h1 Blog",
+      default: "d3h1 Blog",
+    },
     description: "새로운 것을 즐기고, 변화를 만들고",
     images: [{
       url: "/opengraph.png",
