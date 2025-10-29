@@ -18,6 +18,10 @@
   --text-body-2-size: 14px;
   --text-body-2-weight: 400;
   --text-body-2-line-height: 20px;
+  /* Body/3 */
+  --text-body-3-size: 12px;
+  --text-body-3-weight: 400;
+  --text-body-3-line-height: 16px;
 
   /* Body/Bold/1 */
   --text-body-bold-1-size: 16px;
@@ -27,6 +31,10 @@
   --text-body-bold-2-size: 14px;
   --text-body-bold-2-weight: 700;
   --text-body-bold-2-line-height: 20px;
+  /* Body/Bold/3 */
+  --text-body-bold-3-size: 12px;
+  --text-body-bold-3-weight: 700;
+  --text-body-bold-3-line-height: 16px;
 
   /* Paragraph/1 */
   --text-paragraph-1-size: 16px;
@@ -97,20 +105,24 @@
   --color-blue-900: #599BFF;
 
   /* Gray */
-  --color-gray-100: #F5F5F5;
-  --color-gray-200: #EDEDED;
-  --color-gray-300: #DFDFDF;
-  --color-gray-400: #D0D0D0;
-  --color-gray-500: #C2C2C2;
-  --color-gray-600: #B3B3B3;
-  --color-gray-700: #A5A5A5;
-  --color-gray-800: #969696;
-  --color-gray-900: #888888;
+  --color-gray-100: #E8E8E8;
+  --color-gray-200: #D4D4D4;
+  --color-gray-300: #BFBFBF;
+  --color-gray-400: #A8A8A8;
+  --color-gray-500: #919191;
+  --color-gray-600: #777777;
+  --color-gray-700: #5C5C5C;
+  --color-gray-800: #383838;
+  --color-gray-900: #1A1A1A;
 
   /* Background */
   --theme-background-default: var(--color-base-white);
   --theme-background-subtle: var(--color-gray-200);
   --theme-background-inverse: var(--color-base-black);
+
+  /* hover */
+  --theme-hover-default: var(--color-gray-700);
+  --theme-hover-inverse: var(--color-gray-100);
   
   /* Text */
   --theme-text-primary: var(--color-base-black);
@@ -120,9 +132,9 @@
   --theme-text-inverse: var(--color-base-white);
 
   /* Border */
-  --theme-border-default: var(--color-gray-300);
+  --theme-border-default: var(--color-gray-100);
   --theme-border-subtle: var(--color-gray-200);
-  --theme-border-strong: var(--color-gray-500);
+  --theme-border-strong: var(--color-gray-700);
 
   /* Accent */
   --theme-accent-primary: var(--color-cyan-900);
@@ -142,6 +154,10 @@
     --theme-background-subtle: var(--color-gray-800);
     --theme-background-inverse: var(--color-base-white);
 
+    /* hover */
+    --theme-hover-default: var(--color-gray-300);
+    --theme-hover-inverse: var(--color-gray-900);
+
     /* Text */
     --theme-text-primary: var(--color-base-white);
     --theme-text-secondary: var(--color-gray-300);
@@ -150,9 +166,9 @@
     --theme-text-inverse: var(--color-base-black);
 
     /* Border */
-    --theme-border-default: var(--color-gray-700);
-    --theme-border-subtle: var(--color-gray-800);
-    --theme-border-strong: var(--color-gray-500);
+    --theme-border-default: var(--color-gray-800);
+    --theme-border-subtle: var(--color-gray-400);
+    --theme-border-strong: var(--color-gray-900);
 
     /* Accent */
     --theme-accent-primary: var(--color-cyan-300);
@@ -183,6 +199,10 @@
     --text-body-2-size: 12px;
     --text-body-2-weight: 400;
     --text-body-2-line-height: 16px;
+    /* Body/3 */
+    --text-body-3-size: 10px;
+    --text-body-3-weight: 400;
+    --text-body-3-line-height: 14px;
 
     /* Body/Bold/1 */
     --text-body-bold-1-size: 14px;
@@ -192,6 +212,10 @@
     --text-body-bold-2-size: 12px;
     --text-body-bold-2-weight: 700;
     --text-body-bold-2-line-height: 16px;
+    /* Body/Bold/3 */
+    --text-body-bold-3-size: 10px;
+    --text-body-bold-3-weight: 700;
+    --text-body-bold-3-line-height: 14px;
 
     /* Paragraph/1 */
     --text-paragraph-1-size: 14px;

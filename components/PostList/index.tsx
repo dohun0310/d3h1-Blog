@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Button from "../Button";
 import styles from "./postlist.module.css";
 
 export default function PostList({ allPosts }: { allPosts: any }) {  
@@ -32,14 +33,22 @@ export default function PostList({ allPosts }: { allPosts: any }) {
       />
       <div className={styles.categories}>
         {categories.map((category) => (
-            <button
-              type="button"
-              onClick={() => setSelectedCategory(category.keyword)} 
+            // <button
+            //   type="button"
+            //   onClick={() => setSelectedCategory(category.keyword)} 
+            //   key={category.keyword}
+            //   className={selectedCategory === category.keyword ? styles.selected : styles.button}
+            // >
+            //   {category.title}
+            // </button>
+            <Button
               key={category.keyword}
-              className={selectedCategory === category.keyword ? styles.selected : styles.button}
+              size="medium"
+              variant={selectedCategory === category.keyword ? "filled" : "linear"}
+              onClick={() => setSelectedCategory(category.keyword)}
             >
               {category.title}
-            </button>
+            </Button>
         ))}
       </div>
       <div className={styles.articles}>
