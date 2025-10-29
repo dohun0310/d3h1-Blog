@@ -1,6 +1,6 @@
 .footer {
   position: fixed;
-  right: calc((100vw - 1325px) / 2 + 16px);
+  right: calc((100% - 1325px) / 2 + 16px);
   padding-top: 48px;
   display: flex;
   flex-direction: column;
