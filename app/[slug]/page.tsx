@@ -1,14 +1,16 @@
-import { allPosts } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer2/hooks";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Giscus from "@/components/Giscus";
+import AllPosts from "@/utils/allpost";
 import styles from "./page.module.css";
 
 export async function generateStaticParams() {
+  const allPosts = await AllPosts();
+
   return allPosts.map((post) => ({
-    slug: post._raw.flattenedPath,
+    slug: post.slug,
   }));
 }
 
@@ -18,8 +20,9 @@ export async function generateMetadata({
   slug: string
 }> }) {
   const { slug } = await params;
+  const allPosts = await AllPosts();
   const post = allPosts.find((post) => (
-    post._raw.flattenedPath === slug
+    post.slug === slug
   ));
 
   if (!post) {
@@ -64,26 +67,56 @@ export default async function Post({
   slug: string
 }> }) {
   const { slug } = await params;
-  const post = allPosts.find(function(post) {
-    return post._raw.flattenedPath === slug;
-  });
-  
+  const { default: Post } = await import(`../../posts/${slug}.md`);
+
+  const allPosts = await AllPosts();
+  const post = allPosts.find((post) => (
+    post.slug === slug
+  ));
+
   if (!post) {
     notFound();
   }
-
-  const Content = getMDXComponent(post.body.code);
 
   return (
     <>
       <Header/>
       <div className={styles.main}>
         <article className={styles.article}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <time className={styles.date} dateTime={new Date(post.date).toISOString()}>
-            {formatDate(new Date(post.date))}
-          </time>
-          <Content />
+          <h1 className={styles.title}>
+            {post.title}
+          </h1>
+          <Image
+            src={post.teaser}
+            alt={`Teaser image for ${post.title}`}
+            width={3840}
+            height={2160}
+            className={styles.teaser}
+            priority
+          />
+          <div className={styles.content}>
+            <div className={styles.info}>
+              <Image
+                src="/profile.png"
+                alt="d3h1 Profile Image"
+                width={128}
+                height={128}
+                className={styles.profile}
+              />
+              <p className={styles.name}>
+                김 도훈
+              </p>
+              <time className={styles.date} dateTime={post.date}>
+                {formatDate(new Date(post.date))}
+              </time>
+              <p className={styles.category}>
+                {post.category}
+              </p>
+            </div>
+            <div className={styles.post}>
+              <Post />
+            </div>
+          </div>
           <Giscus />
         </article>
         <Footer/>
