@@ -1,20 +1,26 @@
 import { allPosts } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { getMDXComponent } from "next-contentlayer2/hooks";
 import { notFound } from "next/navigation";
-import styles from "./page.module.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Giscus from "@/components/Giscus";
+import styles from "./page.module.css";
 
 export async function generateStaticParams() {
-  return allPosts.map(function(post) {
-    return { params: { slug: post._raw.flattenedPath.split('/') } };
-  });
+  return allPosts.map((post) => ({
+    slug: post._raw.flattenedPath,
+  }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string[] } }) {
-  const slug = params.slug.join('/');
-  const post = allPosts.find(function(post) {
-    return post._raw.flattenedPath === slug;
-  });
+export async function generateMetadata({
+  params
+}: { params: Promise<{
+  slug: string
+}> }) {
+  const { slug } = await params;
+  const post = allPosts.find((post) => (
+    post._raw.flattenedPath === slug
+  ));
 
   if (!post) {
     return {};
@@ -52,8 +58,12 @@ function formatDate(date: Date): string {
   return `${yyyy}년 ${mm}월 ${dd}일`;
 }
 
-export default function PostLayout({ params }: { params: { slug: string[] } }) {
-  const slug = params.slug.join('/');
+export default async function Post({
+  params
+}: { params: Promise<{
+  slug: string
+}> }) {
+  const { slug } = await params;
   const post = allPosts.find(function(post) {
     return post._raw.flattenedPath === slug;
   });
@@ -65,11 +75,19 @@ export default function PostLayout({ params }: { params: { slug: string[] } }) {
   const Content = getMDXComponent(post.body.code);
 
   return (
-    <article className={styles.article}>
-      <h1 className={styles.title}>{post.title}</h1>
-      <time dateTime={styles.date}>{formatDate(new Date(post.date))}</time>
-      <Content />
-      <Giscus />
-    </article>
+    <>
+      <Header/>
+      <div className={styles.main}>
+        <article className={styles.article}>
+          <h1 className={styles.title}>{post.title}</h1>
+          <time className={styles.date} dateTime={new Date(post.date).toISOString()}>
+            {formatDate(new Date(post.date))}
+          </time>
+          <Content />
+          <Giscus />
+        </article>
+        <Footer/>
+      </div>
+    </>
   );
 }
