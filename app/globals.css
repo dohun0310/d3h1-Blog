@@ -159,7 +159,7 @@
     --theme-background-inverse: var(--color-base-white);
 
     /* hover */
-    --theme-hover-default: var(--color-gray-300);
+    --theme-hover-default: var(--color-gray-200);
     --theme-hover-inverse: var(--color-gray-900);
 
     /* Text */
