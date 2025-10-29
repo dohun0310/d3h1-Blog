@@ -31,21 +31,6 @@
   user-select: none;
 }
 
-.categories button {
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-.categories button:hover {
-  background-color: var(--border-color);
-}
-
 .main .selected {
   color: var(--background-color);
   background-color: var(--text-color);
