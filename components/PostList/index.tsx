@@ -33,14 +33,6 @@ export default function PostList({ allPosts }: { allPosts: any }) {
       />
       <div className={styles.categories}>
         {categories.map((category) => (
-            // <button
-            //   type="button"
-            //   onClick={() => setSelectedCategory(category.keyword)} 
-            //   key={category.keyword}
-            //   className={selectedCategory === category.keyword ? styles.selected : styles.button}
-            // >
-            //   {category.title}
-            // </button>
             <Button
               key={category.keyword}
               size="medium"
