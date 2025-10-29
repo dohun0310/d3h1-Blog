@@ -126,7 +126,7 @@
   
   /* Text */
   --theme-text-primary: var(--color-base-black);
-  --theme-text-secondary: var(--color-gray-700);
+  --theme-text-secondary: var(--color-gray-500);
   --theme-text-tertiary: var(--color-gray-300);
   --theme-text-disabled: var(--color-gray-500);
   --theme-text-inverse: var(--color-base-white);
@@ -160,7 +160,7 @@
 
     /* Text */
     --theme-text-primary: var(--color-base-white);
-    --theme-text-secondary: var(--color-gray-300);
+    --theme-text-secondary: var(--color-gray-400);
     --theme-text-tertiary: var(--color-gray-700);
     --theme-text-disabled: var(--color-gray-500);
     --theme-text-inverse: var(--color-base-black);
