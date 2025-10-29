@@ -30,7 +30,7 @@
   background-color: var(--theme-background-subtle);
 }
 
-@media (max-width: 972px) {
+@media (max-width: 987px) {
   .footer {
     position: static;
     padding-top: 16px;
