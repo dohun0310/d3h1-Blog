@@ -26,16 +26,6 @@
   box-sizing: border-box;
 }
 
-.container svg {
-  min-width: 24px;
-  width: 28px;
-  height: auto;
-}
-
-.container svg path {
-  fill: var(--text-color);
-}
-
 .search {
   width: 312px;
   height: 40px;
@@ -52,16 +42,6 @@
   transition: background-color 0.3s;
 }
 
-.search svg {
-  width: 24px;
-  height: 24px;
-  padding: 8px 10px 8px 16px;
-}
-
-.search svg path {
-  fill: var(--text-secondary-color);
-}
-
 .search p {
   margin: 0;
   color: var(--text-secondary-color);
@@ -74,16 +54,6 @@
     display: flex;
     align-items: center;
     border: none;
-  }
-
-  .search svg {
-    width: 36px;
-    height: 36px;
-    padding: 4px;
-  }
-
-  .search svg path {
-    fill: var(--text-color);
   }
 
   .search p {

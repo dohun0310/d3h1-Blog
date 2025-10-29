@@ -31,15 +31,6 @@
   background-color: var(--border-color);
 }
 
-.item svg {
-  padding: 0;
-  margin: 0;
-}
-
-.item svg path {
-  fill: var(--text-color);
-}
-
 .ad {
   width: 100%;
   height: 563px;
