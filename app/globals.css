@@ -18,6 +18,10 @@
   --text-body-2-size: 14px;
   --text-body-2-weight: 400;
   --text-body-2-line-height: 20px;
+  /* Body/3 */
+  --text-body-3-size: 12px;
+  --text-body-3-weight: 400;
+  --text-body-3-line-height: 16px;
 
   /* Body/Bold/1 */
   --text-body-bold-1-size: 16px;
@@ -27,6 +31,10 @@
   --text-body-bold-2-size: 14px;
   --text-body-bold-2-weight: 700;
   --text-body-bold-2-line-height: 20px;
+  /* Body/Bold/3 */
+  --text-body-bold-3-size: 12px;
+  --text-body-bold-3-weight: 700;
+  --text-body-bold-3-line-height: 16px;
 
   /* Paragraph/1 */
   --text-paragraph-1-size: 16px;
@@ -183,6 +191,10 @@
     --text-body-2-size: 12px;
     --text-body-2-weight: 400;
     --text-body-2-line-height: 16px;
+    /* Body/3 */
+    --text-body-3-size: 10px;
+    --text-body-3-weight: 400;
+    --text-body-3-line-height: 14px;
 
     /* Body/Bold/1 */
     --text-body-bold-1-size: 14px;
@@ -192,6 +204,10 @@
     --text-body-bold-2-size: 12px;
     --text-body-bold-2-weight: 700;
     --text-body-bold-2-line-height: 16px;
+    /* Body/Bold/3 */
+    --text-body-bold-3-size: 10px;
+    --text-body-bold-3-weight: 700;
+    --text-body-bold-3-line-height: 14px;
 
     /* Paragraph/1 */
     --text-paragraph-1-size: 14px;
