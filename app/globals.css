@@ -37,62 +37,130 @@
   --text-paragraph-2-weight: 400;
   --text-paragraph-2-line-height: 20px;
 
-  --color-common-white: 255, 255, 255;
-  --color-common-black: 21, 21, 21;
-  --color-common-gray: 136, 136, 136;
+  /* Base */
+  --color-base-black: #111111;
+  --color-base-white: #FFFFFF;
 
-  --color-light-red: 252, 79, 79;
-  --color-light-orange: 255, 159, 67;
-  --color-light-yellow: 255, 191, 68;
-  --color-light-green: 74, 216, 113;
-  --color-light-blue: 60, 137, 255;
-  --color-light-purple: 151, 71, 255;
-  --color-light-pink: 255, 105, 180;
+  /* Red */
+  --color-red-100: #FFEEED;
+  --color-red-200: #FEDFDD;
+  --color-red-300: #FECAC8;
+  --color-red-400: #FEB6B4;
+  --color-red-500: #FEA1A0;
+  --color-red-600: #FE8D8B;
+  --color-red-700: #FD7877;
+  --color-red-800: #FD6463;
+  --color-red-900: #FC4F4F;
 
-  --color-dark-red: 255, 89, 89;
-  --color-dark-orange: 255, 169, 77;
-  --color-dark-yellow: 255, 201, 78;
-  --color-dark-green: 64, 226, 123;
-  --color-dark-blue: 70, 147, 255;
-  --color-dark-purple: 121, 17, 224;
-  --color-dark-pink: 255, 115, 190;
+  /* Orange */
+  --color-orange-100: #FFF5EB;
+  --color-orange-200: #FFE8D6;
+  --color-orange-300: #FFDEC1;
+  --color-orange-400: #FFD3AC;
+  --color-orange-500: #FFC997;
+  --color-orange-600: #FFBE82;
+  --color-orange-700: #FFB46D;
+  --color-orange-800: #FFA958;
+  --color-orange-900: #FF9F43;
 
-  --primary-color: rgb(var(--color-light-purple), 1);
-  --background-color: rgb(var(--color-common-white), 1);
-  --text-color: rgba(var(--color-common-black), 1);
-  --text-secondary-color: rgba(var(--color-common-black), 0.4);
-  --border-color: rgba(var(--color-common-black), 0.1);
-  --shadow-color: rgba(var(--color-common-white), 0.3);
-  --error-color: rgb(var(--color-light-red), 1);
-  --warning-color: rgb(var(--color-light-orange), 1);
-  --success-color: rgb(var(--color-light-green), 1);
-  --info-color: rgb(var(--color-light-blue), 1);
+  /* Green */
+  --color-green-100: #EDFBEF;
+  --color-green-200: #D8F6DF;
+  --color-green-300: #C4F2CF;
+  --color-green-400: #AFEDBF;
+  --color-green-500: #9BE9B0;
+  --color-green-600: #87E5A0;
+  --color-green-700: #72E090;
+  --color-green-800: #5EDC80;
+  --color-green-900: #4AD871;
 
-  font-family: var(--font);
-  font-size: 14px;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  color-scheme: var(--mode);
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  word-break: keep-all;
-  box-sizing: border-box;
+  /* Cyan */
+  --color-cyan-100: #E0F7FA;
+  --color-cyan-200: #C4ECF3;
+  --color-cyan-300: #A8E2EC;
+  --color-cyan-400: #8CD8E5;
+  --color-cyan-500: #70CEDE;
+  --color-cyan-600: #54C3D7;
+  --color-cyan-700: #38B9D0;
+  --color-cyan-800: #1CAFC9;
+  --color-cyan-900: #00A5C2;
+
+  /* Blue */
+  --color-blue-100: #EFF5FF;
+  --color-blue-200: #DDEBFF;
+  --color-blue-300: #CAE0FF;
+  --color-blue-400: #B8D4FF;
+  --color-blue-500: #A5C9FF;
+  --color-blue-600: #92BDFF;
+  --color-blue-700: #7FB2FF;
+  --color-blue-800: #6CA6FF;
+  --color-blue-900: #599BFF;
+
+  /* Gray */
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EDEDED;
+  --color-gray-300: #DFDFDF;
+  --color-gray-400: #D0D0D0;
+  --color-gray-500: #C2C2C2;
+  --color-gray-600: #B3B3B3;
+  --color-gray-700: #A5A5A5;
+  --color-gray-800: #969696;
+  --color-gray-900: #888888;
+
+  /* Background */
+  --theme-background-default: var(--color-base-white);
+  --theme-background-subtle: var(--color-gray-200);
+  --theme-background-inverse: var(--color-base-black);
+  
+  /* Text */
+  --theme-text-primary: var(--color-base-black);
+  --theme-text-secondary: var(--color-gray-700);
+  --theme-text-tertiary: var(--color-gray-300);
+  --theme-text-disabled: var(--color-gray-500);
+  --theme-text-inverse: var(--color-base-white);
+
+  /* Border */
+  --theme-border-default: var(--color-gray-300);
+  --theme-border-subtle: var(--color-gray-200);
+  --theme-border-strong: var(--color-gray-500);
+
+  /* Accent */
+  --theme-accent-primary: var(--color-cyan-900);
+  --theme-accent-primarysoft: var(--color-cyan-300);
+  --theme-accent-error: var(--color-red-900);
+  --theme-accent-warning: var(--color-orange-900);
+  --theme-accent-success: var(--color-green-900);
+  --theme-accent-info: var(--color-blue-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --mode: dark;
 
-    --primary-color: rgb(var(--color-dark-purple), 1);
-    --background-color: rgb(var(--color-common-black), 1);
-    --text-color: rgba(var(--color-common-white), 1);
-    --text-secondary-color: rgba(var(--color-common-white), 0.4);
-    --border-color: rgba(var(--color-common-white), 0.1);
-    --shadow-color: rgba(var(--color-common-black), 0.3);
-    --error-color: rgb(var(--color-dark-red), 1);
-    --warning-color: rgb(var(--color-dark-orange), 1);
-    --success-color: rgb(var(--color-dark-green), 1);
-    --info-color: rgb(var(--color-dark-blue), 1);
+    /* Background */
+    --theme-background-default: var(--color-base-black);
+    --theme-background-subtle: var(--color-gray-800);
+    --theme-background-inverse: var(--color-base-white);
+
+    /* Text */
+    --theme-text-primary: var(--color-base-white);
+    --theme-text-secondary: var(--color-gray-300);
+    --theme-text-tertiary: var(--color-gray-700);
+    --theme-text-disabled: var(--color-gray-500);
+    --theme-text-inverse: var(--color-base-black);
+
+    /* Border */
+    --theme-border-default: var(--color-gray-700);
+    --theme-border-subtle: var(--color-gray-800);
+    --theme-border-strong: var(--color-gray-500);
+
+    /* Accent */
+    --theme-accent-primary: var(--color-cyan-300);
+    --theme-accent-primarysoft: var(--color-cyan-700);
+    --theme-accent-error: var(--color-red-300);
+    --theme-accent-warning: var(--color-orange-300);
+    --theme-accent-success: var(--color-green-300);
+    --theme-accent-info: var(--color-blue-300);
   }
 }
 
