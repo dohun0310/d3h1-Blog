@@ -1,41 +1,27 @@
 {
-  "name": "d3h1-Blog",
+  "name": "d3h1-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint",
     "postbuild": "node sitemap.js"
   },
   "dependencies": {
-    "@types/node": "20.14.10",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "autoprefixer": "10.4.19",
     "contentlayer": "^0.3.4",
-    "date-fns": "3.6.0",
-    "eslint-config-next": "^14.1.0",
-    "next": "^14.2.15",
+    "next": "16.0.1",
     "next-contentlayer": "^0.3.4",
-    "postcss": "^8.4.33",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rehype-accessible-emojis": "^0.3.2",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-code-titles": "^1.2.0",
-    "rehype-highlight": "^6.0.0",
-    "rehype-pretty-code": "^0.9.4",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "shiki": "^0.14.1",
-    "tailwindcss": "3.4.4",
-    "typescript": "5.5.3",
-    "zod": "^3.22.4"
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.1.4"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "typescript": "^5"
   }
 }

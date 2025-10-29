@@ -1,9 +1,7 @@
 import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
-import { format } from "date-fns";
 import styles from "./page.module.css";
-
 import Giscus from "@/components/Giscus";
 
 export async function generateStaticParams() {
@@ -47,6 +45,13 @@ export function generateMetadata({ params }: { params: { slug: string[] } }) {
   };
 }
 
+function formatDate(date: Date): string {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  return `${yyyy}년 ${mm}월 ${dd}일`;
+}
+
 export default function PostLayout({ params }: { params: { slug: string[] } }) {
   const slug = params.slug.join('/');
   const post = allPosts.find(function(post) {
@@ -62,7 +67,7 @@ export default function PostLayout({ params }: { params: { slug: string[] } }) {
   return (
     <article className={styles.article}>
       <h1 className={styles.title}>{post.title}</h1>
-      <time dateTime={styles.date}>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
+      <time dateTime={styles.date}>{formatDate(new Date(post.date))}</time>
       <Content />
       <Giscus />
     </article>
