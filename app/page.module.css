@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 240px;
   column-gap: 48px;
-  max-width: 988px;
+  max-width: 1325px;
 }
 
 .content {
@@ -20,7 +20,7 @@
   line-height: var(--text-title-1-line-height);
 }
 
-@media (max-width: 987px) {
+@media (max-width: 1324px) {
   .main {
     display: flex;
     flex-direction: column;
