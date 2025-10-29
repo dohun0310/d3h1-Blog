@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import Button from "../Button";
+import Post from "@/types/post";
 import styles from "./postlist.module.css";
 
 export default function PostList({ allPosts }: { allPosts: any }) {  
@@ -17,10 +18,13 @@ export default function PostList({ allPosts }: { allPosts: any }) {
     { title: "잡담", keyword: "잡담" },
   ]
 
-  const Posts = allPosts
-    .sort((a: { date: Date; }, b: { date: Date; }) => Number(new Date(b.date)) - Number(new Date(a.date)))
-    .filter((post: { category: string | string[]; }) => post.category.includes(selectedCategory))
-    .filter((post: { title: string; description: string }) => searchKeyword === "" ? true : post.title.toLowerCase().includes(searchKeyword.toLowerCase()) || post.description.toLowerCase().includes(searchKeyword.toLowerCase()));
+  const Posts = allPosts.filter((post: { title: string; category: string; description: string; }) => {
+    const matchesCategory = selectedCategory === "" || post.category === selectedCategory;
+    const matchesKeyword =
+      post.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+      post.description.toLowerCase().includes(searchKeyword.toLowerCase());
+    return matchesCategory && matchesKeyword;
+  });
 
   return (
     <div className={styles.main}>
@@ -45,13 +49,13 @@ export default function PostList({ allPosts }: { allPosts: any }) {
         ))}
       </div>
       <div className={styles.articles}>
-        {Posts.map((post: { _id: any; url: string; teaser: string; alt: string; title: string; category: string; description: string; }) => (
+        {Posts.map((post: Post) => (
           <article
-            key={post._id}
+            key={post.slug}
             className={styles.article}
           >
-            <Link href={post.url}>
-              <Image src={post.teaser} alt={post.title} width={640} height={360} />
+            <Link href={post.slug}>
+              <Image src={post.teaser} alt={post.title} width={1280} height={720} />
               <p className={styles.category}>{post.category}</p>
               <h1 className={styles.title}>{post.title}</h1>
               <p className={styles.description}>{post.description}</p>

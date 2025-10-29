@@ -1,7 +1,7 @@
-import { allPosts } from "contentlayer/generated";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PostList from "@/components/PostList";
+import AllPosts from "@/utils/allpost";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -28,7 +28,9 @@ export const metadata = {
   },
 }
 
-export default function Home() {
+export default async function Home() {
+  const allPosts = await AllPosts();
+
   return (
     <>
       <Header/>
