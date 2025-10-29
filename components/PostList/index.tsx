@@ -26,6 +26,7 @@ export default function PostList({ allPosts }: { allPosts: any }) {
     <div className={styles.main}>
       <input 
         className={styles.search}
+        id="search"
         placeholder="검색어를 입력하세요."
         type="text"
         value={searchKeyword}
@@ -33,14 +34,6 @@ export default function PostList({ allPosts }: { allPosts: any }) {
       />
       <div className={styles.categories}>
         {categories.map((category) => (
-            // <button
-            //   type="button"
-            //   onClick={() => setSelectedCategory(category.keyword)} 
-            //   key={category.keyword}
-            //   className={selectedCategory === category.keyword ? styles.selected : styles.button}
-            // >
-            //   {category.title}
-            // </button>
             <Button
               key={category.keyword}
               size="medium"
@@ -53,7 +46,10 @@ export default function PostList({ allPosts }: { allPosts: any }) {
       </div>
       <div className={styles.articles}>
         {Posts.map((post: { _id: any; url: string; teaser: string; alt: string; title: string; category: string; description: string; }) => (
-          <article className={styles.article} key={post._id}>
+          <article
+            key={post._id}
+            className={styles.article}
+          >
             <Link href={post.url}>
               <Image src={post.teaser} alt={post.title} width={640} height={360} />
               <p className={styles.category}>{post.category}</p>

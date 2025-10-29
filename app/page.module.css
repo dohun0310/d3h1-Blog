@@ -1,14 +1,28 @@
-.articles {
-  max-width: 652px;
-  width: 100%;
-  margin: 0 auto;
+.main {
+  margin: 96px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  column-gap: 48px;
+  max-width: 988px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
 }
 
 .title {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: var(--text-title-1-size);
+  font-weight: var(--text-title-1-weight);
+  line-height: var(--text-title-1-line-height);
 }
 
-.articles input {
-  display: none;
+@media (max-width: 987px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
 }

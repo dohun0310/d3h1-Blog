@@ -40,7 +40,9 @@ export default function Footer() {
         </Link>
       </div>
       <div className={styles.ad} />
-      <p>© 2023-2026 d3h1. 모든 권리 보유.</p>
+      <p className={styles.copyright}>
+        © 2023-2026 d3h1. 모든 권리 보유.
+      </p>
     </footer>
   )
 }
