@@ -8,7 +8,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/">
-          <Logo size={40}/>
+          <Logo size={36}/>
         </Link>
         <Link href="/search">
           <div className={styles.search}>
