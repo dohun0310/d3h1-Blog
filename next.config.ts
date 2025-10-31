@@ -10,10 +10,13 @@ const withMDX = createMDX({
   extension: /posts\/.*\.md$/,
   options: {
     remarkPlugins: [
+      "remark-gfm",
       "remark-frontmatter",
-      ["remark-mdx-frontmatter", { name: "meta" }],
+      ["remark-mdx-frontmatter", { name: "meta" }]
     ],
-    rehypePlugins: []
+    rehypePlugins: [
+      ["rehype-pretty-code", {theme: { dark: "one-dark-pro", light: "one-light" }, keepBackground: true}]
+    ]
   }
 });
 
