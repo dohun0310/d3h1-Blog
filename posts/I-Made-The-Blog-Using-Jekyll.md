@@ -8,8 +8,6 @@ description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 
 안녕하세요. 오늘은 블로그를 개설하고 처음 제대로 된 글을 작성해보려고 합니다. 이 블로그를 만든 경험과 사용된 코드들을 공유하려고도 합니다.
 
-<br />
-
 # 블로그가 가지고 싶어!
 
 ---
@@ -22,19 +20,13 @@ description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 
 그래서 그냥 직접 만들기로 하였습니다.
 
-<br />
-
 # 블로그를 만들자!
 
 ---
 
 `React.JS`를 사용할지 `Next.JS`를 사용할지 생각하다가 '백엔드는 어떻게 하지?'라는 생각이 들었습니다. 사실 `React.JS`나 `Next.JS`를 이용해 프론트엔드를 작업하고 포스팅할 때마다 js 파일을 생성하면 백엔드 작업이 그렇게 복잡해지지 않을 텐데 그러면 뭔가 별로라는 생각이 들어 다른 대안이 있지 않을까 열심히 검색해 보았습니다.
 
-<br/>
-
 검색을 한 결과 [Jekyll](https://jekyllrb.com/)를 이용해서 블로그를 만들면 제가 원하는 블로그를 만들 수 있다는 결과에 도달했습니다. 테마가 다양하고, 내 입맛대로 커스텀 할 수 있고, 수익 창출이 가능하고 제가 등록만 한다면 모든 포털 사이트에 제 블로그를 노출시킬 수 있는 방법이었으니까요.
-
-<br />
 
 # Jekyll 시작하기
 
@@ -64,15 +56,11 @@ jekyll serve
 
 ![Minima](/I-Made-The-Blog-Using-Jekyll-Jekyll-Minima.png)
 
-<br />
-
 # Jekyll 프로젝트에 테마 적용하기?
 
 ---
 
 이렇게 `Jekyll` 프로젝트를 처음 만들게 되면 심심하다 못해 재미없어 보이는 Jekyll의 기본 테마가 적용된 모습을 확인할 수 있는데요. 하지만 저는 이런 재미없는 테마보다는 더욱 개성 있고 이쁜 테마를 `Jekyll`에 적용해 보고 싶었습니다. 그래서 `Jekyll`의 테마가 모여있는 [Jekyll Themes](http://jekyllthemes.org/)에 접속하여 인기 있는 테마 몇몇 개를 적용해 보았습니다.
-
-<br/>
 
 하지만 제 마음에 드는 테마가 없었고 그래서 제 블로그를 제 입맛에 맞게 제가 직접 한번 꾸며보려고 하였습니다. 마침 주변에 멋진 디자인을 만드는 멋진 사람이 있었고 부탁을 해 마음에 꼭 맞는 디자인을 받아볼 수 있었습니다.
 
@@ -81,8 +69,6 @@ jekyll serve
 만들기 어려워보이는 부분이 있어 제가 조금 다듬고 그것에 맞추어 저만의 블로그를 만들기 시작했습니다.
 
 ![Light design](/I-Made-The-Blog-Using-Jekyll-Blog-Light-Design.png)![Dark design](/I-Made-The-Blog-Using-Jekyll-Blog-Dark-Design.png)
-
-<br />
 
 # Jekyll 프로젝트 완성하기
 
@@ -96,8 +82,6 @@ jekyll serve
 
 `head.html`을 건드린 김에 `OpenGraph`와 `favicon`, `title`도 적용해 보겠습니다.
 
-<br/>
-
 먼저 `favicon`을 적용시켜보겠습니다. [Favicon & App Icon Generator](https://www.favicon-generator.org/)를 사용하여 `favicon.ico` 파일을 얻습니다. 그 후, 얻은 `favicon.ico` 파일을 `assets` 폴더에 `favicon.ico` 파일을 저장하고, `head.html`의 `head` 태그가 끝나기 전 아래와 같은 코드 한 줄을 추가해 주면 `favicon`이 표시되는 것을 확인할 수 있습니다.
 
 ```html
@@ -105,8 +89,6 @@ jekyll serve
 ```
 
 이제 `OpenGraph`와 `title`을 적용시켜보겠습니다.
-
-<br/>
 
 `OpenGraph`에서 표시될 이미지를 `opengraph.png`로 이름을 변경 후 `assets` 파일 안에 저장하고, `head.html`의 `head` 태그가 끝나기 전 아래와 같은 코드들을 추가 후 알맞게 수정해 준다면 `OpenGraph`와 `title`이 표시될 것입니다.
 
@@ -473,8 +455,6 @@ title: 원하는 카테고리 이름
 위 코드는 다음과 같은 역활을 합니다. `content`에 표시되는 `page title`의 글자 크기를 26px로 지정하고, 왼쪽 정렬하게 만듭니다. `category`가 `active`일 때 검정색으로 나오게 만들고 `hover` 시 `ease-out` 효과와 함께 `#f0f0f0`으로 표시되게 만듭니다. `post`의 간격을 8px로 설정하고 `post`에 `hover` 시 teaser의 `outline`에 애니메이션과 색 변환을 합니다. 이 외에도 모든 스타일링에 관여합니다.
 
 코드블럭을 조금 더 이쁘게 강조하고 싶다면, [Rouge Theme Preview Page](https://spsarolkar.github.io/rouge-theme-preview/)를 사용하여서 자신이 원하는 테마를 찾고 적용하면 됩니다.
-
-<br />
 
 # 마무리
 

@@ -8,8 +8,6 @@ description: 삼성 강남가서 갤럭시 Z 폴드/플립5 구경하고 왔습�
 
 Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬워서 근처에 뭐 할 거 없나 생각하다가 새로운 갤럭시 Z 폴드/플립 시리즈가 나왔고 예전에 삼성이 새로운 놀스팟? 이러면서 뭐라 뭐라 광고했던 게 떠올라서 갔습니다. 총 6층짜리였고 고객은 5층까지만 쓸 수 있더라고요.
 
-<br />
-
 # 1층
 
 ---
@@ -28,8 +26,6 @@ Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬
 
 이것저것 하고 있었는데 대부분 플립 아니면 폴드 하나씩 다 쥐고 계시더라고요. 뭔가 해서 봤는데 무슨 이벤트성으로 삼성 강남 내에서 사용할 수 있게 해주고 체험 후에 별을 모아오면 상품으로 변경이 가능하다고 했습니다. 그래서 저도 하려고 했는데 신분증이 없어서 기기를 빌리 진 못했습니다. 기기를 빌리면 GS25랑 콜라보 한 뭔 먹을 거도 준다고 했는데 그거도 못 받아서 매우 아쉬웠고요. 일단 이거 시작하면 4층부터 가야 합니다.
 
-<br />
-
 # 4층
 
 ---
@@ -45,8 +41,6 @@ Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬
 그 옆에 갤럭시 Z 플립5랑 갤럭시 탭 S9 Ultra가 있었는데 Z 플립5는 가로 게임 띄워놨으면 좀 가로로 돌려놨으면 좋았을 거 같습니다.
 
 ![Kartrider Drift Galaxy Z Flip5 Galaxy Tap S9 Ultra](/Review-Samsung-Gangnam-Kartrider-Drift-Galaxy-Z-Flip5-Galaxy-Tap-S9-Ultra.JPEG)
-
-<br />
 
 # 3층
 
@@ -71,8 +65,6 @@ Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬
 그 다음에 뭐 비스포크 홈 메타라고 삼성전자 가전을 둔 3D 가상 주택을 체험하는 게 있었는데 얼마나 관리를 안했으면 여긴 뭐 되는게 없었습니다.
 
 ![BESPOKE HOME META](/Review-Samsung-Gangnam-BESPOKE-HOME-META.JPEG)
-
-<br />
 
 # 2층
 
@@ -102,8 +94,6 @@ Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬
 
 ![Galaxy Watch 6 Running](/Review-Samsung-Gangnam-Galaxy-Watch-6-Running.JPEG)
 ![Galaxy Watch 6 Tennis](/Review-Samsung-Gangnam-Galaxy-Watch-6-Tennis.JPEG)
-
-<br />
 
 # 마무리
 

@@ -1,6 +1,6 @@
 .footer {
   position: fixed;
-  right: calc((100vw - 972px) / 2 + 8px);
+  right: calc((100% - 1325px) / 2 + 16px);
   padding-top: 48px;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
   background-color: var(--theme-background-subtle);
 }
 
-@media (max-width: 987px) {
+@media (max-width: 1324px) {
   .footer {
     position: static;
     padding-top: 16px;
