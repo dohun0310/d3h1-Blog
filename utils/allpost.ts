@@ -1,10 +1,9 @@
-"use server";
-
+import { cache } from "react";
 import { readdir, readFile } from "fs/promises";
 import path from "path";
 import Post from "@/types/post";
 
-export default async function AllPosts(): Promise<Post[]> {
+export default cache(async function AllPosts(): Promise<Post[]> {
   // `.md` 파일 저장 경로 선언
   const postPath = path.resolve(process.cwd(), "posts");
 
@@ -55,4 +54,4 @@ export default async function AllPosts(): Promise<Post[]> {
   posts.sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   return posts;
-}
+});
