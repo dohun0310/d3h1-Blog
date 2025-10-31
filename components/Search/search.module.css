@@ -108,7 +108,7 @@
   object-fit: cover;
 }
 
-.content {
+.article {
   flex: 1;
   min-width: 0;
 }

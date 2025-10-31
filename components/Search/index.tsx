@@ -165,14 +165,14 @@ export default function Search({
                       height={2160}
                       className={styles.teaser}
                     />
-                    <div className={styles.content}>
+                    <article className={styles.article}>
                       <div className={styles.title}>
                         {post.title}
                       </div>
                       <div className={styles.content}>
                         {post.content.slice(0, 100)}...
                       </div>
-                    </div>
+                    </article>
                     <div className={styles.category}>
                       {post.category}
                     </div>
