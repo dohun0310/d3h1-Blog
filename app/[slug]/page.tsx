@@ -80,7 +80,7 @@ export default async function Post({
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className={styles.main}>
         <article className={styles.article}>
           <h1 className={styles.title}>
@@ -119,7 +119,7 @@ export default async function Post({
           </div>
           <Giscus />
         </article>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

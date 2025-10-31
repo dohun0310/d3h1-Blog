@@ -33,7 +33,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className={styles.main}>
         <div className={styles.content}>
           <h1 className={styles.title}>
@@ -41,7 +41,7 @@ export default async function Home() {
           </h1>
           <PostList allPosts={allPosts}/>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

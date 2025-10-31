@@ -8,11 +8,11 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/">
-          <Logo size={36}/>
+          <Logo size={36} />
         </Link>
         <Link href="/search">
           <div className={styles.search}>
-            <Icon name="search"/>
+            <Icon name="search" />
             <p>검색...</p>
           </div>
         </Link>
