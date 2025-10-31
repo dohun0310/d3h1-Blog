@@ -65,15 +65,7 @@
 .post {
   max-width: 870px;
   width: 100%;
-  font-size: var(--text-body-1-size);
-  font-weight: var(--text-body-1-weight);
-  line-height: var(--text-body-1-line-height);
   color: var(--theme-text-primary);
-}
-
-.post img {
-  width: 100%;
-  height: auto;
 }
 
 .post pre {
