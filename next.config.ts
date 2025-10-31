@@ -15,7 +15,7 @@ const withMDX = createMDX({
       ["remark-mdx-frontmatter", { name: "meta" }]
     ],
     rehypePlugins: [
-      ["rehype-pretty-code", {theme: { dark: "one-dark-pro", light: "one-light" }, keepBackground: true}]
+      ["rehype-pretty-code", {theme: { dark: "slack-dark", light: "slack-ochin" }}]
     ]
   }
 });
