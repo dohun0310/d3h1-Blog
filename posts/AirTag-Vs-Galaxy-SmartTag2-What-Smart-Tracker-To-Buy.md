@@ -3,7 +3,6 @@ teaser: /AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-Teaser.jpg
 category: 잡담
 title: AirTag vs 갤럭시 스마트태그2 - 스마트 트래커 뭐 사지?
 date: 2024-07-20T18:06:00+09:00
-description: 스마트 트래커 비교해보기
 ---
 
 모두 나온 지 조금 된 제품들이지만 시장에서 가장 인기 있는 스마트 트래커는 아무래도 이 두 제품 같습니다. 저는 트래커 달아 놓는 것을 매우 좋아합니다. 갤럭시 스마트태그의 1세대 제품도 사서 사용하고 있었지만, 스마트태그2를 최근에 써보면서 이제야 뭔가 AirTag와 경쟁할 수 있겠다는 생각이 들어 비교 글을 한번 작성해 보려 합니다.

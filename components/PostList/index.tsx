@@ -28,7 +28,7 @@ export default function PostList({ allPosts }: { allPosts: any }) {
 
   return (
     <div className={styles.main}>
-      <input 
+      <input
         className={styles.search}
         id="search"
         placeholder="검색어를 입력하세요."
@@ -58,7 +58,7 @@ export default function PostList({ allPosts }: { allPosts: any }) {
               <Image src={post.teaser} alt={post.title} width={1280} height={720} />
               <p className={styles.category}>{post.category}</p>
               <h1 className={styles.title}>{post.title}</h1>
-              <p className={styles.description}>{post.description}</p>
+              <p className={styles.description}>{post.content}</p>
             </Link>
           </article>
         ))}

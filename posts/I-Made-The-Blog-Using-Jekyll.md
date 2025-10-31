@@ -3,7 +3,6 @@ teaser: /I-Made-The-Blog-Using-Jekyll-Teaser.jpg
 category: 개발
 title: Jekyll를 이용해 블로그를 만들었습니다.
 date: 2023-05-21T20:20:00+09:00
-description: Jekyll를 이용해 블로그를 만든 경험을 공유합니다.
 ---
 
 안녕하세요. 오늘은 블로그를 개설하고 처음 제대로 된 글을 작성해보려고 합니다. 이 블로그를 만든 경험과 사용된 코드들을 공유하려고도 합니다.

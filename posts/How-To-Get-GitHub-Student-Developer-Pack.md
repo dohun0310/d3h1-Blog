@@ -3,7 +3,6 @@ teaser: /How-To-Get-GitHub-Student-Developer-Pack-Teaser.jpg
 category: 개발
 title: GitHub Student Developer Pack 받기
 date: 2023-08-08T03:28:00+09:00
-description: GitHub Student Developer Pack를 받아 여러 혜택을 누려봅시다.
 ---
 
 만약 학생(중학생, 고등학생, 대학생 등)이거나 교직원이라면 `GitHub Student Developer Pack`을 받을 수 있습니다. 이것을 받게되면 일단 `GitHub` Profile에 Pro Label이 추가가 되며, `GitHub Copilot`, `JetBrains Licenses`를 얻는 등 다양한 혜택이 주어집니다. 바로 받아봅시다.

@@ -3,7 +3,6 @@ teaser: /I-Made-Chemistry-Challenge-Teaser.png
 category: 잡담
 title: 화학 챌린지 앱 출시
 date: 2024-02-10T16:08:00+09:00
-description: Flutter로 처음 제대로 된 걸 만들어 봤습니다.
 ---
 
 화학 챌린지가 출시 되었습니다.

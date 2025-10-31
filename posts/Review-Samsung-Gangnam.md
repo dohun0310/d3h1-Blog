@@ -3,7 +3,6 @@ teaser: /Review-Samsung-Gangnam-Teaser.JPEG
 category: 후기
 title: 삼성 강남 갔다 왔습니다.
 date: 2023-08-01T00:39:00+09:00
-description: 삼성 강남가서 갤럭시 Z 폴드/플립5 구경하고 왔습니다.
 ---
 
 Google IO Extended 2023 Seoul 끝난 후에 이대로 집에 돌아가긴 아쉬워서 근처에 뭐 할 거 없나 생각하다가 새로운 갤럭시 Z 폴드/플립 시리즈가 나왔고 예전에 삼성이 새로운 놀스팟? 이러면서 뭐라 뭐라 광고했던 게 떠올라서 갔습니다. 총 6층짜리였고 고객은 5층까지만 쓸 수 있더라고요.

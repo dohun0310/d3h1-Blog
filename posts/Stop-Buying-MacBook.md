@@ -3,7 +3,6 @@ teaser: /Stop-Buying-MacBook-Teaser.jpg
 category: 잡담
 title: MacBook 좀 사지 마세요.
 date: 2024-12-22T16:32:00+09:00
-description: 당신에게 MacBook이 필요 없는 이유
 ---
 
 이 시기에 제가 많이 듣는 질문은 '`MacBook` 살까?'입니다. 이 질문에 대해서 몇몇 친구들을 빼고 저는 '아니 사지 마.'라고 똑같이 답변해 줬습니다. 이제 이 답변을 하는 것도 지쳐서 매년 있는 WWE를 제 손과 입이 해왔던 일을 이 글이 대신 하게 할 것입니다.
