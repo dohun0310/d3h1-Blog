@@ -72,7 +72,7 @@ export default function Search({
     
     dialog.addEventListener("click", handleClickOutside);
     return () => dialog.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [handleClose]);
 
   // 키보드 네비게이션
   useEffect(() => {
