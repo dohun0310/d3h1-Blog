@@ -3,7 +3,6 @@ teaser: /Review-Apple-Gangnam-Teaser.jpg
 category: 후기
 title: Apple 강남 갔다 왔습니다.
 date: 2023-08-02T03:04:00+09:00
-description: Apple 강남가서 구경만하고 왔습니다.
 ---
 
 삼성 강남에서 체험 끝나고 나서 아주 가깝게 Apple 강남이 있다는 사실이 떠올랐습니다. 그래서 원래였다면 Today at Apple 세션 뭐 있나 보고 예약하고 갔겠지만 그냥 안돼도 상관없다는 생각으로 무지성으로 갔습니다. 가는 길에 전광판들이 꽤 있었는데 그 전광판에 갤럭시 Z 폴드/플립5 광고로 도배되어 있는데 꽤 부담스러웠습니다.

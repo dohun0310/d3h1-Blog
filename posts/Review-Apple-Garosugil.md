@@ -3,7 +3,6 @@ teaser: /Review-Apple-Garosugil-Teaser.jpg
 category: 후기
 title: Apple 가로수길 갔다 왔습니다.
 date: 2023-07-27T00:00:00+09:00
-description: Apple 가로수길 가서 별거 다 하고 왔습니다.
 ---
 
 근처에 일이 있었는데 시간이 애매하게 남아서 뭘 할까 하다가 예전에 Apple 여의도에서 애플 펜슬 펜촉 사고 박수 받고 Today at Apple이 재미있었던 경험이 떠올랐습니다.

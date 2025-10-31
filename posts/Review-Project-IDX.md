@@ -3,7 +3,6 @@ teaser: /Review-Project-IDX-Teaser.jpg
 category: 후기
 title: 구글의 웹 기반 IDE 프로젝트 IDX 살펴보기
 date: 2023-12-30T23:00:00+09:00
-description: 구글도 뛰어든 브라우저 IDE
 ---
 
 `GitHub`의 `Codespace`에 이어서 `Google`도 `프로젝트 IDX`라는 브라우저 IDE를 출시했습니다. 아직까진 Waitlist 접수를 받고 허가된 사용자에게만 푸는 것 같아요. 사실 8월에 저는 이미 살짝 써봤는데 미루다가 블로그에 쓰기 좋은 주제 같아서 가지고 왔어요. 대충 `GitHub Copilot` 같은 `Codey`라는 AI Assistant를 넣은 게 특징이라고 하네요. 웹 개발 시 Preview를 제공하는 것은 물론, `Flutter` 개발을 할 때 `Android`와 `iOS`의 `Simulator`를 모두 제공한다고 해서 기대했습니다. 

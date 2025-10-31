@@ -37,15 +37,17 @@ export default cache(async function AllPosts(): Promise<Post[]> {
       const teaser = meta["teaser"] || "";
       const category = meta["category"] || "";
       const title = meta["title"] || "";
-      const description = meta["description"] || "";
       const date = meta["date"] || "";
+
+      // 글 내용 추출
+      const content = raw.replace(metaMatch[0], "").trim();
 
       return {
         slug,
         teaser,
         category,
         title,
-        description,
+        content,
         date,
       } as Post;
     })

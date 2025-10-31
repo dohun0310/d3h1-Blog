@@ -3,7 +3,6 @@ teaser: /Should-I-Learn-To-Code-Teaser.png
 category: 잡담
 title: 나도 코딩 배울까?
 date: 2024-12-26T18:06:00+09:00
-description: 난 코딩을 해 봤어요!
 ---
 
 저번에는 매년 있던 WWE라면, 이번에는 매달 있는 WWE에 대한 답입니다.

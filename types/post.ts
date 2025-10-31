@@ -3,6 +3,6 @@ export default interface Post {
   category: string;
   teaser: string;
   title: string;
-  description: string;
+  content: string;
   date: string;
 }

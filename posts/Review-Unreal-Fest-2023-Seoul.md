@@ -3,7 +3,6 @@ teaser: /Review-Unreal-Fest-2023-Seoul-Teaser.jpg
 category: 후기
 title: Unreal Fest 2023 Seoul 갔다 왔습니다.
 date: 2023-09-09T23:31:00+09:00
-description: Unreal Fest 2023 Seoul 오프라인 세션에 다녀왔습니다.
 ---
 
 코로나19 여파로 오프라인 세션이 열리지 않았던 Unreal Fest가 최근 열렸는데요. 저는 8월 29에 열리는 DAY1 공통 오프라인 행사에 다녀왔습니다. 제 생에 2번째 개발자 행사입니다. Google I/O Extended 2023 Seoul에서는 마실 거도 줬는데 여긴 뭐 주는 게 아무것도 없더라고요. 티켓값도 더 비싸면서... 대신에 영어로 진행되는 세션은 동시통역이 되어서 좋았습니다. 입장 전에 통역 리시버 챙겨줬어요.

@@ -35,11 +35,16 @@
   background: unset;
   border-radius: 100px;
   border: 1px solid var(--theme-border-default);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .search:hover {
   background-color: var(--theme-hover-inverse);
-  transition: background-color 0.3s;
 }
 
 .search path {

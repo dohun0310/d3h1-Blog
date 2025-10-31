@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Header from "@/components/Header";
+import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Giscus from "@/components/Giscus";
 import AllPosts from "@/utils/allpost";
@@ -28,15 +29,15 @@ export async function generateMetadata({
   if (!post) {
     return {};
   }
-  
+
   return {
-    title: `${post.title}`,
-    description: post.description,
+    title: post.title,
+    description: post.content.slice(0, 160),
     openGraph: {
       type: "website",
       url: "https://blog.d3h1.com",
-      title: `${post.title}`,
-      description: post.description,
+      title: post.title,
+      description: post.content.slice(0, 160),
       siteName: "d3h1 Blog",
       images: [{
         url: post.teaser,
@@ -45,8 +46,8 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       site: "https://blog.d3h1.com",
-      title: `${post.title}`,
-      description: post.description,
+      title: post.title,
+      description: post.content.slice(0, 160),
       images: [{
         url: post.teaser,
       }],
@@ -81,6 +82,7 @@ export default async function Post({
   return (
     <>
       <Header />
+      <Search allPosts={allPosts} />
       <div className={styles.main}>
         <article className={styles.article}>
           <h1 className={styles.title}>

@@ -3,7 +3,6 @@ teaser: /Review-Google-IO-Extended-2023-Seoul-Teaser.png
 category: 후기
 title: Google I/O Extended 2023 Seoul 다녀왔습니다.
 date: 2023-07-30T06:33:00+09:00
-description: Google I/O Extended 2023 Seoul 가서 놀고 왔습니다.
 ---
 
 한국에서 열리는 Google IO Extended 중 가장 큰 규모의 Extended Seoul이 열린다는 소식을 접했는데요. festa에서 티켓을 구매할 수 있길래 구매하고 다녀왔습니다.
