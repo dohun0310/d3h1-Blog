@@ -89,9 +89,16 @@
   line-height: var(--text-body-2-line-height);
 }
 
+.post code {
+  background-color: var(--theme-background-subtle);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
 .post code[data-theme*=" "],
 .post code[data-theme*=" "] span {
   color: var(--shiki-light);
+  background-color: transparent;
 }
 
 @media (max-width: 1324px) {
