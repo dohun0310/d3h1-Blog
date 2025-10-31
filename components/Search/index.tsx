@@ -97,7 +97,7 @@ export default function Search({
           e.preventDefault();
           if (displayedPosts[selectedIndex]) {
             router.push(`/${displayedPosts[selectedIndex].slug}`);
-            dialogRef.current?.close();
+            handleClose();
           }
           break;
       }
@@ -154,7 +154,7 @@ export default function Search({
                     }`}
                     onClick={() => {
                       router.push(`/${post.slug}`);
-                      dialogRef.current?.close();
+                      handleClose();
                     }}
                     onMouseEnter={() => setSelectedIndex(index)}
                   >
