@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import PostList from "@/components/PostList";
 import AllPosts from "@/utils/allpost";
@@ -34,6 +35,7 @@ export default async function Home() {
   return (
     <>
       <Header />
+      <Search allPosts={allPosts} />
       <div className={styles.main}>
         <div className={styles.content}>
           <h1 className={styles.title}>
