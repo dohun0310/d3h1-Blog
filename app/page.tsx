@@ -1,47 +1,90 @@
+import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
-import PostList from "@/components/PostList";
+import Button from "@/components/Button";
 import AllPosts from "@/utils/allpost";
+import Post from "@/types/post";
 import styles from "./page.module.css";
 
-export const metadata = {
-  title: "홈 | d3h1 Blog",
-  description: "새로운 것을 즐기고, 변화를 만들고",
-  openGraph: {
-    type: "website",
-    url: "https://blog.d3h1.com",
-    title: "홈 | d3h1 Blog",
-    description: "새로운 것을 즐기고, 변화를 만들고",
-    siteName: "d3h1 Blog",
-    images: [{
-      url: "/opengraph.png",
-    }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "https://blog.d3h1.com",
-    title: "홈 | d3h1 Blog",
-    description: "새로운 것을 즐기고, 변화를 만들고",
-    images: [{
-      url: "/opengraph.png",
-    }],
-  },
-}
+const categories: {
+  title: string;
+  params: string;
+}[] = [
+  { title: "전체", params: "" },
+  { title: "개발", params: "development" },
+  { title: "후기", params: "review" },
+  { title: "잡담", params: "talk" },
+]
 
-export default async function Home() {
+export default async function Home({
+  searchParams
+}: { searchParams: Promise<{
+  [key: string]: string | string[] | undefined
+}>
+}) {
+  const { category } = await searchParams;
+
+  const selectedCategory = categories.find((c) => c.params === category || c.title === category)?.title || "전체";
+
   const allPosts = await AllPosts();
+  const posts = allPosts.filter((post) => {
+    if (!selectedCategory || selectedCategory === "전체") return true;
+    return post.category === selectedCategory;
+  });
 
   return (
     <>
       <Header />
       <Search allPosts={allPosts} />
       <div className={styles.main}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>
+        <div className={styles.list}>
+          <h1 className={styles.headline}>
             홈
           </h1>
-          <PostList allPosts={allPosts}/>
+          <div className={styles.categories}>
+            {categories.map((category) => (
+              <Link
+                key={category.params}
+                href={category.params ? `/?category=${category.params}` : "/"}
+              >
+                <Button
+                  key={category.params}
+                  size="medium"
+                  variant={selectedCategory === category.title ? "filled" : "linear"}
+                >
+                  {category.title}
+                </Button>
+              </Link>
+            ))}
+          </div>
+          <div className={styles.articles}>
+            {posts.map((post: Post) => (
+              <article
+                key={post.slug}
+                className={styles.article}
+              >
+                <Link href={post.slug}>
+                  <Image
+                    src={post.teaser}
+                    alt={post.title}
+                    width={1280}
+                    height={720}
+                  />
+                  <p className={styles.category}>
+                    {post.category}
+                  </p>
+                  <h1 className={styles.title}>
+                    {post.title}
+                  </h1>
+                  <p className={styles.content}>
+                    {post.content}
+                  </p>
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
         <Footer />
       </div>
