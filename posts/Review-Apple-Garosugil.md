@@ -3,7 +3,6 @@ teaser: /Review-Apple-Garosugil-Teaser.jpg
 category: 후기
 title: Apple 가로수길 갔다 왔습니다.
 date: 2023-07-27T00:00:00+09:00
-description: Apple 가로수길 가서 별거 다 하고 왔습니다.
 ---
 
 근처에 일이 있었는데 시간이 애매하게 남아서 뭘 할까 하다가 예전에 Apple 여의도에서 애플 펜슬 펜촉 사고 박수 받고 Today at Apple이 재미있었던 경험이 떠올랐습니다.
@@ -13,8 +12,6 @@ description: Apple 가로수길 가서 별거 다 하고 왔습니다.
 그래서 근처에 Apple Store가 있는 지 찾아봤는데 강남이랑 가로수길 쪽이 가깝길래 그 쪽에 Today at Apple 세션이 뭐 있는지 확인 후에 예약해서 갔습니다.
 
 ![Today at Apple Ticket](/Review-Apple-Garosugil-Today-at-Apple-Ticket.jpg)
-
-<br />
 
 # 간단한 구경
 
@@ -33,8 +30,6 @@ Touch ID 데모 배경이 iOS 15 것이 적용 되어 있지만 iPadOS는 최신
 
 뭐 이것도 그럴 수 있다고 생각하고 iPad Pro로 제 코드 서버에 들어와서 코딩 좀 하고 있으니까 Apple Store 직원분께서 오셔서 저한테 프로크리에이트 써본 적 있냐고 말을 거시더라고요. 예전에 Apple 여의도에서 Today at Apple 하면서 써본 적 있다고 하니까 프로크리에이트로 금손처럼 하늘 그림 그리는 법 알려주셔서 같이 하늘을 그렸고요. 그 다음에 갤럭시 밖에 안쓰냐, iPad로 어떤거 자주 하시냐 이런 이야기 하다가 저한테 Today at Apple 세션 참가할 생각이 없냐 물어봐주셔서 이미 예약을 했다고 말씀드렸고 체크인 후 기다렸습니다.
 
-<br />
-
 # Today at Apple
 
 ---
@@ -44,8 +39,6 @@ Touch ID 데모 배경이 iOS 15 것이 적용 되어 있지만 iPadOS는 최신
 세션 시작 시간이 돼도 저 말고 예약하신 분들이 계셨는데 안오셔서 3분 정도 기다렸는데 다른 분들도 도착해서 세션을 진행했습니다. 세션은 뭐 별거 없었고 iPad에 기본으로 설치되어 있는 메모 앱을 어떻게 사용하는지에 대한 내용이었어요. 다 아는 내용이라 재미없었는데 내 휴가 그려보기 이건 좀 재미있었고요. 세션 하는 동안 지급받은 iPad로 좀 딴짓을 했는데 이 iPad에 저장되어 있는 메모에 `지도`를 사용한 메모가 있더라고요. 한국에서 이 기능은 지원 안되는 게 빼는 게 나은 거 같은데 어차피 세션 중에 딴짓하는 사람은 저 밖에 없을 거고요.
 
 ![Today at Apple iPad Memo App](/Review-Apple-Garosugil-Today-at-Apple-iPad-Memo-App.jpg)
-
-<br />
 
 # 마무리
 

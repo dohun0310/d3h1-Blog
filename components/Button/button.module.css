@@ -1,0 +1,110 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tiny {
+  padding: 4px 4px;
+  font-size: var(--text-body-3-size);
+  font-weight: var(--text-body-3-weight);
+  line-height: var(--text-body-3-line-height);
+  border-radius: 100px;
+}
+
+.small {
+  padding: 8px 16px;
+  font-size: var(--text-body-3-size);
+  font-weight: var(--text-body-3-weight);
+  line-height: var(--text-body-3-line-height);
+  border-radius: 100px;
+}
+
+.medium {
+  padding: 12px 20px;
+  font-size: var(--text-body-2-size);
+  font-weight: var(--text-body-2-weight);
+  line-height: var(--text-body-2-line-height);
+  border-radius: 100px;
+}
+
+.big {
+  padding: 16px 24px;
+  font-size: var(--text-body-1-size);
+  font-weight: var(--text-body-1-weight);
+  line-height: var(--text-body-1-line-height);
+  border-radius: 100px;
+}
+
+.filled {
+  background-color: var(--theme-background-inverse);
+  color: var(--theme-text-inverse);
+  border: 1px solid var(--theme-background-inverse);
+}
+
+.filled:hover {
+  background-color: var(--theme-hover-default);
+  border: 1px solid var(--theme-hover-default);
+}
+
+.filled:disabled {
+  background-color: var(--theme-border-strong);
+  color: var(--theme-text-disabled);
+  border-color: var(--theme-border-strong);
+  cursor: not-allowed;
+}
+
+.linear {
+  background-color: var(--theme-background-default);
+  color: var(--theme-text-primary);
+  border: 1px solid var(--theme-border-default);
+}
+
+.linear:hover {
+  background-color: var(--theme-hover-inverse);
+}
+
+.linear:disabled {
+  background-color: var(--theme-background-default);
+  color: var(--theme-text-disabled);
+  border-color: var(--theme-border-subtle);
+  cursor: not-allowed;
+}
+
+.transparent {
+  padding: 4px;
+  background-color: transparent;
+  color: var(--theme-text-primary);
+}
+
+.transparent:hover {
+  background-color: var(--theme-hover-inverse);
+}
+
+.transparent:disabled {
+  background-color: transparent;
+  color: var(--theme-text-disabled);
+  cursor: not-allowed;
+}
+
+.iconOnly.tiny {
+  padding: 8px;
+}
+
+.iconOnly.small {
+  padding: 10px;
+}
+
+.iconOnly.medium {
+  padding: 14px;
+}
+
+.iconOnly.big {
+  padding: 18px;
+}

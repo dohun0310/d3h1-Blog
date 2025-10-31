@@ -3,12 +3,9 @@ teaser: /AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-Teaser.jpg
 category: 잡담
 title: AirTag vs 갤럭시 스마트태그2 - 스마트 트래커 뭐 사지?
 date: 2024-07-20T18:06:00+09:00
-description: 스마트 트래커 비교해보기
 ---
 
 모두 나온 지 조금 된 제품들이지만 시장에서 가장 인기 있는 스마트 트래커는 아무래도 이 두 제품 같습니다. 저는 트래커 달아 놓는 것을 매우 좋아합니다. 갤럭시 스마트태그의 1세대 제품도 사서 사용하고 있었지만, 스마트태그2를 최근에 써보면서 이제야 뭔가 AirTag와 경쟁할 수 있겠다는 생각이 들어 비교 글을 한번 작성해 보려 합니다.
-
-<br />
 
 # 디자인
 
@@ -40,8 +37,6 @@ AirTag는 동그랗고 마치 바둑돌을 떠올리게 하는 디자인입니�
 
 AirTag는 갤럭시 스마트태그**들**과 다르게 **별도의 액세서리가 있어야만** 무언가에 달아서 활용할 수 있습니다. 어딘가에 달아두지 않고 넣어둘 생각이여도 무조건 액세서리가 있어야만 합니다. 그 이유는 이 뒤에서 계속 하도록 하겠습니다.
 
-<br />
-
 # 배터리
 
 ---
@@ -65,8 +60,6 @@ AirTag는 갤럭시 스마트태그**들**과 다르게 **별도의 액세서리
 
 ![AirTag Battery Replace](/AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-AirTag-Battery-Replace.jpg)
 ![Galaxy SmartTag2 Battery Replace](/AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-Galaxy-SmartTag2-Battery-Replace.jpg)
-
-<br />
 
 # 소리
 
@@ -93,8 +86,6 @@ AirTag는 무언가를 찾는 때 제품이고, 애플은 AirTag를 소리로 �
 ![AirTag And AirTag FineWoven Key Ring Price](/AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-AirTag-And-AirTag-FineWoven-Key-Ring-Price.png)
 
 갤럭시 스마트태그2는 소리로 찾을 때 재생될 소리를 정할 수 있는데, 개인적으로 모든 소리가 AirTag에 비해 듣기 싫은 소리였습니다. 또한 AirTag는 고음을 내는 데에도 상당히 예쁘다고 느껴지는 소리를 내지만 갤럭시 스마트태그2는 어떻게 하나 같이 듣기 싫은 소리를 내는지 정말 이해할 수 없습니다. 차라리 사용자가 직접 만들어 사용하는 선택지를 줬으면 좋겠지만, 아마 제품 성능의 한계로 이건 안 될 것 같아 아쉽습니다.
-
-<br />
 
 # 위치 찾기
 
@@ -128,8 +119,6 @@ UWB를 통한 정확한 위치를 찾을때에는 소리도 같이 울릴 수 �
 
 제가 사용하는 환경에서는 UWB를 이용해 찾는 경험은 AirTag가 사용하기 좋았고, 블루투스 신호 감도를 보고 소리를 울리는 경험은 갤럭시 스마트태그2가 사용하기 좋았습니다.
 
-<br />
-
 # 가격
 
 ---
@@ -144,8 +133,6 @@ AirTag가 갤럭시 스마트태그2에 비해 훨씬 비쌉니다. AirTag를 �
 여기에 아까 말했던 제대로 쓰기 위한 액세서리들까지 구매한다면 비교할 수 없을 정도로 AirTag가 훨씬 비쌉니다.
 
 ![AirTag And AirTag FineWoven Key Ring Price](/AirTag-Vs-Galaxy-SmartTag2-What-Smart-Tracker-To-Buy-AirTag-And-AirTag-FineWoven-Key-Ring-Price.png)
-
-<br />
 
 # 마무리
 

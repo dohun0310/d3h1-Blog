@@ -3,12 +3,9 @@ teaser: /Review-Google-IO-Extended-2023-Seoul-Teaser.png
 category: 후기
 title: Google I/O Extended 2023 Seoul 다녀왔습니다.
 date: 2023-07-30T06:33:00+09:00
-description: Google I/O Extended 2023 Seoul 가서 놀고 왔습니다.
 ---
 
 한국에서 열리는 Google IO Extended 중 가장 큰 규모의 Extended Seoul이 열린다는 소식을 접했는데요. festa에서 티켓을 구매할 수 있길래 구매하고 다녀왔습니다.
-
-<br />
 
 # 도착
 
@@ -23,8 +20,6 @@ description: Google I/O Extended 2023 Seoul 가서 놀고 왔습니다.
 
 ![Welcome Drink](/Review-Google-IO-Extended-Seoul-Welcome-Drink.png)
 
-<br />
-
 # Keynote
 
 ---
@@ -38,8 +33,6 @@ description: Google I/O Extended 2023 Seoul 가서 놀고 왔습니다.
 ![Keynote](/Review-Google-IO-Extended-Seoul-Keynote.jpg)
 
 Keynote 내용은 한국은 모바일 결제 시장이 엄청나고 <s>(그래서 구글 페이는 언제?)</s> 택시도 폰으로 쉽게 잡을 수 있고 멋지다! 라는 내용과 구글이 모바일 우선에서 AI를 우선하는 회사로 바뀌였고 지금도 AI로 엄청난 변화가 일어나고 있고 이 변화를 여러분들이 이끌 수 있다 뭐 이런 내용이었는데 이것도 제가 영어를 잘 못해서 제대로 이해한 건지 모르겠습니다.
-
-<br />
 
 # What's new in android development tools
 
@@ -101,8 +94,6 @@ Keynote 내용은 한국은 모바일 결제 시장이 엄청나고 <s>(그래�
 ![Flamingo](/Review-Google-IO-Extended-Flamingo.jpg)
 ![Hedgehog](Review-Google-IO-Extended-Hedgehog.jpg)
 
-<br />
-
 
 # Google Cloud Security Story
 
@@ -150,8 +141,6 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 
 이 세션은 처음부터 끝까지 멋지다와 재밌다 두가지의 감정에서 왔다갔다 하는 재미있는 세션이였습니다. 만약 한번 더 들을 수 있다면 한번 더 듣고 싶어요.
 
-<br />
-
 # 일 잘하는 개발자는 회사에서 어떻게 일할까?
 
 ---
@@ -175,8 +164,6 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 말로 논의한 회의 등도 모두 기록해 기억이 안날 때 검색하고 누가 왜 그렇게 했는지 또는 참고가 필요할 때 많은 도움이 될 수 있습니다. 또한 뭔가 물어보거나 할 때 개인 DM보다는 공개 채널을 이용해 비슷한 내용에 대한 문의나 요청을 막을 수 있고 누구든 그 소통 기록을 찾아볼 수 있어서라고 합니다. 한일과 해야 할 일을 명확히 정리해 어떤 것을 했고 무엇을 해야 하는지도 정리해야 합니다. 또한 내가 그 일을 당장 할 수 없다면 까먹기 전에 리마인더를 작성해 놓는 것도 좋고요. 회고는 마치 오답노트와 같다고 합니다. 어떤 목표를 가지고 업무를 했는지, 어떤 부분이 부족했는지, 다음에 어떤 시도를 할지 적어 놓는 등 매우 중요한 역할을 하는 것이 회고인데요. 대충 연말만 되면 몇 년도 회고 이런 식으로 작성을 많이 하는데 최소한 분기에 한 번씩은 해야 좋다고 합니다.
 
 이 세션은 개발자 뿐만 아니라 많은 직업군에서 도움이 될만한 내용을 많이 가지고 있다고 생각하는 세션이였어요. 이 세션을 참여하시는 분들이 제일 많았던거 같아요.
-
-<br />
 
 # Go 언어에서의 패키지 취약성 관리와 deps.dev API를 활용하여 다른 언어에서 이를 구축하는 방법
 
@@ -230,8 +217,6 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 
 근데 위에서는 `pip`를 사용해 모듈 설치를 했는데 저러면 패키지 지울 때 종속성 패키지는 삭제가 안된다고 하고요. `poetry` 사용하면 같이 삭제된다고 합니다. 알고 계시면 좋을 거 같고요.
 
-<br />
-
 # 엑티비티
 
 ---
@@ -258,8 +243,6 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 
 다른 것들도 해보고 싶었는데, 줄이 길거나 친구가 있어야 하거나 그래서 못했고요. `도전 코딩 연습`과 `내 마음속의 캡챠`는 리더보드를 `vim 에디터`를 사용하는 것이 매우 인상 깊었고요. 개발자 행사라는 게 많이 느껴졌습니다.
 
-<br />
-
 # 굿즈
 
 ---
@@ -270,8 +253,6 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 
 ![Google Extended t-shirts](/Review-Google-IO-Extended-Google-Extended-T-Shirts.jpg)
 ![Google Extended sticker](/Review-Google-IO-Extended-Google-Extended-Sticker.jpg)
-
-<br />
 
 # 마무리
 
