@@ -161,8 +161,8 @@ export default function Search({
                     <Image
                       src={post.teaser}
                       alt={post.title}
-                      width={2160}
-                      height={2160}
+                      width={480}
+                      height={480}
                       className={styles.teaser}
                     />
                     <article className={styles.article}>
