@@ -91,8 +91,8 @@ export default async function Post({
           <Image
             src={post.teaser}
             alt={`Teaser image for ${post.title}`}
-            width={3840}
-            height={2160}
+            width={1280}
+            height={720}
             className={styles.teaser}
             priority
           />

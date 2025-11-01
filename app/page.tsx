@@ -69,8 +69,9 @@ export default async function Home({
                   <Image
                     src={post.teaser}
                     alt={post.title}
-                    width={1280}
-                    height={720}
+                    width={640}
+                    height={360}
+                    className={styles.teaser}
                   />
                   <p className={styles.category}>
                     {post.category}
