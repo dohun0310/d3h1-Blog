@@ -12,12 +12,16 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link href="/">
+        <Link
+          href="/"
+          aria-label="logo"
+        >
           <Logo size={36} />
         </Link>
         <button
           onClick={openSearch}
           className={styles.search}
+          aria-label="search"
         >
           <Icon name="search" />
           <p>검색...</p>
