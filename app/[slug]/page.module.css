@@ -68,6 +68,10 @@
   color: var(--theme-text-primary);
 }
 
+.post a:hover {
+  text-decoration: underline;
+}
+
 .post pre {
   padding: 20px 0;
   border-radius: 12px;
