@@ -19,7 +19,7 @@ date: 2023-07-26T05:50:00+09:00
 
 이제 뭐 쓸지 다 정했으니까 디자인 받아와야겠죠? 전에 디자인해 주신 분께 모바일 어떻게 만들어야 할지 모르겠다고 말하니까 또 금방 하나 찍어내주셨어요. 멋진 걸로요.
 
-![New design](/Blog-New-Design.png)
+![New design](/I-Recreated-The-Blog-Using-Next.js-Blog-New-Design.png)
 
 # 제작 시작
 
