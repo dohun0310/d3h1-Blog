@@ -3,6 +3,9 @@ import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
   /* config options here */
+  images: {
+    formats: ["image/avif", "image/webp"]
+  },
   pageExtensions: ["ts", "tsx", "md"]
 };
 

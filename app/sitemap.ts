@@ -21,15 +21,15 @@ export default async function sitemap({
   const paginatedPosts = posts.slice(start, end);
 
   const routes: MetadataRoute.Sitemap = index === 0 
-    ? [
+    ? []
+    : [
         {
           url: "https://blog.d3h1.com",
           lastModified: new Date(),
           changeFrequency: "daily",
           priority: 1.0,
         },
-      ]
-    : [];
+      ];
 
   const postRoutes: MetadataRoute.Sitemap = paginatedPosts.map((post) => ({
     url: `https://blog.d3h1.com/${post.slug}`,
