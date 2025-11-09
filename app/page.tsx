@@ -60,7 +60,7 @@ export default async function Home({
             ))}
           </div>
           <div className={styles.articles}>
-            {posts.map((post: Post) => (
+            {posts.map((post: Post, index: number) => (
               <article
                 key={post.slug}
                 className={styles.article}
@@ -71,7 +71,13 @@ export default async function Home({
                     alt={post.title}
                     width={640}
                     height={360}
+                    sizes="(max-width: 684px) 100vw,
+                          (max-width: 1324px) 50vw,
+                          33vw"
                     className={styles.teaser}
+                    fetchPriority={index < 4 ? "high" : "low"}
+                    loading={index < 4 ? "eager" : "lazy"}
+                    priority={index < 4}
                   />
                   <p className={styles.category}>
                     {post.category}

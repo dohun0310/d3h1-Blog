@@ -93,7 +93,10 @@ export default async function Post({
             alt={`Teaser image for ${post.title}`}
             width={1280}
             height={720}
+            sizes="(max-width: 684px) 100vw,
+                  70vw"
             className={styles.teaser}
+            fetchPriority="high"
             priority
           />
           <div className={styles.content}>
