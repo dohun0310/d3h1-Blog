@@ -1,5 +1,5 @@
 import Icon from "@/components/Icon";
-import type { ButtonProps } from "@/types/button";
+import ButtonProps from "@/types/button";
 import styles from "./button.module.css";
 
 export default function Button({
