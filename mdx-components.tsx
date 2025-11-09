@@ -194,6 +194,7 @@ const components: MDXComponents = {
         width: "100%",
         height: "auto"
       }}
+      fetchPriority="low"
     />
   )
 }
