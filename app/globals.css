@@ -117,6 +117,9 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
+
+  --breakpoint-sm: 42.75rem;
+  --breakpoint-lg: 82.75rem;
 }
 
 html:has(dialog[open]),
