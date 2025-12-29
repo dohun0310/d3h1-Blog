@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import AllPosts from "@/utils/allpost";
 import Post from "@/types/post";
-import styles from "./page.module.css";
 
 const categories: {
   title: string;
