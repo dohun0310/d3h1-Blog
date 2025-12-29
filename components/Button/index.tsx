@@ -1,12 +1,6 @@
 import { cn } from "@/utils/cn";
 import ButtonProps from "@/types/button";
 
-const variantClasses = {
-  filled: "bg-[var(--theme-background-inverse)] text-[var(--theme-text-inverse)] border border-[var(--theme-background-inverse)] hover:bg-[var(--theme-hover-default)] hover:border-[var(--theme-hover-default)] disabled:bg-[var(--theme-border-strong)] disabled:text-[var(--theme-text-disabled)] disabled:border-[var(--theme-border-strong)] disabled:cursor-not-allowed",
-  linear: "bg-[var(--theme-background-default)] text-[var(--theme-text-primary)] border border-[var(--theme-border-default)] hover:bg-[var(--theme-hover-inverse)] disabled:bg-[var(--theme-background-default)] disabled:text-[var(--theme-text-disabled)] disabled:border-[var(--theme-border-subtle)] disabled:cursor-not-allowed",
-  transparent: "p-1 bg-transparent text-foreground hover:bg-[var(--theme-hover-inverse)] disabled:bg-transparent disabled:text-[var(--theme-text-disabled)] disabled:cursor-not-allowed",
-};
-
 export default function Button({
   size = "medium",
   variant = "filled",
@@ -29,13 +23,13 @@ export default function Button({
               ? "p-4.5"
             : ""
           : size === "tiny"
-            ? "py-1 px-1 text-xs"
+            ? "py-1 px-1 text-2xs lg:text-xs"
           : size === "small"
-            ? "py-2 px-4 text-xs"
+            ? "py-2 px-4 text-2xs lg:text-xs"
           : size === "medium"
-            ? "py-3 px-5 text-sm"
+            ? "py-3 px-5 text-sm lg:text-xs"
           : size === "big"
-            ? "py-4 px-6 text-base"
+            ? "py-4 px-6 text-sm lg:text-base"
           : "",
         variant === "filled"
           ? `bg-foreground text-background
