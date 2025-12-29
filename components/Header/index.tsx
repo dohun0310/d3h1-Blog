@@ -29,7 +29,8 @@ export default function Header() {
             p-0 lg:px-4 lg:py-2 gap-2.5
             flex items-center rounded-full
             lg:border border-gray-200 dark:border-gray-800
-            hover:bg-gray-100 dark:hover:bg-gray-900"
+            hover:bg-gray-100 dark:hover:bg-gray-900
+            transition-colors duration-300"
           aria-label="search"
         >
           <Icon
