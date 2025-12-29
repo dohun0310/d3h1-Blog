@@ -5,7 +5,7 @@ export type IconName =
   | "github"
   | "x"
 
-export default interface IconProps {
+export default interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
   size?: number;
   color?: string;
