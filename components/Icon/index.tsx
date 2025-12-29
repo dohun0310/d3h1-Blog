@@ -5,7 +5,7 @@ import IconProps from "@/types/icon";
 export default function Icon({
   name,
   size = 24,
-  color = "var(--theme-text-primary)",
+  color = "var(--foreground)",
   className,
   ...props
 }: IconProps) {
