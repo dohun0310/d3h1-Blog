@@ -27,7 +27,7 @@ export default function Button({
           : size === "small"
             ? "py-2 px-4 text-2xs lg:text-xs"
           : size === "medium"
-            ? "py-3 px-5 text-sm lg:text-xs"
+            ? "py-3 px-5 text-xs lg:text-sm"
           : size === "big"
             ? "py-4 px-6 text-sm lg:text-base"
           : "",
