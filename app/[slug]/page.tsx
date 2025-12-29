@@ -133,7 +133,8 @@ export default async function Post({
               [&_pre]:rounded-xl [&_pre]:border [&_pre]:border-gray-100 dark:[&_pre]:border-gray-800
               [&_pre_span[data-line]]:inline-block [&_pre_span[data-line]]:px-5
               [&_pre_span[data-line]]:text-xs lg:[&_pre_span[data-line]]:text-sm
-              [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md"
+              [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md
+              [&_code]:bg-gray-100 dark:[&_code]:bg-gray-800"
             >
               <Post />
             </div>
