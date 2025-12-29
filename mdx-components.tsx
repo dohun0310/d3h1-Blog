@@ -120,7 +120,7 @@ const components: MDXComponents = {
 
   // Horizontal Rule
   hr: () => (
-    <hr className="border-0.5 border-gray-100 dark:border-gray-800 mb-6" />
+    <hr className="border-0.5 border-gray-100 dark:border-gray-800 mt-1 mb-6" />
   ),
 
   // Images
