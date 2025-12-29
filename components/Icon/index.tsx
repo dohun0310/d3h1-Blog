@@ -5,7 +5,6 @@ import IconProps from "@/types/icon";
 export default function Icon({
   name,
   size = 24,
-  color = "var(--foreground)",
   className,
   ...props
 }: IconProps) {
@@ -15,15 +14,17 @@ export default function Icon({
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
       className={cn(
-        "inline-block align-middle",
+        "inline-block align-middle fill-current",
         className
       )}
       {...props}
     >
-      {/* SVG path 데이터 적용, stroke는 color 사용 */}
-      <path d={svgPath[name].path} fill={color} fillRule="evenodd" clipRule="evenodd" />
+      <path
+        d={svgPath[name].path}
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
     </svg>
   );
 }
