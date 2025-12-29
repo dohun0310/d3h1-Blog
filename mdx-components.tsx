@@ -3,74 +3,42 @@ import type { MDXComponents } from "mdx/types"
 const components: MDXComponents = {
   // Headings
   h1: ({ children }) => (
-    <h1
-      style={{
-        fontSize: `var(--text-title-1-size)`,
-        fontWeight: `var(--text-title-1-weight)`,
-        lineHeight: `var(--text-title-1-line-height)`,
-        marginTop: "24px"
-      }}
-    >
+    <h1 className="text-2xl lg:text-3xl font-bold mt-6">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2
-      style={{
-        fontSize: `var(--text-title-2-size)`,
-        fontWeight: `var(--text-title-2-weight)`,
-        lineHeight: `var(--text-title-2-line-height)`,
-        marginTop: "24px"
-      }}
-    >
+    <h2 className="text-xl lg:text-2xl font-bold mt-6">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3
-      style={{
-        fontSize: `var(--text-title-3-size)`,
-        fontWeight: `var(--text-title-3-weight)`,
-        lineHeight: `var(--text-title-3-line-height)`,
-        marginTop: "24px"
-      }}
-    >
+    <h3 className="text-lg lg:text-xl font-bold mt-6">
       {children}
     </h3>
   ),
 
   // Text
   p: ({ children }) => (
-    <p
-      style={{
-        fontSize: `var(--text-body-1-size)`,
-        fontWeight: `var(--text-body-1-weight)`,
-        lineHeight: `var(--text-body-1-line-height)`,
-        marginTop: "16px"
-      }}
-    >
+    <p className="text-sm lg:text-base mt-4">
       {children}
     </p>
   ),
   a: ({ href, children }) => (
     <a
       href={href}
-      style={{ color: `var(--theme-accent-info)` }}
+      className="text-blue-500"
     >
       {children}
     </a>
   ),
   strong: ({ children }) => (
-    <strong 
-      style={{ fontWeight: `var(--text-body-bold-1-weight)` }}
-    >
+    <strong className="font-bold">
       {children}
     </strong>
   ),
   em: ({ children }) => (
-    <em 
-      style={{ fontStyle: "italic" }}
-    >
+    <em className="italic">
       {children}
     </em>
   ),
@@ -78,14 +46,10 @@ const components: MDXComponents = {
   // Blockquote
   blockquote: ({ children, props }) => (
     <blockquote
+      className="mb-4 px-4 rounded-xs
+        border-l-4 border-l-purple-500
+        bg-gray-100 dark:bg-gray-800"
       {...props}
-      style={{
-        marginBottom: "16px",
-        padding: "0 16px",
-        borderRadius: "2px",
-        borderLeft: "4px solid var(--theme-accent-primary)",
-        backgroundColor: `var(--theme-background-subtle)`,
-      }}
     >
       {children}
     </blockquote>
@@ -94,30 +58,24 @@ const components: MDXComponents = {
   // Lists
   ul: ({ children, props }) => (
     <ul
+      className="mt-4 ml-4"
       {...props}
-      style={{
-        margin: "16px 0 0 16px",
-      }}
     >
       {children}
     </ul>
   ),
   ol: ({ children, props }) => (
     <ol
+      className="mt-4 ml-4"
       {...props}
-      style={{
-        margin: "16px 0 0 16px",
-      }}
     >
       {children}
     </ol>
   ),
   li: ({ children, props }) => (
     <li
+      className="my-1"
       {...props}
-      style={{
-        margin: "4px 0",
-      }}
     >
       {children}
     </li>
@@ -126,51 +84,35 @@ const components: MDXComponents = {
   // Table
   table: ({ children, props }) => (
     <table
+      className="block w-full overflow-x-auto
+        border border-gray-100 dark:border-gray-800
+        border-collapse border-spacing-0"
       {...props}
-      style={{
-        borderSpacing: "0",
-        borderCollapse: "collapse",
-        display: "block",
-        width: "max-content",
-        maxWidth: "100%",
-        overflowX: "auto",
-        border: `1px solid var(--theme-border-default)`,
-      }}
     >
       {children}
     </table>
   ),
   thead: ({ children, props }) => (
     <thead
+      className="bg-foreground/5"
       {...props}
-      style={{
-        backgroundColor: `var(--theme-background-subtle)`,
-      }}
     >
       {children}
     </thead>
   ),
   th: ({ children, props }) => (
     <th
+      className="px-4 py-2 font-bold text-left bg-foreground/5
+        border-b border-gray-100 dark:border-gray-800"
       {...props}
-      style={{
-        padding: "8px 16px",
-        borderBottom: `1px solid var(--theme-border-default)`,
-        textAlign: "left",
-        fontWeight: `var(--text-body-bold-1-weight)`,
-        backgroundColor: `var(--theme-background-subtle)`,
-      }}
     >
       {children}
     </th>
   ),
   td: ({ children, props }) => (
     <td
+      className="px-4 py-1 border-b border-gray-100 dark:border-gray-800"
       {...props}
-      style={{
-        padding: "8px 16px",
-        borderBottom: `1px solid var(--theme-border-default)`,
-      }}
     >
       {children}
     </td>
@@ -178,23 +120,15 @@ const components: MDXComponents = {
 
   // Horizontal Rule
   hr: () => (
-    <hr
-      style={{
-        borderColor: `var(--theme-border-default)`,
-        marginBottom: "24px"
-      }}
-    />
+    <hr className="border border-gray-100 dark:border-gray-800 mb-6" />
   ),
 
   // Images
   img: (props) => (
     <img
-      {...props} 
-      style={{
-        width: "100%",
-        height: "auto"
-      }}
+      className="w-full h-auto"
       fetchPriority="low"
+      {...props} 
     />
   )
 }
