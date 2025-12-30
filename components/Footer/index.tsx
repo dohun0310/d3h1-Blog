@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Button from "../Button";
 import Icon from "../Icon";
-import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
