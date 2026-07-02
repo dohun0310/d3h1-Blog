@@ -4,10 +4,10 @@ import path from "path";
 import Post from "@/types/post";
 
 export default cache(async function AllPosts(): Promise<Post[]> {
-  // `.md` 파일 저장 경로 선언
+  // `.mdx` 파일 저장 경로 선언
   const postPath = path.resolve(process.cwd(), "posts");
 
-  // `.md` 파일 모두 가져오기
+  // `.mdx` 파일 모두 가져오기
   const dir = await readdir(postPath, { withFileTypes: true });
   const files = dir.filter((file) => file.isFile() && file.name.endsWith(".mdx"));
 
