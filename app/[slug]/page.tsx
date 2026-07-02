@@ -67,7 +67,6 @@ export default async function Post({
   slug: string
 }> }) {
   const { slug } = await params;
-  const { default: Post } = await import(`../../posts/${slug}.md`);
 
   const allPosts = await AllPosts();
   const post = allPosts.find((post) => (
@@ -77,6 +76,8 @@ export default async function Post({
   if (!post) {
     notFound();
   }
+
+  const PostContent = (await import(`@/posts/${post.slug}.md`)).default;
 
   return (
     <>
@@ -136,7 +137,7 @@ export default async function Post({
               [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md
               [&_code]:bg-gray-100 dark:[&_code]:bg-gray-800"
             >
-              <Post />
+              <PostContent />
             </div>
           </div>
           <Giscus />
