@@ -77,7 +77,7 @@ export default async function Post({
     notFound();
   }
 
-  const PostContent = (await import(`@/posts/${post.slug}.md`)).default;
+  const PostContent = (await import(`@/posts/${post.slug}.mdx`)).default;
 
   return (
     <>

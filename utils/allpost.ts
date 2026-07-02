@@ -4,12 +4,12 @@ import path from "path";
 import Post from "@/types/post";
 
 export default cache(async function AllPosts(): Promise<Post[]> {
-  // `.md` 파일 저장 경로 선언
+  // `.mdx` 파일 저장 경로 선언
   const postPath = path.resolve(process.cwd(), "posts");
 
-  // `.md` 파일 모두 가져오기
+  // `.mdx` 파일 모두 가져오기
   const dir = await readdir(postPath, { withFileTypes: true });
-  const files = dir.filter((file) => file.isFile() && file.name.endsWith(".md"));
+  const files = dir.filter((file) => file.isFile() && file.name.endsWith(".mdx"));
 
   // 각 파일의 메타데이터 및 경로 정보 반환
   const posts: Post[] = await Promise.all(
@@ -31,7 +31,7 @@ export default cache(async function AllPosts(): Promise<Post[]> {
       });
 
       // 슬러그 생성
-      const slug = file.name.replace(/\.md$/, "");
+      const slug = file.name.replace(/\.mdx$/, "");
 
       // 메타데이터에서 필요한 정보 추출
       const teaser = meta["teaser"] || "";
