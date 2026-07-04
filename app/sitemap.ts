@@ -18,8 +18,25 @@ export async function generateSitemaps() {
 export default async function sitemap(props: {
   id: Promise<string>
 }): Promise<MetadataRoute.Sitemap> {
+  const id = await props.id;
+
+  if (id === "sitemap") {
+    const count = await getSitemapCount();
+
+    return [
+      {
+        url: "https://blog.d3h1.com",
+        lastModified: new Date(),
+      },
+      ...Array.from({ length: count }, (_, i) => ({
+        url: `https://blog.d3h1.com/sitemap/${i}.xml`,
+        lastModified: new Date(),
+      })),
+    ];
+  }
+
   const posts = await AllPosts();
-  const index = Number(await props.id)
+  const index = Number(id);
 
   const start = index * 50000;
   const end = start + 50000;
