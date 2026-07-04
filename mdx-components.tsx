@@ -2,49 +2,49 @@ import type { MDXComponents } from "mdx/types"
 
 const components: MDXComponents = {
   // Headings
-  h1: ({ children }) => (
-    <h1 className="text-2xl lg:text-3xl font-bold mt-6">
+  h1: ({ children, ...props }) => (
+    <h1 className="text-2xl lg:text-3xl font-bold mt-6" {...props}>
       {children}
     </h1>
   ),
-  h2: ({ children }) => (
-    <h2 className="text-xl lg:text-2xl font-bold mt-6">
+  h2: ({ children, ...props }) => (
+    <h2 className="text-xl lg:text-2xl font-bold mt-6" {...props}>
       {children}
     </h2>
   ),
-  h3: ({ children }) => (
-    <h3 className="text-lg lg:text-xl font-bold mt-6">
+  h3: ({ children, ...props }) => (
+    <h3 className="text-lg lg:text-xl font-bold mt-6" {...props}>
       {children}
     </h3>
   ),
 
   // Text
-  p: ({ children }) => (
-    <p className="text-sm lg:text-base mt-4">
+  p: ({ children, ...props }) => (
+    <p className="text-sm lg:text-base mt-4" {...props}>
       {children}
     </p>
   ),
-  a: ({ href, children }) => (
+  a: ({ children, ...props }) => (
     <a
-      href={href}
       className="text-blue-500"
+      {...props}
     >
       {children}
     </a>
   ),
-  strong: ({ children }) => (
-    <strong className="font-bold">
+  strong: ({ children, ...props }) => (
+    <strong className="font-bold" {...props}>
       {children}
     </strong>
   ),
-  em: ({ children }) => (
-    <em className="italic">
+  em: ({ children, ...props }) => (
+    <em className="italic" {...props}>
       {children}
     </em>
   ),
 
   // Blockquote
-  blockquote: ({ children, props }) => (
+  blockquote: ({ children, ...props }) => (
     <blockquote
       className="mb-4 px-4 rounded-xs
         border-l-4 border-l-purple-500
@@ -56,7 +56,7 @@ const components: MDXComponents = {
   ),
 
   // Lists
-  ul: ({ children, props }) => (
+  ul: ({ children, ...props }) => (
     <ul
       className="mt-4 ml-4"
       {...props}
@@ -64,7 +64,7 @@ const components: MDXComponents = {
       {children}
     </ul>
   ),
-  ol: ({ children, props }) => (
+  ol: ({ children, ...props }) => (
     <ol
       className="mt-4 ml-4"
       {...props}
@@ -72,7 +72,7 @@ const components: MDXComponents = {
       {children}
     </ol>
   ),
-  li: ({ children, props }) => (
+  li: ({ children, ...props }) => (
     <li
       className="my-1"
       {...props}
@@ -82,7 +82,7 @@ const components: MDXComponents = {
   ),
 
   // Table
-  table: ({ children, props }) => (
+  table: ({ children, ...props }) => (
     <table
       className="block w-full overflow-x-auto
         border border-gray-100 dark:border-gray-800
@@ -92,7 +92,7 @@ const components: MDXComponents = {
       {children}
     </table>
   ),
-  thead: ({ children, props }) => (
+  thead: ({ children, ...props }) => (
     <thead
       className="bg-foreground/5"
       {...props}
@@ -100,7 +100,7 @@ const components: MDXComponents = {
       {children}
     </thead>
   ),
-  th: ({ children, props }) => (
+  th: ({ children, ...props }) => (
     <th
       className="px-4 py-2 font-bold text-left bg-foreground/5
         border-b border-gray-100 dark:border-gray-800"
@@ -109,7 +109,7 @@ const components: MDXComponents = {
       {children}
     </th>
   ),
-  td: ({ children, props }) => (
+  td: ({ children, ...props }) => (
     <td
       className="px-4 py-1 border-b border-gray-100 dark:border-gray-800"
       {...props}
@@ -128,11 +128,11 @@ const components: MDXComponents = {
     <img
       className="w-full h-auto"
       fetchPriority="low"
-      {...props} 
+      {...props}
     />
   )
 }
- 
+
 export function useMDXComponents(): MDXComponents {
   return components
 }
