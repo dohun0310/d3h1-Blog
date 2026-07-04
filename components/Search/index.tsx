@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Icon from "../Icon";
@@ -45,17 +45,17 @@ export default function Search({
     }
   }, [isOpen]);
 
-  // dialog 닫힐 때 처리
-  const handleCancel = (e: React.FormEvent<HTMLDialogElement>) => {
-    e.preventDefault();
-    handleClose();
-  }
-
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     closeSearch();
     setSearchKeyword("");
     setSelectedIndex(0);
     setDisplayCount(6);
+  }, [closeSearch]);
+
+  // dialog 닫힐 때 처리
+  const handleCancel = (e: React.FormEvent<HTMLDialogElement>) => {
+    e.preventDefault();
+    handleClose();
   }
 
   // 배경 클릭 시 닫기
