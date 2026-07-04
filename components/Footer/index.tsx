@@ -1,6 +1,18 @@
 import Link from "next/link";
-import Button from "../Button";
 import Icon from "../Icon";
+
+const socialLinks = [
+  { name: "instagram", href: "https://www.instagram.com/dohun0310/" },
+  { name: "facebook", href: "https://www.facebook.com/dohun0310/" },
+  { name: "x", href: "https://x.com/dohun0310/" },
+  { name: "github", href: "https://github.com/dohun0310/" },
+] as const;
+
+const socialLinkClass = `inline-flex justify-center items-center p-2
+  gap-1.5 rounded-full cursor-pointer select-none
+  bg-background text-foreground
+  border border-gray-100 dark:border-gray-800
+  hover:bg-foreground/5 transition-colors duration-300`;
 
 export default function Footer() {
   return (
@@ -9,70 +21,21 @@ export default function Footer() {
       static lg:fixed lg:right-[calc((100%-1325px)/2+16px)]"
     >
       <div className="w-full flex items-center justify-center gap-4 lg:justify-between">
-        <Link
-          href="https://www.instagram.com/dohun0310/"
-          aria-label="instagram"
-        >
-          <Button
-            size="tiny"
-            variant="linear"
-            iconOnly
-            aria-label="instagram"
+        {socialLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.name}
+            className={socialLinkClass}
           >
             <Icon
-              name="instagram"
+              name={link.name}
               size={20}
             />
-          </Button>
-        </Link>
-        <Link
-          href="https://www.facebook.com/dohun0310/"
-          aria-label="facebook"
-        >
-          <Button
-            size="tiny"
-            variant="linear"
-            iconOnly
-            aria-label="facebook"
-          >
-            <Icon
-              name="facebook"
-              size={20}
-            />
-          </Button>
-        </Link>
-        <Link
-          href="https://x.com/dohun0310/"
-          aria-label="x"
-        >
-          <Button
-            size="tiny"
-            variant="linear"
-            iconOnly
-            aria-label="x"
-          >
-            <Icon
-              name="x"
-              size={20}
-            />
-          </Button>
-        </Link>
-        <Link
-          href="https://github.com/dohun0310/"
-          aria-label="github"
-        >
-          <Button
-            size="tiny"
-            variant="linear"
-            iconOnly
-            aria-label="github"
-          >
-            <Icon
-              name="github"
-              size={20}
-            />
-          </Button>
-        </Link>
+          </Link>
+        ))}
       </div>
       <div className="w-full max-w-80 lg:max-w-40
         bg-gray-400 dark:bg-gray-700 object-contain
