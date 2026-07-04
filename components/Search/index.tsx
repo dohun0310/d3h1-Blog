@@ -17,6 +17,8 @@ export default function Search({
 
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const isKeyboardNav = useRef(false);
 
   const { isOpen, closeSearch } = useSearch();
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -62,13 +64,13 @@ export default function Search({
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
-    
+
     const handleClickOutside = (e: MouseEvent) => {
       if (e.target === dialog) {
         handleClose();
       }
     };
-    
+
     dialog.addEventListener("click", handleClickOutside);
     return () => dialog.removeEventListener("click", handleClickOutside);
   }, [handleClose]);
@@ -85,12 +87,14 @@ export default function Search({
           break;
         case "ArrowDown":
           e.preventDefault();
+          isKeyboardNav.current = true;
           setSelectedIndex((prev) =>
             prev < displayedPosts.length - 1 ? prev + 1 : prev
           );
           break;
         case "ArrowUp":
           e.preventDefault();
+          isKeyboardNav.current = true;
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
           break;
         case "Enter":
@@ -105,7 +109,14 @@ export default function Search({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, displayedPosts, selectedIndex, router]);
+  }, [isOpen, displayedPosts, selectedIndex, router, handleClose]);
+
+  // 선택된 항목이 화면에 보이도록 스크롤
+  useEffect(() => {
+    itemRefs.current[selectedIndex]?.scrollIntoView({
+      block: "nearest",
+    });
+  }, [selectedIndex]);
 
   useEffect(() => {
     setSelectedIndex(0);
@@ -124,6 +135,7 @@ export default function Search({
         backdrop:bg-background/80
         transition-colors duration-300"
       onCancel={handleCancel}
+      onMouseMove={() => { isKeyboardNav.current = false; }}
     >
       <div className="w-[95vw] lg:w-[90vw] max-w-160 fixed
         top-1/10 lg:top-1/5 left-1/2 -translate-x-1/2
@@ -163,6 +175,7 @@ export default function Search({
                 {displayedPosts.map((post, index) => (
                   <button
                     key={post.slug}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`w-full flex items-center gap-4 px-4 py-3
                       border-none text-left cursor-pointer hover:bg-foreground/5
                       ${index === selectedIndex ? "bg-foreground/5" : ""}`}
@@ -170,7 +183,10 @@ export default function Search({
                       router.push(`/${post.slug}`);
                       handleClose();
                     }}
-                    onMouseEnter={() => setSelectedIndex(index)}
+                    onMouseEnter={() => {
+                      if (isKeyboardNav.current) return;
+                      setSelectedIndex(index);
+                    }}
                   >
                     <Image
                       src={post.teaser}
