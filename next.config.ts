@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
 };
 
 const withMDX = createMDX({
-  extension: /posts\/.*\.mdx$/,
+  extension: /posts\/[^/]+\/post\.mdx$/,
   options: {
     remarkPlugins: [
       "remark-gfm",
