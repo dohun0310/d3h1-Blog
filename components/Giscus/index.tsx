@@ -6,7 +6,8 @@ export default memo(function Giscus() {
   const giscusContainerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!giscusContainerRef.current) return;
+    const container = giscusContainerRef.current;
+    if (!container) return;
 
     const scriptElement = document.createElement("script");
     scriptElement.src = "https://giscus.app/client.js";
@@ -22,7 +23,11 @@ export default memo(function Giscus() {
     scriptElement.setAttribute("data-theme", "preferred_color_scheme");
     scriptElement.setAttribute("data-lang", "ko");
     scriptElement.setAttribute("crossorigin", "anonymous");
-    giscusContainerRef.current.appendChild(scriptElement);
+    container.appendChild(scriptElement);
+
+    return () => {
+      container.innerHTML = "";
+    };
   }, []);
 
   return <section ref={giscusContainerRef} />;
