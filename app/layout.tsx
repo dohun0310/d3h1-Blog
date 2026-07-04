@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { SearchProvider } from "@/contexts/SearchContext";
+import { SearchProvider } from "@/lib/contexts/SearchContext";
 import "./globals.css";
 
 const pretendard = localFont({

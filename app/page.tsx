@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
-import AllPosts from "@/utils/allpost";
-import Post from "@/types/post";
+import { allPosts } from "@/lib/utils/post";
+import Post from "@/lib/types/post";
 
 const categories: {
   title: string;
@@ -27,8 +27,8 @@ export default async function Home({
 
   const selectedCategory = categories.find((c) => c.params === category || c.title === category)?.title || "전체";
 
-  const allPosts = await AllPosts();
-  const posts = allPosts.filter((post) => {
+  const base = await allPosts();
+  const posts = base.filter((post) => {
     if (!selectedCategory || selectedCategory === "전체") return true;
     return post.category === selectedCategory;
   });
@@ -36,7 +36,7 @@ export default async function Home({
   return (
     <>
       <Header />
-      <Search allPosts={allPosts} />
+      <Search allPosts={base} />
       <div className="mx-auto my-24 px-4 max-w-[1325px]
         flex flex-col
         lg:grid grid-cols-[1fr_240px] gap-x-12"

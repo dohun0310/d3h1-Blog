@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types"
+import Image, { type StaticImageData } from "next/image"
 
 const components: MDXComponents = {
   // Headings
@@ -124,12 +125,27 @@ const components: MDXComponents = {
   ),
 
   // Images
-  img: (props) => (
-    <img
-      className="w-full h-auto"
-      fetchPriority="low"
-      {...props}
-    />
+  // 본문의 `./` 상대 경로 이미지는 번들러가 StaticImageData로 변환
+  img: ({ src, alt, ...props }: { src?: string | StaticImageData; alt?: string }) => (
+    typeof src === "object" ? (
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        sizes="(max-width: 684px) 100vw,
+              70vw"
+        className="w-full h-auto"
+        fetchPriority="low"
+        {...props}
+      />
+    ) : (
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-auto"
+        fetchPriority="low"
+        {...props}
+      />
+    )
   )
 }
 
