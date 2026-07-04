@@ -13,12 +13,11 @@ const withMDX = createMDX({
   extension: /posts\/[^/]+\/post\.mdx$/,
   options: {
     remarkPlugins: [
-      "remark-gfm",
-      "remark-frontmatter",
-      ["remark-mdx-frontmatter", { name: "meta" }]
+      "remark-gfm"
     ],
     rehypePlugins: [
-      ["rehype-pretty-code", {theme: { dark: "slack-dark", light: "slack-ochin" }}]
+      ["rehype-pretty-code", {theme: { dark: "slack-dark", light: "slack-ochin" }}],
+      "rehype-mdx-import-media"
     ]
   }
 });
