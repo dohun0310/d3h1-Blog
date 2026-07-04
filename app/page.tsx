@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
-import { allPosts } from "@/lib/utils/allpost";
+import { allPosts } from "@/lib/utils/post";
 import Post from "@/lib/types/post";
 
 const categories: {

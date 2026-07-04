@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
-import { allPosts } from "@/lib/utils/allpost";
+import { allPosts } from "@/lib/utils/post";
 import { formatDate } from "@/lib/utils/date";
 
 export async function generateStaticParams() {
@@ -40,7 +40,7 @@ export async function generateMetadata({
       description: post.content.trim().slice(0, 160),
       siteName: "d3h1 Blog",
       images: [{
-        url: post.teaser,
+        url: post.teaser.src,
       }],
     },
     twitter: {
@@ -49,7 +49,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.content.trim().slice(0, 160),
       images: [{
-        url: post.teaser,
+        url: post.teaser.src,
       }],
     },
   };
@@ -71,7 +71,7 @@ export default async function Post({
     notFound();
   }
 
-  const PostContent = (await import(`@/posts/${post.slug}.mdx`)).default;
+  const PostContent = (await import(`@/posts/${post.slug}/post.mdx`)).default;
 
   return (
     <>
@@ -90,8 +90,6 @@ export default async function Post({
           <Image
             src={post.teaser}
             alt={`Teaser image for ${post.title}`}
-            width={1280}
-            height={720}
             sizes="(max-width: 684px) 100vw,
                   70vw"
             className="w-full h-auto"
