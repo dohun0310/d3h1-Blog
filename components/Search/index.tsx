@@ -80,7 +80,8 @@ export default function Search({
 
       switch (e.key) {
         case "Escape":
-          // ESC는 dialog가 자동으로 처리
+          e.preventDefault();
+          handleClose();
           break;
         case "ArrowDown":
           e.preventDefault();
@@ -164,7 +165,7 @@ export default function Search({
                     key={post.slug}
                     className={`w-full flex items-center gap-4 px-4 py-3
                       border-none text-left cursor-pointer hover:bg-foreground/5
-                      ${index === selectedIndex ? "bg-background/5" : ""}`}
+                      ${index === selectedIndex ? "bg-foreground/5" : ""}`}
                     onClick={() => {
                       router.push(`/${post.slug}`);
                       handleClose();
