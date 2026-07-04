@@ -1,9 +1,9 @@
 import { cache } from "react";
 import { readdir, readFile } from "fs/promises";
 import path from "path";
-import Post from "@/types/post";
+import Post from "@/lib/types/post";
 
-export default cache(async function AllPosts(): Promise<Post[]> {
+export const allPosts = cache(async function (): Promise<Post[]> {
   // `.mdx` 파일 저장 경로 선언
   const postPath = path.resolve(process.cwd(), "posts");
 
