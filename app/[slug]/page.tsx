@@ -3,8 +3,9 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
-import Giscus from "@/components/Giscus";
+import Comments from "@/components/Comments";
 import AllPosts from "@/utils/allpost";
+import { formatDate } from "@/utils/date";
 
 export async function generateStaticParams() {
   const allPosts = await AllPosts();
@@ -31,12 +32,12 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.content.slice(0, 160),
+    description: post.content.trim().slice(0, 160),
     openGraph: {
       type: "website",
-      url: "https://blog.d3h1.com",
+      url: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.slice(0, 160),
+      description: post.content.trim().slice(0, 160),
       siteName: "d3h1 Blog",
       images: [{
         url: post.teaser,
@@ -44,21 +45,14 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site: "https://blog.d3h1.com",
+      site: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.slice(0, 160),
+      description: post.content.trim().slice(0, 160),
       images: [{
         url: post.teaser,
       }],
     },
   };
-}
-
-function formatDate(date: Date): string {
-  const yyyy = date.getFullYear();
-  const mm = String(date.getMonth() + 1).padStart(2, "0");
-  const dd = String(date.getDate()).padStart(2, "0");
-  return `${yyyy}년 ${mm}월 ${dd}일`;
 }
 
 export default async function Post({
@@ -122,7 +116,7 @@ export default async function Post({
                 김 도훈
               </p>
               <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
-                {formatDate(new Date(post.date))}
+                {formatDate(post.date)}
               </time>
               <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep">
                 {post.category}
@@ -140,7 +134,7 @@ export default async function Post({
               <PostContent />
             </div>
           </div>
-          <Giscus />
+          <Comments />
         </article>
         <Footer />
       </div>
