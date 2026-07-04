@@ -5,6 +5,7 @@ import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
 import AllPosts from "@/utils/allpost";
+import { formatDate } from "@/utils/date";
 
 export async function generateStaticParams() {
   const allPosts = await AllPosts();
@@ -52,13 +53,6 @@ export async function generateMetadata({
       }],
     },
   };
-}
-
-function formatDate(date: Date): string {
-  const yyyy = date.getFullYear();
-  const mm = String(date.getMonth() + 1).padStart(2, "0");
-  const dd = String(date.getDate()).padStart(2, "0");
-  return `${yyyy}년 ${mm}월 ${dd}일`;
 }
 
 export default async function Post({
@@ -122,7 +116,7 @@ export default async function Post({
                 김 도훈
               </p>
               <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
-                {formatDate(new Date(post.date))}
+                {formatDate(post.date)}
               </time>
               <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep">
                 {post.category}
