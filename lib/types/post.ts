@@ -1,8 +1,13 @@
-export default interface Post {
-  slug: string;
+import type { StaticImageData } from "next/image";
+
+export interface PostMeta {
+  teaser: StaticImageData;
   category: string;
-  teaser: string;
   title: string;
-  content: string;
   date: string;
+}
+
+export default interface Post extends PostMeta {
+  slug: string;
+  content: string;
 }
