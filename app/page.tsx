@@ -72,7 +72,7 @@ export default async function Home({
                 className="flex flex-col"
               >
                 <Link
-                  href={post.slug}
+                  href={`/${post.slug}`}
                   className="text-inherit no-underline
                   transition-colors duration-300
                   hover:p-2 hover:-m-2 hover:rounded-2xl hover:bg-foreground/5"
