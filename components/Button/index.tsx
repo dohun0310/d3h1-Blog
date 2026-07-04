@@ -1,5 +1,5 @@
-import { cn } from "@/utils/cn";
-import ButtonProps from "@/types/button";
+import { cn } from "@/lib/utils/cn";
+import ButtonProps from "@/lib/types/button";
 
 export default function Button({
   size = "medium",

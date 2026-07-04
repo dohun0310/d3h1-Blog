@@ -1,4 +1,4 @@
-import LogoProps from "@/types/logo";
+import LogoProps from "@/lib/types/logo";
 
 export default function Logo({
   size = 64,
