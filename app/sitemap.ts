@@ -18,23 +18,8 @@ export default async function sitemap(props: {
   const end = start + 50000;
   const paginatedPosts = posts.slice(start, end);
 
-  const routes: MetadataRoute.Sitemap = index === 0 
-    ? []
-    : [
-        {
-          url: "https://blog.d3h1.com",
-          lastModified: new Date(),
-          changeFrequency: "daily",
-          priority: 1.0,
-        },
-      ];
-
-  const postRoutes: MetadataRoute.Sitemap = paginatedPosts.map((post) => ({
+  return paginatedPosts.map((post) => ({
     url: `https://blog.d3h1.com/${post.slug}`,
     lastModified: new Date(post.date),
-    changeFrequency: "weekly",
-    priority: 0.8,
   }));
-
-  return [...routes, ...postRoutes];
 }
