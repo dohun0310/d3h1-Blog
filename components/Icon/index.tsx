@@ -1,6 +1,6 @@
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import svgPath from "./icons.json";
-import IconProps from "@/types/icon";
+import IconProps from "@/lib/types/icon";
 
 export default function Icon({
   name,

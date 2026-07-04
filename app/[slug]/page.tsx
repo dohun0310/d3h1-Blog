@@ -4,13 +4,13 @@ import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
-import AllPosts from "@/utils/allpost";
-import { formatDate } from "@/utils/date";
+import { allPosts } from "@/lib/utils/allpost";
+import { formatDate } from "@/lib/utils/date";
 
 export async function generateStaticParams() {
-  const allPosts = await AllPosts();
+  const base = await allPosts();
 
-  return allPosts.map((post) => ({
+  return base.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -21,8 +21,8 @@ export async function generateMetadata({
   slug: string
 }> }) {
   const { slug } = await params;
-  const allPosts = await AllPosts();
-  const post = allPosts.find((post) => (
+  const base = await allPosts();
+  const post = base.find((post) => (
     post.slug === slug
   ));
 
@@ -62,8 +62,8 @@ export default async function Post({
 }> }) {
   const { slug } = await params;
 
-  const allPosts = await AllPosts();
-  const post = allPosts.find((post) => (
+  const base = await allPosts();
+  const post = base.find((post) => (
     post.slug === slug
   ));
 
@@ -76,7 +76,7 @@ export default async function Post({
   return (
     <>
       <Header />
-      <Search allPosts={allPosts} />
+      <Search allPosts={base} />
       <div className="mx-auto my-24 px-4 max-w-[1325px]
         flex flex-col
         lg:grid grid-cols-[1fr_240px] gap-x-12"

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Icon from "../Icon";
 import Button from "../Button";
-import Post from "@/types/post";
-import useSearchDialog from "@/hooks/search";
+import Post from "@/lib/types/post";
+import useSearchDialog from "@/lib/hooks/search";
 
 export default function Search({
   allPosts

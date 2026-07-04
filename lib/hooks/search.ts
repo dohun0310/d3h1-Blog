@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Post from "@/types/post";
-import { useSearch } from "@/contexts/SearchContext";
+import Post from "@/lib/types/post";
+import { useSearch } from "@/lib/contexts/SearchContext";
 
 export default function useSearchDialog(allPosts: Post[]) {
   const router = useRouter();

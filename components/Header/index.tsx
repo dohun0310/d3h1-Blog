@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Logo from "../Logo";
 import Icon from "../Icon";
-import { useSearch } from "@/contexts/SearchContext";
+import { useSearch } from "@/lib/contexts/SearchContext";
 
 export default function Header() {
   const { openSearch } = useSearch();
