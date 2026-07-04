@@ -1,11 +1,18 @@
 import type { MetadataRoute } from "next";
 import AllPosts from "@/utils/allpost";
 
-export async function generateSitemaps() {
+async function getSitemapCount() {
   const posts = await AllPosts();
-  const numberOfSitemaps = Math.ceil(posts.length / 50000);
+  return Math.ceil(posts.length / 50000);
+}
+
+export async function generateSitemaps() {
+  const count = await getSitemapCount();
   
-  return Array.from({ length: numberOfSitemaps }, (_, i) => ({ id: i }));
+  return [
+    { id: "sitemap" },
+    ...Array.from({ length: count }, (_, i) => ({ id: i }))
+  ];
 }
 
 export default async function sitemap(props: {
