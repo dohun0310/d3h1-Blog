@@ -1,9 +1,11 @@
----
-teaser: ./Teaser.png
-category: 개발
-title: 이제 Next.js에서 파라미터 쓰는 법
-date: 2025-11-02T13:55:00+09:00
----
+import teaser from "./Teaser.png";
+
+export const meta = {
+  teaser,
+  category: "개발",
+  title: "이제 Next.js에서 파라미터 쓰는 법",
+  date: "2025-11-02T13:55:00+09:00",
+};
 
 `App Router`를 쓰는 `Next.js` 15부터 많은 동기 API가 비동기화 되었습니다. 그 중, `params`와 `searchParams`가 비동기 Promise화가 되었습니다. `Client Component`에서는 `use()` 훅을 통한 동기 접근이 가능해집니다. 이에 대한 변경점에 대해 알아봅니다.
 

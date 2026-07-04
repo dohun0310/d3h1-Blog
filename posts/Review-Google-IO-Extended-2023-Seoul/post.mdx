@@ -1,9 +1,11 @@
----
-teaser: ./Teaser.png
-category: 후기
-title: Google I/O Extended 2023 Seoul 다녀왔습니다.
-date: 2023-07-30T06:33:00+09:00
----
+import teaser from "./Teaser.png";
+
+export const meta = {
+  teaser,
+  category: "후기",
+  title: "Google I/O Extended 2023 Seoul 다녀왔습니다.",
+  date: "2023-07-30T06:33:00+09:00",
+};
 
 한국에서 열리는 Google IO Extended 중 가장 큰 규모의 Extended Seoul이 열린다는 소식을 접했는데요. festa에서 티켓을 구매할 수 있길래 구매하고 다녀왔습니다.
 
@@ -105,27 +107,27 @@ Keynote 내용은 한국은 모바일 결제 시장이 엄청나고 <s>(그래�
 
 `Cloud`와 `On Premise` 방식에는 보안상 많은 차이가 존재한다고 이야기 해주셨는데요. `On Premise` 방식은 보안문제가 발생하고 보안 문제를 인식 하는데까지 운이 좋으면 바로 인식 할 수 있지만 그렇지 않은 경우가 매우 많으며 만약 인식했다고 하여도 꽤 많은 시간이 소요된다고 합니다.
 
-![On Premise](./On-Premise.JPEG)
+![On Premise](./On-Premise.jpeg)
 
 반면 `Cloud` 방식은 `Cloud API`를 통하여 자동으로 대응을 실행하는데, 이 과정이 5초도 안된다고 해서 꽤 놀라웠습니다.
 
-![Cloud](./Cloud.JPEG)
+![Cloud](./Cloud.jpeg)
 
 예전에는 `Cloud`를 사용할까 `On Premise`를 사용할까 고민하는 추세였다면 요즘에는 언제 넘어갈까 고민하는 추세라고 하고요. 잘 모르는 제가 들어봐도 이렇게 쉬우면 당연히 `Cloud` 공부 필수가 맞는 거 같습니다. 이다음에는 `Google Cloud`를 이용하게 되면 고객이 걱정하는 것들에 대해서도 말을 해주셨는데요. `Google Cloud`에서 원할 때 언제든 고객의 데이터에 접근해 빼돌릴 수 있다는 이야기를 자주 들으신다고 하는데 서버 랙 사용 기록, 서버실 출입 기록 모두 기록되며 직원마다 접근 권한이 다르기 때문에 혼자서 하는 건 어렵고 여러 명이 뭉쳐서 한다고 해도 많은 어려움이 있을 것이라고 말씀해 주셨습니다.
 
-![Defense in depth](./Defense-In-Depth-At-Scale.JPEG)
+![Defense in depth](./Defense-In-Depth-At-Scale.jpeg)
 
 근데 `Google Cloud`가 아닌 `Google Cloud`에서 납품받는 서버에 하드웨어 백도어가 있을 때도 보안 대책이 있다고 합니다. `Titan`이라는 보안 모듈과 자체 제작 OS를 이용해서 시스템 무결성 검사를 하고 이 검사를 통과하지 못한 서버는 OS 단에서 아예 배제를 시켜버린다고 하네요.
 
-![Titan](./Titan.JPEG)
+![Titan](./Titan.jpeg)
 
 Google Cloud에서는 여러 보안 제품을 사용하고 있는데, 이게 모두 외산 Framework입니다. 근데 왜 국산을 쓰지 않냐는 의문이 들 수 있죠. 국내에는 이런 Framework가 아예 없다고 합니다. 매우 안타까운 부분이고요.
 
-![Secure framework](./Google-Cloud-Secure-Framework.JPEG)
+![Secure framework](./Google-Cloud-Secure-Framework.jpeg)
 
 업무할 때도 여러 보안 대책이 있다고 합니다. `Google Workspace`를 이용해서 메일로 들어오는 바이러스 파일을 거르고 그 파일이 걸러지지 않을 경우 `Chrome`이 한 번 더 검사를 한다고 합니다. `Chrome`은 탭 하나하나가 모두 엔진이기 때문에 문제가 되는 탭을 닫게 되면 다른 탭에는 전혀 영향이 끼치지 않는다는데 그래서 램을 많이 먹는다고 하는데 뭐 어쨌든 엄청 멋졌고요. 그리고 구글 검색 크롤러가 하루 약 10억 개의 사이트를 돌며 검사하는데 1백만 개의 악성코드 데이터베이스를 업데이트해서 `Chrome`이 바이러스를 탐지하는데 돕는다고 했고 `ChromeOS`를 업무에 사용해서 마지막까지 설치가 안 되게 완벽하게 막는다고 했는데 진짜 멋졌습니다.
 
-![Ransomware mitigation](./Ransomware-Mitigation.JPEG)
+![Ransomware mitigation](./Ransomware-Mitigation.jpeg)
 
 그다음에 막 Google Cloud에서 여러 보안 인증도 받고 그랬다고 이야기 해주셨는데 여긴 너무 어려워서 제가 이해를 못했습니다.
 
@@ -133,11 +135,11 @@ Google Cloud에서는 여러 보안 제품을 사용하고 있는데, 이게 모
 
 Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. 다들 `reCAPTCHA`가 뭔지 아시죠? 그 어디 들어갈 때 '로봇입니까?' 이렇게 물어보고 계속 나한테 사진 고르라고 하는 삐져나온 부분 골라야 할지 안 할지 맨날 헷갈리는 그거 맞습니다. 팁을 하나 주셨는데 삐져나온 부분도 선택을 해야 한다고 하고요. 만약에 그거 선택 안 하면 계속 어려워질 수도 있다고 하고요. `reCAPTCHA`의 버전들을 보여주셨는데요. 저희에게 가장 익숙한 `reCAPTCHA 2.0`부터 최근 나온 `reCAPTCHA Enterprise`까지 보여주셨습니다.
 
-![reCAPTCHA history](./ReCAPTCHA-History.JPEG)
+![reCAPTCHA history](./ReCAPTCHA-History.jpeg)
 
 그 중 `reCAPTCHA Enterprise`의 동작 흐름도를 보여주셨는데요. 유저가 페이지에 접속하면 `user agent`를 받아서 Google 서버로 던진 다음에 이 `user agent`에 0.1부터 1까지의 점수를 매긴 후 0.5 이상이면 통과 시킨다고 합니다. 대체로 0.1, 0.2, 0.3, 0.7, 0.8, 0.9 정도의 숫자가 많고 중간 정도의 숫자는 적다고 합니다. 그냥 유저가 접속 하기만 해도 `reCAPTCHA` 인증이 되는게 엄청 멋졌습니다.
 
-![reCAPTCHA Enterprise](./ReCAPTCHA-Enterprise.JPEG)
+![reCAPTCHA Enterprise](./ReCAPTCHA-Enterprise.jpeg)
 
 이 세션은 처음부터 끝까지 멋지다와 재밌다 두가지의 감정에서 왔다갔다 하는 재미있는 세션이였습니다. 만약 한번 더 들을 수 있다면 한번 더 듣고 싶어요.
 
@@ -175,45 +177,45 @@ Google Cloud 이야기 끝나고 `reCAPTCHA` 이야기를 해주셨습니다. �
 
 먼저 `CLI`를 사용해서 `govulncheck`를 사용하는 방법입니다. `govulncheck .`을 `CLI`에 입력하게 되면 `govulncheck`가 파악하고 알아서 취약점이 있는 모듈을 업데이트 해줍니다.
 
-![govulncheck CLI](./Govulncheck-CLI.JPEG)
+![govulncheck CLI](./Govulncheck-CLI.jpeg)
 
 그 다음은 `IDE(Virtual Studio Code)`를 이용한 방법이였습니다. `setting.json`에 다음과 같이 입력하면 됩니다.
 
-![govulncheck IDE](./Govulncheck-IDE.JPEG)
+![govulncheck IDE](./Govulncheck-IDE.jpeg)
 
 그렇게 입력하고 나면 그 다음부터 `IDE(Virtual Studio Code)`에서 다음과 같이 표시되며 패키지 취약성을 확인 할 수 있습니다.
 
-![govulncheck IDE warming](./Govulncheck-IDE-Warming.JPEG)
+![govulncheck IDE warming](./Govulncheck-IDE-Warming.jpeg)
 
 
 다음은 `makefile`을 이용한 방법입니다. 아래와 같은 파일을 생성합니다.
 
-![govulncheck makefile](./Govulncheck-Makefile.JPEG)
+![govulncheck makefile](./Govulncheck-Makefile.jpeg)
 
 그 후에 CLI에 다음과 같이 입력하면 `govulncheck .`와 같은 일을 수행하게 됩니다.
 
-![govulncheck makefile warming](./Govulncheck-Makefile-Warming.JPEG)
+![govulncheck makefile warming](./Govulncheck-Makefile-Warming.jpeg)
 
 마지막으로 `pre-commit`을 사용하는 방법이고요. 이 방법은 `production`에 전혀 영향을 끼치지 않고 내가 `git commit` 하기 전 알아서 해결해주는 방법으로 개인적으로 저는 이 방법이 제일 좋다고 느껴졌습니다.
 
 `.git/hooks/pre-commit` 파일에 아래와 같이 저장 후 권한을 755로 설정하면 `git commit`시 실행됩니다.
 
-![govulncheck pre-commit](./Govulncheck-Pre-Commit.JPEG)
+![govulncheck pre-commit](./Govulncheck-Pre-Commit.jpeg)
 
 ## python에서 사용하기
 
 이렇게 멋지게 패키지에 취약점을 알고 취약점으로 공격 들어오는 것들을 막을 수 있는데요, 이걸 `go`에서만 사용하긴 아깝죠? 그래서 이걸 `python`에도 써봅시다. 우선 `pip`를 이용해 `fastapi`라는 모듈을 설치해요.
 
-![govulncheck python pip](./Govulncheck-Python-Pip.JPEG)
+![govulncheck python pip](./Govulncheck-Python-Pip.jpeg)
 
 그다음 아래와 같이 `python` 파일을 작성합니다.
 
-![govulncheck python parser](./Govulncheck-Python-Parser.JPEG)
-![govulncheck python main](./Govulncheck-Python-Main.JPEG)
+![govulncheck python parser](./Govulncheck-Python-Parser.jpeg)
+![govulncheck python main](./Govulncheck-Python-Main.jpeg)
 
 이렇게 작성해 줬으면 이제 `main.py`를 실행시켜보면 아래와 같이 잘 잡고 잘 해결합니다.
 
-![govulncheck python warming](./Govulncheck-Python-Warming.JPEG)
+![govulncheck python warming](./Govulncheck-Python-Warming.jpeg)
 
 근데 위에서는 `pip`를 사용해 모듈 설치를 했는데 저러면 패키지 지울 때 종속성 패키지는 삭제가 안된다고 하고요. `poetry` 사용하면 같이 삭제된다고 합니다. 알고 계시면 좋을 거 같고요.
 
