@@ -3,7 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
-import Giscus from "@/components/Giscus";
+import Comments from "@/components/Comments";
 import AllPosts from "@/utils/allpost";
 
 export async function generateStaticParams() {
@@ -140,7 +140,7 @@ export default async function Post({
               <PostContent />
             </div>
           </div>
-          <Giscus />
+          <Comments />
         </article>
         <Footer />
       </div>

@@ -1,6 +1,8 @@
+"use client";
+
 import Giscus from '@giscus/react';
 
-export default function Comment() {
+export default function Comments() {
   return (
     <Giscus
       id="comments"
