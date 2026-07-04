@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Icon from "../Icon";
 
 const socialLinks = [
@@ -22,7 +21,7 @@ export default function Footer() {
     >
       <div className="w-full flex items-center justify-center gap-4 lg:justify-between">
         {socialLinks.map((link) => (
-          <Link
+          <a
             key={link.name}
             href={link.href}
             target="_blank"
@@ -34,7 +33,7 @@ export default function Footer() {
               name={link.name}
               size={20}
             />
-          </Link>
+          </a>
         ))}
       </div>
       <div className="w-full max-w-80 lg:max-w-40
