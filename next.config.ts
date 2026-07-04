@@ -6,11 +6,11 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"]
   },
-  pageExtensions: ["ts", "tsx", "md"]
+  pageExtensions: ["ts", "tsx", "mdx"]
 };
 
 const withMDX = createMDX({
-  extension: /posts\/.*\.md$/,
+  extension: /posts\/.*\.mdx$/,
   options: {
     remarkPlugins: [
       "remark-gfm",
