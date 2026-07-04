@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-import { Search } from "@/types/context";
+import { Search } from "@/lib/types/context";
 
 const SearchContext = createContext<Search | undefined>(undefined);
 
