@@ -59,16 +59,16 @@ function CompactPostCard({
         className="w-10 lg:w-12 h-10 lg:h-12 object-cover rounded-lg"
       />
       <article className="flex-1 min-w-0">
-        <div className="text-sm lg:text-base font-bold truncate">
+        <h2 className="text-sm lg:text-base font-bold truncate">
           {post.title}
-        </div>
-        <div className="text-xs lg:text-sm mt-1 truncate text-gray-500 dark:text-gray-400">
+        </h2>
+        <p className="text-xs lg:text-sm mt-1 truncate text-gray-500 dark:text-gray-400">
           {post.excerpt}
-        </div>
+        </p>
       </article>
-      <div className="text-xs lg:text-sm px-2 py-1 bg-foreground/5 rounded-full">
+      <span className="text-xs lg:text-sm px-2 py-1 bg-foreground/5 rounded-full">
         {post.category}
-      </div>
+      </span>
     </>
   );
 }
