@@ -2,13 +2,13 @@
 
 import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from "react";
 
-export interface Search {
+export interface SearchContextValue {
   isOpen: boolean;
   openSearch: () => void;
   closeSearch: () => void;
 }
 
-const SearchContext = createContext<Search | undefined>(undefined);
+const SearchContext = createContext<SearchContextValue | undefined>(undefined);
 
 export function SearchProvider({
   children
