@@ -32,12 +32,12 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.content.trim().slice(0, 160),
+    description: post.excerpt,
     openGraph: {
       type: "website",
       url: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.trim().slice(0, 160),
+      description: post.excerpt,
       siteName: "d3h1 Blog",
       images: [{
         url: post.teaser.src,
@@ -47,7 +47,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       site: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.trim().slice(0, 160),
+      description: post.excerpt,
       images: [{
         url: post.teaser.src,
       }],
@@ -76,7 +76,7 @@ export default async function Post({
   return (
     <>
       <Header />
-      <Search allPosts={base} />
+      <Search />
       <div className="mx-auto my-24 px-4 max-w-[1325px]
         flex flex-col
         lg:grid grid-cols-[1fr_240px] gap-x-12"

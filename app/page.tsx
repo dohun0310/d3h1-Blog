@@ -36,7 +36,7 @@ export default async function Home({
   return (
     <>
       <Header />
-      <Search allPosts={base} />
+      <Search />
       <div className="mx-auto my-24 px-4 max-w-[1325px]
         flex flex-col
         lg:grid grid-cols-[1fr_240px] gap-x-12"
@@ -99,7 +99,7 @@ export default async function Home({
                   <p className="text-xs lg:text-sm
                     line-clamp-2 text-gray-500 dark:text-gray-400"
                   >
-                    {post.content}
+                    {post.excerpt}
                   </p>
                 </Link>
               </article>
