@@ -3,18 +3,18 @@
 import { useState, useEffect, useCallback } from "react";
 import Icon from "../Icon";
 import Button from "../Button";
-import Post from "@/lib/types/post";
 import PostCard from "../PostCard";
+import type { PostSummary } from "@/lib/utils/post";
 import useSearchDialog from "@/lib/hooks/search";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
-let searchDocsCache: Post[] | null = null;
+let searchDocsCache: PostSummary[] | null = null;
 
 type LoadState = "idle" | "loaded" | "error";
 
 export default function Search() {
   const { isOpen } = useSearch();
-  const [docs, setDocs] = useState<Post[]>(searchDocsCache ?? []);
+  const [docs, setDocs] = useState<PostSummary[]>(searchDocsCache ?? []);
   const [loadState, setLoadState] = useState<LoadState>(searchDocsCache ? "loaded" : "idle");
 
   const loadDocs = useCallback(async () => {
@@ -29,7 +29,7 @@ export default function Search() {
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
       }
-      const data: Post[] = await res.json();
+      const data: PostSummary[] = await res.json();
       searchDocsCache = data;
       setDocs(data);
       setLoadState("loaded");
@@ -40,9 +40,13 @@ export default function Search() {
 
   // 다이얼로그가 처음 열릴 때 검색 인덱스 지연 로드
   useEffect(() => {
-    if (isOpen && loadState === "idle") {
-      loadDocs();
-    }
+    if (!isOpen || loadState !== "idle") return;
+
+    const timer = window.setTimeout(() => {
+      void loadDocs();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, [isOpen, loadState, loadDocs]);
 
   const {

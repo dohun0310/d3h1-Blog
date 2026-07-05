@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Post from "@/lib/types/post";
+import type { PostSummary } from "@/lib/utils/post";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
-export default function useSearchDialog(allPosts: Post[]) {
+export default function useSearchDialog(summaries: PostSummary[]) {
   const router = useRouter();
 
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -18,7 +18,7 @@ export default function useSearchDialog(allPosts: Post[]) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [displayCount, setDisplayCount] = useState(6);
 
-  const filteredPosts = allPosts.filter(
+  const filteredPosts = summaries.filter(
     (post) =>
       post.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
       post.content.toLowerCase().includes(searchKeyword.toLowerCase())
@@ -46,6 +46,12 @@ export default function useSearchDialog(allPosts: Post[]) {
     setSelectedIndex(0);
     setDisplayCount(6);
   }, [closeSearch]);
+
+  const handleSearchKeywordChange = useCallback((keyword: string) => {
+    setSearchKeyword(keyword);
+    setSelectedIndex(0);
+    setDisplayCount(6);
+  }, []);
 
   const navigateToPost = useCallback((slug: string) => {
     router.push(`/${slug}`);
@@ -109,11 +115,6 @@ export default function useSearchDialog(allPosts: Post[]) {
     });
   }, [selectedIndex]);
 
-  useEffect(() => {
-    setSelectedIndex(0);
-    setDisplayCount(6);
-  }, [searchKeyword]);
-
   const handleLoadMore = () => {
     setDisplayCount((prev) => prev + 6);
   };
@@ -132,7 +133,7 @@ export default function useSearchDialog(allPosts: Post[]) {
     inputRef,
     itemRefs,
     searchKeyword,
-    setSearchKeyword,
+    setSearchKeyword: handleSearchKeywordChange,
     selectedIndex,
     displayedPosts,
     hasMore,
