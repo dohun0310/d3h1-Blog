@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Logo from "../Logo";
 import Icon from "../Icon";
+import { buttonClass } from "../Button";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
 export default function Header() {
@@ -13,7 +14,7 @@ export default function Header() {
       fixed z-20 bg-background
       border-b border-gray-100 dark:border-gray-800"
     >
-      <div className="w-full max-w-[1325px] h-full
+      <div className="w-full max-w-331.25 h-full
         relative mx-auto px-4
         flex items-center justify-between"
       >
@@ -25,11 +26,8 @@ export default function Header() {
         </Link>
         <button
           onClick={openSearch}
-          className="select-none w-6 lg:w-78
-            p-0 lg:px-4 lg:py-2 gap-2.5
-            flex items-center rounded-full
-            lg:border border-gray-100 dark:border-gray-800
-            hover:bg-foreground/5 transition-colors duration-300"
+          className={`w-6 lg:w-78 justify-start
+            ${buttonClass({ size: "small", variant: "linear" })}`}
           aria-label="search"
         >
           <Icon
