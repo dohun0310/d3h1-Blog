@@ -131,7 +131,7 @@ const components: MDXComponents = {
       <Image
         src={src}
         alt={alt ?? ""}
-        sizes="(max-width: 684px) 100vw,
+        sizes="(max-width: 674px) 100vw,
               70vw"
         className="w-full h-auto"
         fetchPriority="low"

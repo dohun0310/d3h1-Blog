@@ -29,7 +29,7 @@ function DefaultPostCard({
           alt={post.title}
           width={640}
           height={360}
-          sizes="(max-width: 684px) 100vw, (max-width: 1324px) 50vw, 33vw"
+          sizes="(max-width: 674px) 100vw, (max-width: 834px) 50vw, 33vw"
           className="w-full h-auto rounded-lg mb-2"
           loading={priority ? "eager" : "lazy"}
           priority={priority}
