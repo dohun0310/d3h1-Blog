@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import Icon from "../Icon";
 import Button from "../Button";
 import Post from "@/lib/types/post";
+import PostCard from "../PostCard";
 import useSearchDialog from "@/lib/hooks/search";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
@@ -133,29 +133,10 @@ export default function Search() {
                     onClick={() => navigateToPost(post.slug)}
                     onMouseEnter={() => handleMouseEnterItem(index)}
                   >
-                    <Image
-                      src={post.teaser}
-                      alt={post.title}
-                      width={480}
-                      height={480}
-                      className="w-10 lg:w-12 h-10 lg:h-12
-                        object-cover rounded-lg"
+                    <PostCard
+                      post={post}
+                      variant="compact"
                     />
-                    <article className="flex-1 min-w-0">
-                      <div className="text-sm lg:text-base font-bold truncate">
-                        {post.title}
-                      </div>
-                      <div className="text-xs lg:text-sm mt-1
-                        truncate text-gray-500 dark:text-gray-400"
-                      >
-                        {post.excerpt}
-                      </div>
-                    </article>
-                    <div className="text-xs lg:text-sm px-2 py-1
-                      bg-foreground/5 rounded-full"
-                    >
-                      {post.category}
-                    </div>
                   </button>
                 ))}
                 {hasMore && (
