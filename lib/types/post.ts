@@ -10,4 +10,5 @@ export interface PostMeta {
 export default interface Post extends PostMeta {
   slug: string;
   content: string;
+  excerpt: string;
 }
