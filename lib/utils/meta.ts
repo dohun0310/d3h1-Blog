@@ -12,8 +12,8 @@ export function validatePostMeta(slug: string, meta: unknown): string[] {
     errors.push(`${post} meta.title은 반드시 문자열이여야 하며 비어 있을 수 없습니다.`);
   }
 
-  if (typeof m.description !== "string" || m.description.trim() === "") {
-    errors.push(`${post} meta.description은 반드시 문자열이여야 하며 비어 있을 수 없습니다.`);
+  if (typeof m.category !== "string" || m.category.trim() === "") {
+    errors.push(`${post} meta.category은 반드시 문자열이여야 하며 비어 있을 수 없습니다.`);
   }
 
   if (typeof m.date !== "string" || isNaN(Date.parse(m.date))) {
