@@ -25,7 +25,7 @@ export default function Search() {
     }
 
     try {
-      const res = await fetch("/index");
+      const res = await fetch("/posts");
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
       }
