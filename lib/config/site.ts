@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
     firstName: "도훈",
     lastName: "김",
   },
-  copyright: "© 2023-2026 d3h1. 모든 권리 보유.",
+  copyright: `© 2023-${new Date().getFullYear()} d3h1. 모든 권리 보유.`,
   socials: [
     { name: "instagram", href: "https://www.instagram.com/dohun0310/" },
     { name: "facebook", href: "https://www.facebook.com/dohun0310/" },
