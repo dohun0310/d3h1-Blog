@@ -99,7 +99,7 @@ export default async function Home({
                   <p className="text-xs lg:text-sm
                     line-clamp-2 text-gray-500 dark:text-gray-400"
                   >
-                    {post.content}
+                    {post.excerpt}
                   </p>
                 </Link>
               </article>

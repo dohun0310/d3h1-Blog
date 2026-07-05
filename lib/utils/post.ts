@@ -2,7 +2,7 @@ import { cache } from "react";
 import { readdir, readFile } from "fs/promises";
 import path from "path";
 import Post from "@/lib/types/post";
-import { toPlainText } from "@/lib/utils/text";
+import { toExcerpt, toPlainText } from "@/lib/utils/text";
 import { validatePostMeta } from "@/lib/utils/meta";
 
 export const allPosts = cache(async function (): Promise<Post[]> {
@@ -34,10 +34,12 @@ export const allPosts = cache(async function (): Promise<Post[]> {
       // 글 내용 추출 (상단의 import/export 선언 제거)
       const raw = await readFile(path.join(postPath, slug, "post.mdx"), "utf-8");
       const content = toPlainText(raw);
+      const excerpt = toExcerpt(content);
 
       posts.push({
         slug,
         content,
+        excerpt,
         ...meta,
       });
     })

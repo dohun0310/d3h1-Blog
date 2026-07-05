@@ -32,12 +32,12 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.content.trim().slice(0, 160),
+    description: post.excerpt,
     openGraph: {
       type: "website",
       url: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.trim().slice(0, 160),
+      description: post.excerpt,
       siteName: "d3h1 Blog",
       images: [{
         url: post.teaser.src,
@@ -47,7 +47,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       site: `https://blog.d3h1.com/${slug}`,
       title: post.title,
-      description: post.content.trim().slice(0, 160),
+      description: post.excerpt,
       images: [{
         url: post.teaser.src,
       }],

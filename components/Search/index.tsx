@@ -103,7 +103,7 @@ export default function Search({
                       <div className="text-xs lg:text-sm mt-1
                         truncate text-gray-500 dark:text-gray-400"
                       >
-                        {post.content.slice(0, 100)}...
+                        {post.excerpt}
                       </div>
                     </article>
                     <div className="text-xs lg:text-sm px-2 py-1
