@@ -1,11 +1,5 @@
 import Icon from "../Icon";
-
-const socialLinks = [
-  { name: "instagram", href: "https://www.instagram.com/dohun0310/" },
-  { name: "facebook", href: "https://www.facebook.com/dohun0310/" },
-  { name: "x", href: "https://x.com/dohun0310/" },
-  { name: "github", href: "https://github.com/dohun0310/" },
-] as const;
+import { siteConfig } from "@/lib/config/site";
 
 const socialLinkClass = `inline-flex justify-center items-center p-2
   gap-1.5 rounded-full cursor-pointer select-none
@@ -20,7 +14,7 @@ export default function Footer() {
       static lg:fixed lg:right-[calc((100%-1325px)/2+16px)]"
     >
       <div className="w-full flex items-center justify-center gap-4 lg:justify-between">
-        {socialLinks.map((link) => (
+        {siteConfig.socials.map((link) => (
           <a
             key={link.name}
             href={link.href}
@@ -44,7 +38,7 @@ export default function Footer() {
         [@media(min-width:1325px)_and_(max-height:317px)]:aspect-32/5"
       />
       <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
-        © 2023-2026 d3h1. 모든 권리 보유.
+        {siteConfig.copyright}
       </p>
     </footer>
   )

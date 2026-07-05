@@ -1,15 +1,16 @@
 "use client";
 
-import Giscus from '@giscus/react';
+import Giscus from "@giscus/react";
+import { siteConfig } from "@/lib/config/site";
 
 export default function Comments() {
   return (
     <Giscus
       id="comments"
-      repo="dohun0310/d3h1-Blog-comment"
-      repoId="R_kgDOJ-0RuA"
-      category="General"
-      categoryId="DIC_kwDOJ-0RuM4CYGS5"
+      repo={siteConfig.giscus.repo}
+      repoId={siteConfig.giscus.repoId}
+      category={siteConfig.giscus.category}
+      categoryId={siteConfig.giscus.categoryId}
       mapping="pathname"
       reactionsEnabled="1"
       emitMetadata="0"
