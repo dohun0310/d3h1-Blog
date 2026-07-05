@@ -9,15 +9,15 @@ export function validatePostMeta(slug: string, meta: unknown): string[] {
   const errors: string[] = [];
 
   if (typeof m.title !== "string" || m.title.trim() === "") {
-    errors.push(`${post} meta.title must be a string and cannot be empty`);
+    errors.push(`${post} meta.title은 반드시 문자열이여야 하며 비어 있을 수 없습니다.`);
   }
 
   if (typeof m.description !== "string" || m.description.trim() === "") {
-    errors.push(`${post} meta.description must be a string and cannot be empty`);
+    errors.push(`${post} meta.description은 반드시 문자열이여야 하며 비어 있을 수 없습니다.`);
   }
 
   if (typeof m.date !== "string" || isNaN(Date.parse(m.date))) {
-    errors.push(`${post} meta.date must be a valid date string`);
+    errors.push(`${post} meta.date은 반드시 유효한 날짜 문자열이어야 합니다.`);
   }
 
   const teaser = m.teaser;
@@ -26,7 +26,7 @@ export function validatePostMeta(slug: string, meta: unknown): string[] {
     typeof teaser !== "object" ||
     typeof (teaser as { src?: unknown }).src !== "string"
   ) {
-    errors.push(`${post}: teaser — import된 이미지(StaticImageData)여야 합니다`);
+    errors.push(`${post} meta.teaser은 반드시 import된 이미지(StaticImageData)여야 합니다`);
   }
 
   return errors;
