@@ -90,7 +90,7 @@ export default async function Post({
       <div className="flex flex-col-reverse gap-8
         lg:grid grid-cols-[100px_1fr] gap-x-7"
       >
-        <MeCard post={post} />
+        <MeCard date={post.date} category={post.category} />
         <div className="w-full max-w-full lg:max-w-217.5
           [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
           [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto
