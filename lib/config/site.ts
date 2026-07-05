@@ -23,8 +23,12 @@ export interface SiteConfig {
   };
 }
 
+const url = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : 'http://localhost:3000';
+
 export const siteConfig: SiteConfig = {
-  url: "https://blog.d3h1.com",
+  url: url,
   name: "d3h1 Blog",
   description: "새로운 것을 즐기고, 변화를 만들고",
   author: {
