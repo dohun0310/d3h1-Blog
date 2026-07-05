@@ -40,9 +40,13 @@ export default function Search() {
 
   // 다이얼로그가 처음 열릴 때 검색 인덱스 지연 로드
   useEffect(() => {
-    if (isOpen && loadState === "idle") {
-      loadDocs();
-    }
+    if (!isOpen || loadState !== "idle") return;
+
+    const timer = window.setTimeout(() => {
+      void loadDocs();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, [isOpen, loadState, loadDocs]);
 
   const {
