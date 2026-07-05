@@ -1,7 +1,12 @@
 "use client";
 
 import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from "react";
-import { Search } from "@/lib/types/context";
+
+export interface Search {
+  isOpen: boolean;
+  openSearch: () => void;
+  closeSearch: () => void;
+}
 
 const SearchContext = createContext<Search | undefined>(undefined);
 
