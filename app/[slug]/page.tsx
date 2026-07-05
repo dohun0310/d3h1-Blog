@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
 import { allPosts } from "@/lib/utils/post";
 import { formatDate } from "@/lib/utils/date";
+import { siteConfig } from "@/lib/config/site";
 
 export async function generateStaticParams() {
   const base = await allPosts();
@@ -35,17 +36,17 @@ export async function generateMetadata({
     description: post.excerpt,
     openGraph: {
       type: "website",
-      url: `https://blog.d3h1.com/${slug}`,
+      url: `${siteConfig.url}/${slug}`,
       title: post.title,
       description: post.excerpt,
-      siteName: "d3h1 Blog",
+      siteName: siteConfig.name,
       images: [{
         url: post.teaser.src,
       }],
     },
     twitter: {
       card: "summary_large_image",
-      site: `https://blog.d3h1.com/${slug}`,
+      site: `${siteConfig.url}/${slug}`,
       title: post.title,
       description: post.excerpt,
       images: [{

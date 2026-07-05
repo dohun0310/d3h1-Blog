@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { SearchProvider } from "@/lib/contexts/SearchContext";
+import { siteConfig } from "@/lib/config/site";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -12,32 +13,32 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | d3h1 Blog",
-    default: "d3h1 Blog",
+    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.name,
   },
-  description: "새로운 것을 즐기고, 변화를 만들고",
-  metadataBase: new URL("https://blog.d3h1.com"),
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
-    url: "https://blog.d3h1.com",
+    url: siteConfig.url,
     title: {
-      template: "%s | d3h1 Blog",
-      default: "d3h1 Blog",
+      template: `%s | ${siteConfig.name}`,
+      default: siteConfig.name,
     },
-    description: "새로운 것을 즐기고, 변화를 만들고",
-    siteName: "d3h1 Blog",
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     images: [{
       url: "/opengraph.png",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://blog.d3h1.com",
+    site: siteConfig.url,
     title: {
-      template: "%s | d3h1 Blog",
-      default: "d3h1 Blog",
+      template: `%s | ${siteConfig.name}`,
+      default: siteConfig.name,
     },
-    description: "새로운 것을 즐기고, 변화를 만들고",
+    description: siteConfig.description,
     images: [{
       url: "/opengraph.png",
     }],
