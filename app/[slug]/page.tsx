@@ -112,7 +112,7 @@ export default async function Post({
                   rounded-full object-cover"
               />
               <p className="text-sm lg:text-base font-bold">
-                김 도훈
+                {siteConfig.author.firstName} {siteConfig.author.lastName}
               </p>
               <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
                 {formatDate(post.date)}
