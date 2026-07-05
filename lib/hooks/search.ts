@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import type { Post } from "@/lib/utils/post";
+import type { PostSummary } from "@/lib/utils/post";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
-export default function useSearchDialog(allPosts: Post[]) {
+export default function useSearchDialog(summaries: PostSummary[]) {
   const router = useRouter();
 
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -18,7 +18,7 @@ export default function useSearchDialog(allPosts: Post[]) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [displayCount, setDisplayCount] = useState(6);
 
-  const filteredPosts = allPosts.filter(
+  const filteredPosts = summaries.filter(
     (post) =>
       post.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
       post.content.toLowerCase().includes(searchKeyword.toLowerCase())

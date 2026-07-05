@@ -1,16 +1,13 @@
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import MeCard from "@/components/MeCard";
 import Comments from "@/components/Comments";
-import { allPosts } from "@/lib/utils/post";
+import { getPost, getPostSummary, getPostList } from "@/lib/posts/service";
 import { siteConfig } from "@/lib/config/site";
 
-export async function generateStaticParams() {
-  const base = await allPosts();
+export const dynamicParams = false;
 
-  return base.map((post) => ({
-    slug: post.slug,
-  }));
+export async function generateStaticParams() {
+  return getPostList().then((posts) => posts.map(({ slug }) => ({ slug })));
 }
 
 export async function generateMetadata({
@@ -19,35 +16,28 @@ export async function generateMetadata({
   slug: string
 }> }) {
   const { slug } = await params;
-  const base = await allPosts();
-  const post = base.find((post) => (
-    post.slug === slug
-  ));
-
-  if (!post) {
-    return {};
-  }
+  const { title, teaser, excerpt } = await getPostSummary(slug);
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title,
+    description: excerpt,
     openGraph: {
       type: "website",
       url: `${siteConfig.url}/${slug}`,
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description: excerpt,
       siteName: siteConfig.name,
       images: [{
-        url: post.teaser.src,
+        url: teaser.src,
       }],
     },
     twitter: {
       card: "summary_large_image",
-      site: `${siteConfig.url}/${slug}`,
-      title: post.title,
-      description: post.excerpt,
+      site: siteConfig.url,
+      title,
+      description: excerpt,
       images: [{
-        url: post.teaser.src,
+        url: teaser.src,
       }],
     },
   };
@@ -60,27 +50,19 @@ export default async function Post({
 }> }) {
   const { slug } = await params;
 
-  const base = await allPosts();
-  const post = base.find((post) => (
-    post.slug === slug
-  ));
-
-  if (!post) {
-    notFound();
-  }
-
-  const PostContent = (await import(`@/posts/${post.slug}/post.mdx`)).default;
+  // dynamicParams=false라 미등록 slug는 여기 도달 전 404 — 로딩 실패는 그대로 드러낸다
+  const { title, Content, date, category, teaser } = await getPost(slug);
 
   return (
     <article className="mx-auto w-full max-w-247.5
       flex flex-col gap-8 break-keep"
     >
       <h1 className="text-2xl font-bold lg:text-3xl">
-        {post.title}
+        {title}
       </h1>
       <Image
-        src={post.teaser}
-        alt={`Teaser image for ${post.title}`}
+        src={teaser}
+        alt={`${title} 티저 사진`}
         sizes="(max-width: 674px) 100vw,
               70vw"
         className="w-full h-auto"
@@ -90,7 +72,7 @@ export default async function Post({
       <div className="flex flex-col-reverse gap-8
         lg:grid grid-cols-[100px_1fr] gap-x-7"
       >
-        <MeCard date={post.date} category={post.category} />
+        <MeCard date={date} category={category} />
         <div className="w-full max-w-full lg:max-w-217.5
           [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
           [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto
@@ -100,7 +82,7 @@ export default async function Post({
           [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md
           [&_code]:bg-gray-100 dark:[&_code]:bg-gray-800"
         >
-          <PostContent />
+          <Content />
         </div>
       </div>
       <Comments />
