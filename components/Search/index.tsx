@@ -1,16 +1,50 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Icon from "../Icon";
 import Button from "../Button";
 import Post from "@/lib/types/post";
 import useSearchDialog from "@/lib/hooks/search";
+import { useSearch } from "@/lib/contexts/SearchContext";
 
-export default function Search({
-  allPosts
-}: {
-  allPosts: Post[]
-}) {
+let searchDocsCache: Post[] | null = null;
+
+type LoadState = "idle" | "loaded" | "error";
+
+export default function Search() {
+  const { isOpen } = useSearch();
+  const [docs, setDocs] = useState<Post[]>(searchDocsCache ?? []);
+  const [loadState, setLoadState] = useState<LoadState>(searchDocsCache ? "loaded" : "idle");
+
+  const loadDocs = useCallback(async () => {
+    if (searchDocsCache) {
+      setDocs(searchDocsCache);
+      setLoadState("loaded");
+      return;
+    }
+
+    try {
+      const res = await fetch("/index");
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      const data: Post[] = await res.json();
+      searchDocsCache = data;
+      setDocs(data);
+      setLoadState("loaded");
+    } catch {
+      setLoadState("error");
+    }
+  }, []);
+
+  // 다이얼로그가 처음 열릴 때 검색 인덱스 지연 로드
+  useEffect(() => {
+    if (isOpen && loadState === "idle") {
+      loadDocs();
+    }
+  }, [isOpen, loadState, loadDocs]);
+
   const {
     dialogRef,
     inputRef,
@@ -25,7 +59,7 @@ export default function Search({
     handleMouseEnterItem,
     handleMouseMove,
     navigateToPost,
-  } = useSearchDialog(allPosts);
+  } = useSearchDialog(docs);
 
   // dialog 닫힐 때 처리
   const handleCancel = (e: React.FormEvent<HTMLDialogElement>) => {
@@ -74,7 +108,18 @@ export default function Search({
           </kbd>
         </div>
 
-        {searchKeyword && (
+        {loadState === "error" && (
+          <div className="flex flex-col items-center gap-3 px-4 py-6">
+            <p className="text-xs lg:text-sm text-center">
+              문제가 발생했습니다
+            </p>
+            <Button size="small" onClick={loadDocs}>
+              다시 시도
+            </Button>
+          </div>
+        )}
+
+        {loadState === "loaded" && searchKeyword && (
           <div className="max-h-50 overflow-auto">
             {displayedPosts.length > 0 ? (
               <>
