@@ -4,11 +4,13 @@ import { formatDate } from "@/lib/utils/date";
 import { siteConfig } from "@/lib/config/site";
 
 export interface MeCardProps {
-  post: Post;
+  date: Post["date"];
+  category: Post["category"];
 }
 
 export default function MeCard({
-  post
+  date,
+  category
 }: MeCardProps) {
   return (
     <div className="flex items-center gap-3
@@ -25,11 +27,11 @@ export default function MeCard({
       <p className="text-sm lg:text-base font-bold">
         {siteConfig.author.lastName} {siteConfig.author.firstName}
       </p>
-      <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
-        {formatDate(post.date)}
+      <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={date}>
+        {formatDate(date)}
       </time>
       <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep">
-        {post.category}
+        {category}
       </p>
     </div>
   );
