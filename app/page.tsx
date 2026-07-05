@@ -5,17 +5,8 @@ import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import { allPosts } from "@/lib/utils/post";
+import { categories, ALL_CATEGORY_LABEL } from "@/lib/config/categories";
 import Post from "@/lib/types/post";
-
-const categories: {
-  title: string;
-  params: string;
-}[] = [
-  { title: "전체", params: "" },
-  { title: "개발", params: "development" },
-  { title: "후기", params: "review" },
-  { title: "잡담", params: "talk" },
-]
 
 export default async function Home({
   searchParams
@@ -25,11 +16,18 @@ export default async function Home({
 }) {
   const { category } = await searchParams;
 
-  const selectedCategory = categories.find((c) => c.params === category || c.title === category)?.title || "전체";
+  const filterOptions = [
+    { slug: "", label: ALL_CATEGORY_LABEL },
+    ...categories,
+  ];
+
+  const selectedCategory =
+    filterOptions.find((c) => c.slug === category || c.label === category)?.label
+      ?? ALL_CATEGORY_LABEL;
 
   const base = await allPosts();
   const posts = base.filter((post) => {
-    if (!selectedCategory || selectedCategory === "전체") return true;
+    if (selectedCategory === ALL_CATEGORY_LABEL) return true;
     return post.category === selectedCategory;
   });
 
@@ -48,17 +46,16 @@ export default async function Home({
           <div className="w-full select-none
             flex flex-wrap gap-2"
           >
-            {categories.map((category) => (
+            {filterOptions.map((option) => (
               <Link
-                key={category.params}
-                href={category.params ? `/?category=${category.params}` : "/"}
+                key={option.slug}
+                href={option.slug ? `/?category=${option.slug}` : "/"}
               >
                 <Button
-                  key={category.params}
                   size="medium"
-                  variant={selectedCategory === category.title ? "filled" : "linear"}
+                  variant={selectedCategory === option.label ? "filled" : "linear"}
                 >
-                  {category.title}
+                  {option.label}
                 </Button>
               </Link>
             ))}
