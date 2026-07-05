@@ -1,9 +1,22 @@
+import type { StaticImageData } from "next/image";
 import { cache } from "react";
 import { readdir, readFile } from "fs/promises";
 import path from "path";
-import Post from "@/lib/types/post";
 import { toExcerpt, toPlainText } from "@/lib/utils/text";
-import { validatePostMeta } from "@/lib/utils/meta";
+import { validatePostMeta } from "@/lib/utils/meta"
+
+export interface PostMeta {
+  teaser: StaticImageData;
+  category: string;
+  title: string;
+  date: string;
+}
+
+export interface Post extends PostMeta {
+  slug: string;
+  content: string;
+  excerpt: string;
+}
 
 export const allPosts = cache(async function (): Promise<Post[]> {
   // `.mdx` 파일 저장 경로 선언
