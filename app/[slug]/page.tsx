@@ -16,10 +16,7 @@ export async function generateMetadata({
   slug: string
 }> }) {
   const { slug } = await params;
-  const [{ title, teaser }, { excerpt }] = await Promise.all([
-    getPost(slug),
-    getPostSummary(slug),
-  ]);
+  const { title, teaser, excerpt } = await getPostSummary(slug);
 
   return {
     title,
