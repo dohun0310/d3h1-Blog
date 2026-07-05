@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Button from "@/components/Button";
 import PostCard from "@/components/PostCard";
+import { buttonClass } from "@/components/Button";
 import { allPosts } from "@/lib/utils/post";
 import { categories, ALL_CATEGORY_LABEL } from "@/lib/config/categories";
 
@@ -39,13 +39,12 @@ export default async function Home({
           <Link
             key={option.slug}
             href={option.slug ? `/?category=${option.slug}` : "/"}
+            className={buttonClass({
+              size: "medium",
+              variant: selectedCategory === option.label ? "filled" : "linear",
+            })}
           >
-            <Button
-              size="medium"
-              variant={selectedCategory === option.label ? "filled" : "linear"}
-            >
-              {option.label}
-            </Button>
+            {option.label}
           </Link>
         ))}
       </div>
