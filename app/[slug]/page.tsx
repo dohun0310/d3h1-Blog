@@ -1,8 +1,5 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Header from "@/components/Header";
-import Search from "@/components/Search";
-import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
 import { allPosts } from "@/lib/utils/post";
 import { formatDate } from "@/lib/utils/date";
@@ -75,68 +72,58 @@ export default async function Post({
   const PostContent = (await import(`@/posts/${post.slug}/post.mdx`)).default;
 
   return (
-    <>
-      <Header />
-      <Search />
-      <div className="mx-auto my-24 px-4 max-w-[1325px]
-        flex flex-col
-        lg:grid grid-cols-[1fr_240px] gap-x-12"
+    <article className="mx-auto w-full max-w-247.5
+      flex flex-col gap-8 break-keep"
+    >
+      <h1 className="text-2xl font-bold lg:text-3xl">
+        {post.title}
+      </h1>
+      <Image
+        src={post.teaser}
+        alt={`Teaser image for ${post.title}`}
+        sizes="(max-width: 684px) 100vw,
+              70vw"
+        className="w-full h-auto"
+        fetchPriority="high"
+        priority
+      />
+      <div className="flex flex-col-reverse gap-8
+        lg:grid grid-cols-[100px_1fr] gap-x-7"
       >
-        <article className="mx-auto w-full max-w-247.5
-          flex flex-col gap-8 break-keep"
+        <div className="flex items-center gap-3
+          lg:flex-col lg:items-start lg:gap-2"
         >
-          <h1 className="text-2xl font-bold lg:text-3xl">
-            {post.title}
-          </h1>
           <Image
-            src={post.teaser}
-            alt={`Teaser image for ${post.title}`}
-            sizes="(max-width: 684px) 100vw,
-                  70vw"
-            className="w-full h-auto"
-            fetchPriority="high"
-            priority
+            src="/profile.png"
+            alt="d3h1 Profile Image"
+            width={128}
+            height={128}
+            className="w-12 h-12 lg:w-25 lg:h-25
+              rounded-full object-cover"
           />
-          <div className="flex flex-col-reverse gap-8
-            lg:grid grid-cols-[100px_1fr] gap-x-7"
-          >
-            <div className="flex items-center gap-3
-              lg:flex-col lg:items-start lg:gap-2"
-            >
-              <Image
-                src="/profile.png"
-                alt="d3h1 Profile Image"
-                width={128}
-                height={128}
-                className="w-12 h-12 lg:w-25 lg:h-25
-                  rounded-full object-cover"
-              />
-              <p className="text-sm lg:text-base font-bold">
-                {siteConfig.author.lastName} {siteConfig.author.firstName}
-              </p>
-              <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
-                {formatDate(post.date)}
-              </time>
-              <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep">
-                {post.category}
-              </p>
-            </div>
-            <div className="w-full max-w-full lg:max-w-217.5
-              [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
-              [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto
-              [&_pre]:rounded-xl [&_pre]:border [&_pre]:border-gray-100 dark:[&_pre]:border-gray-800
-              [&_pre_span[data-line]]:inline-block [&_pre_span[data-line]]:px-5
-              [&_pre_span[data-line]]:text-xs lg:[&_pre_span[data-line]]:text-sm
-              [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md
-              [&_code]:bg-gray-100 dark:[&_code]:bg-gray-800"
-            >
-              <PostContent />
-            </div>
-          </div>
-          <Comments />
-        </article>
-        <Footer />
+          <p className="text-sm lg:text-base font-bold">
+            {siteConfig.author.lastName} {siteConfig.author.firstName}
+          </p>
+          <time className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep" dateTime={post.date}>
+            {formatDate(post.date)}
+          </time>
+          <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 break-keep">
+            {post.category}
+          </p>
+        </div>
+        <div className="w-full max-w-full lg:max-w-217.5
+          [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
+          [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto
+          [&_pre]:rounded-xl [&_pre]:border [&_pre]:border-gray-100 dark:[&_pre]:border-gray-800
+          [&_pre_span[data-line]]:inline-block [&_pre_span[data-line]]:px-5
+          [&_pre_span[data-line]]:text-xs lg:[&_pre_span[data-line]]:text-sm
+          [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded-md
+          [&_code]:bg-gray-100 dark:[&_code]:bg-gray-800"
+        >
+          <PostContent />
+        </div>
       </div>
-    </>
+      <Comments />
+    </article>
   );
 }

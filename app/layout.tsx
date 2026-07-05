@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Header from "@/components/Header";
+import Search from "@/components/Search";
+import Footer from "@/components/Footer";
 import { SearchProvider } from "@/lib/contexts/SearchContext";
 import { siteConfig } from "@/lib/config/site";
 import "./globals.css";
@@ -54,7 +57,15 @@ export default function RootLayout({
     <html lang="ko" className={pretendard.variable}>
       <body>
         <SearchProvider>
-          {children}
+          <Header />
+          <Search />
+          <div className="mx-auto my-24 px-4 max-w-331.25
+            flex flex-col
+            lg:grid grid-cols-[1fr_240px] gap-x-12"
+          >
+            {children}
+            <Footer />
+          </div>
         </SearchProvider>
       </body>
     </html>
