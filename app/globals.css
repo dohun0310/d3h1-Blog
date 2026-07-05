@@ -118,8 +118,9 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
-  --breakpoint-sm: 42.75rem;
-  --breakpoint-lg: 82.75rem;
+  --breakpoint-sm: 39.625rem;
+  --breakpoint-md: 42.125rem;
+  --breakpoint-lg: 60.25rem;
 
   @keyframes slide {
     from {
