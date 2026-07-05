@@ -59,9 +59,13 @@ export default function RootLayout({
         <SearchProvider>
           <Header />
           <Search />
-          <Footer>
+          <div className="mx-auto my-24 px-4 max-w-331.25
+            flex flex-col
+            lg:grid grid-cols-[1fr_240px] gap-x-12"
+          >
             {children}
-          </Footer>
+            <Footer />
+          </div>
         </SearchProvider>
       </body>
     </html>
