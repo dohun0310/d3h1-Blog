@@ -1,12 +1,7 @@
 import { cn } from "@/lib/utils/cn";
 import svgPath from "./icons.json";
 
-export type IconName =
-  | "search"
-  | "instagram"
-  | "facebook"
-  | "github"
-  | "x"
+export type IconName = keyof typeof svgPath;
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
