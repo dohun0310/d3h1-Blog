@@ -24,7 +24,7 @@ export default function Error({
       <p className="text-sm lg:text-base mt-4">
         맞는 페이지에 오셨는데, 잠시 문제가 생겼나 봐요.
       </p>
-      <Button size="medium" onClick={reset}>
+      <Button size="medium" onClick={reset} className="w-fit">
         다시 시도
       </Button>
     </div>
