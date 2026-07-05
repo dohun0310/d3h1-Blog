@@ -1,7 +1,7 @@
-import { allPosts } from "@/lib/utils/post";
+import { getPostSummaries } from "@/lib/posts/service";
 
 export const dynamic = "force-static";
 
 export async function GET() {
-  return Response.json(await allPosts());
+  return Response.json(await getPostSummaries());
 }

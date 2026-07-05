@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
 import { buttonClass } from "@/components/Button";
-import { allPosts } from "@/lib/utils/post";
+import { getPostSummaries } from "@/lib/posts/service";
 import { categories, ALL_CATEGORY_LABEL } from "@/lib/config/categories";
 
 export default async function Home({
@@ -21,7 +21,7 @@ export default async function Home({
     filterOptions.find((c) => c.slug === category || c.label === category)?.label
       ?? ALL_CATEGORY_LABEL;
 
-  const base = await allPosts();
+  const base = await getPostSummaries();
   const posts = base.filter((post) => {
     if (selectedCategory === ALL_CATEGORY_LABEL) return true;
     return post.category === selectedCategory;
