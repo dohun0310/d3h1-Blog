@@ -36,7 +36,7 @@ export function useSearch() {
   const context = useContext(SearchContext);
 
   if (!context) {
-    throw new Error("useSearch must be used within SearchProvider");
+    throw new Error("useSearch는 SearchProvider 안에서만 사용될 수 있습니다.");
   }
 
   return context;
