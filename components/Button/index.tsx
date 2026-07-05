@@ -1,5 +1,13 @@
 import { cn } from "@/lib/utils/cn";
-import ButtonProps from "@/lib/types/button";
+
+export type ButtonSize = "tiny" | "small" | "medium" | "big";
+export type ButtonVariant = "filled" | "linear" | "transparent";
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: ButtonSize;
+  variant?: ButtonVariant;
+  iconOnly?: boolean;
+}
 
 export default function Button({
   size = "medium",
