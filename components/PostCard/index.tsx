@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type Post from "@/lib/types/post";
+import type { Post } from "@/lib/utils/post";
 
 export type PostCardVariant = "default" | "compact";
 

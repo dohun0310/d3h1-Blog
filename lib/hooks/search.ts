@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Post from "@/lib/types/post";
+import type { Post } from "@/lib/utils/post";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
 export default function useSearchDialog(allPosts: Post[]) {

@@ -3,8 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import Icon from "../Icon";
 import Button from "../Button";
-import Post from "@/lib/types/post";
 import PostCard from "../PostCard";
+import type { Post } from "@/lib/utils/post";
 import useSearchDialog from "@/lib/hooks/search";
 import { useSearch } from "@/lib/contexts/SearchContext";
 

@@ -1,6 +1,13 @@
 import { cn } from "@/lib/utils/cn";
 import svgPath from "./icons.json";
-import IconProps from "@/lib/types/icon";
+
+export type IconName = keyof typeof svgPath;
+
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: IconName;
+  size?: number;
+  className?: string;
+}
 
 export default function Icon({
   name,
