@@ -13,9 +13,7 @@ export default function NotFound() {
         맞는 곳에 오셨는데, 찾는 페이지는 다른 곳에 있나 봐요.
       </p>
       <Link href="/">
-        <Button
-          size="medium"
-          variant="filled"
+        <Button size="medium"
         >
           홈으로 돌아가기
         </Button>
