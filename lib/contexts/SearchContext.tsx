@@ -1,9 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
-import { Search } from "@/lib/types/context";
+import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from "react";
 
-const SearchContext = createContext<Search | undefined>(undefined);
+export interface SearchContextValue {
+  isOpen: boolean;
+  openSearch: () => void;
+  closeSearch: () => void;
+}
+
+const SearchContext = createContext<SearchContextValue | undefined>(undefined);
 
 export function SearchProvider({
   children
@@ -12,11 +17,16 @@ export function SearchProvider({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openSearch = () => setIsOpen(true);
-  const closeSearch = () => setIsOpen(false);
+  const openSearch = useCallback(() => setIsOpen(true), []);
+  const closeSearch = useCallback(() => setIsOpen(false), []);
+
+  const value = useMemo(
+    () => ({ isOpen, openSearch, closeSearch }),
+    [isOpen, openSearch, closeSearch],
+  );
 
   return (
-    <SearchContext.Provider value={{ isOpen, openSearch, closeSearch }}>
+    <SearchContext.Provider value={value}>
       {children}
     </SearchContext.Provider>
   );
@@ -26,7 +36,7 @@ export function useSearch() {
   const context = useContext(SearchContext);
 
   if (!context) {
-    throw new Error("useSearch must be used within SearchProvider");
+    throw new Error("useSearch는 SearchProvider 안에서만 사용될 수 있습니다.");
   }
 
   return context;
