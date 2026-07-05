@@ -135,7 +135,6 @@ export default function Search() {
                   >
                     <PostCard
                       post={post}
-                      priority={index < 4}
                       variant="compact"
                     />
                   </button>
