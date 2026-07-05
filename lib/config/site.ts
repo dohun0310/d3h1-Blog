@@ -1,4 +1,4 @@
-import type { IconName } from "@/lib/types/icon";
+import type { IconName } from "@/components/Icon";
 
 export interface SocialLink {
   name: IconName;
