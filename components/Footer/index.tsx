@@ -1,11 +1,7 @@
 import Icon from "../Icon";
+import { buttonClass } from "../Button";
+import { cn } from "@/lib/utils/cn";
 import { siteConfig } from "@/lib/config/site";
-
-const socialLinkClass = `inline-flex justify-center items-center p-2
-  gap-1.5 rounded-full cursor-pointer select-none
-  bg-background text-foreground
-  border border-gray-100 dark:border-gray-800
-  hover:bg-foreground/5 transition-colors duration-300`;
 
 export default function Footer() {
   return (
@@ -21,7 +17,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            className={socialLinkClass}
+            className={cn(buttonClass({ size: "small", variant: "linear" }), "p-2")}
           >
             <Icon
               name={link.name}
@@ -32,7 +28,7 @@ export default function Footer() {
       </div>
       <div className="w-full max-w-80 lg:max-w-40
         bg-gray-400 dark:bg-gray-700 object-contain
-        aspect-32/5 lg:aspect-[1/3.75]
+        aspect-32/5 lg:aspect-1/3.75
         [@media(min-width:1325px)_and_(max-height:867px)_and_(min-height:401px)]:aspect-6/5
         [@media(min-width:1325px)_and_(max-height:400px)_and_(min-height:318px)]:aspect-32/10
         [@media(min-width:1325px)_and_(max-height:317px)]:aspect-32/5"
