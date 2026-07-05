@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Post } from "@/lib/utils/post";
+import type { PostSummary } from "@/lib/utils/post";
 
 export type PostCardVariant = "default" | "compact";
 
+// 카드 렌더에 필요한 필드만 요구 — 검색 전문(content)은 불필요
+type PostCardPost = Omit<PostSummary, "content">;
+
 export interface PostCardProps {
-  post: Post;
+  post: PostCardPost;
   priority?: boolean;
   variant?: PostCardVariant;
 }
@@ -14,7 +17,7 @@ function DefaultPostCard({
   post,
   priority
 }: {
-  post: Post;
+  post: PostCardPost;
   priority: boolean
 }) {
   return (
@@ -47,7 +50,7 @@ function DefaultPostCard({
 function CompactPostCard({
   post
 }: {
-  post: Post
+  post: PostCardPost
 }) {
   return (
     <>
