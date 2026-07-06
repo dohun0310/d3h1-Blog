@@ -23,8 +23,8 @@ export interface SiteConfig {
   };
 }
 
-const url = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+const url = process.env.DEPLOY_URL
+  ? `https://${process.env.DEPLOY_URL}`
   : 'http://localhost:3000';
 
 export const siteConfig: SiteConfig = {
