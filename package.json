@@ -40,5 +40,6 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5",
     "wrangler": "^4.107.0"
-  }
+  },
+  "packageManager": "yarn@4.17.0"
 }
