@@ -1,0 +1,15 @@
+.git
+.github
+.next
+.open-next
+.wrangler
+node_modules
+coverage
+out
+build
+*.log
+.env*
+!.env.example
+Dockerfile
+Jenkinsfile
+README.md

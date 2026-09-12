@@ -3,6 +3,7 @@ import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: "standalone",
   images: {
     formats: ["image/avif", "image/webp"]
   },
@@ -17,7 +18,8 @@ const withMDX = createMDX({
     ],
     rehypePlugins: [
       ["rehype-pretty-code", {theme: { dark: "slack-dark", light: "slack-ochin" }}],
-      "rehype-mdx-import-media"
+      "rehype-mdx-import-media",
+      "rehype-slug"
     ]
   }
 });

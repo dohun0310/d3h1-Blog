@@ -42,7 +42,7 @@ const baseStyles = `inline-flex justify-center items-center
   disabled:cursor-not-allowed
   transition-colors duration-300`;
 
-export function buttonClass({
+export function buttonClassName({
   size = "medium",
   variant = "filled",
   iconOnly = false,
@@ -68,7 +68,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={cn(buttonClass({ size, variant, iconOnly }), className)}
+      className={cn(buttonClassName({ size, variant, iconOnly }), className)}
       {...props}
     >
       {children}

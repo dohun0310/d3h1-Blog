@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buttonClass } from "@/components/Button";
+import { buttonClassName } from "@/components/ui/button";
 
 export interface CategoryOption {
   slug: string;
@@ -16,7 +16,7 @@ export default function CategoryButton({
   return (
     <Link
       href={option.slug ? `/category/${option.slug}` : "/"}
-      className={buttonClass({
+      className={buttonClassName({
         size: "medium",
         variant: selected ? "filled" : "linear",
       })}

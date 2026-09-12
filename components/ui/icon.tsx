@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils/cn";
-import svgPath from "./icons.json";
+import svgPath from "@/lib/data/icons.json";
 
 export type IconName = keyof typeof svgPath;
 
@@ -20,7 +20,7 @@ export default function Icon({
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox={svgPath[name].viewBox}
       className={cn(
         "inline-block align-middle fill-current",
         className

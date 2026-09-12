@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import MeCard from "@/components/MeCard";
-import Comments from "@/components/Comments";
-import JsonLd from "@/components/JsonLd";
-import { getPost, getPostSummary, getPostList } from "@/lib/posts/service";
-import { siteConfig, authorName } from "@/lib/config/site";
+import AuthorCard from "@/components/author-card";
+import Comments from "@/components/comments";
+import JsonLd from "@/components/json-ld";
+import PostNavigation from "@/components/post-navigation";
+import {
+  getAdjacentPosts,
+  getPost,
+  getPostList,
+  getPostSummary,
+  getRelatedPosts,
+} from "@/lib/posts/service";
+import { siteConfig, authorName } from "@/lib/data/site";
 import { buildPostJsonLd } from "@/lib/utils/jsonLd";
 
 export const dynamicParams = false;
@@ -60,8 +67,13 @@ export default async function Post({
   const { slug } = await params;
 
   // dynamicParams=false라 미등록 slug는 여기 도달 전 404 — 로딩 실패는 그대로 드러낸다
-  const { Content } = await getPost(slug);
-  const summary = await getPostSummary(slug);
+  const [post, summary, adjacentPosts, relatedPosts] = await Promise.all([
+    getPost(slug),
+    getPostSummary(slug),
+    getAdjacentPosts(slug),
+    getRelatedPosts(slug),
+  ]);
+  const { Content } = post;
   const { title, date, category, teaser } = summary;
 
   return (
@@ -84,7 +96,7 @@ export default async function Post({
       <div className="flex flex-col-reverse gap-8
         lg:grid grid-cols-[100px_1fr] gap-x-7"
       >
-        <MeCard date={date} category={category} />
+        <AuthorCard date={date} category={category} />
         <div className="w-full max-w-full lg:max-w-217.5
           [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
           [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto
@@ -97,6 +109,11 @@ export default async function Post({
           <Content />
         </div>
       </div>
+      <PostNavigation
+        previous={adjacentPosts.previous}
+        next={adjacentPosts.next}
+        relatedPosts={relatedPosts}
+      />
       <Comments />
     </article>
   );

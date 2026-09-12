@@ -1,5 +1,5 @@
 import { getPostSummaries } from "@/lib/posts/service";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/data/site";
 
 export const dynamic = "force-static";
 

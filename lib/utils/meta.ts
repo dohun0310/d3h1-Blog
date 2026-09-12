@@ -1,4 +1,4 @@
-import { categories } from "@/lib/config/categories";
+import { categories } from "@/lib/data/categories";
 
 export function validatePostMeta(slug: string, meta: unknown): string[] {
   const post = `posts/${slug}/post.mdx`;

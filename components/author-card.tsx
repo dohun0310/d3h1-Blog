@@ -1,17 +1,17 @@
 import Image from "next/image";
-import type { Post } from "@/lib/utils/post";
+import type { Post } from "@/lib/types/post";
 import { formatDate } from "@/lib/utils/date";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/data/site";
 
-export interface MeCardProps {
+export interface AuthorCardProps {
   date: Post["date"];
   category: Post["category"];
 }
 
-export default function MeCard({
+export default function AuthorCard({
   date,
   category
-}: MeCardProps) {
+}: AuthorCardProps) {
   return (
     <div className="flex items-center gap-3
       lg:flex-col lg:items-start lg:gap-2"

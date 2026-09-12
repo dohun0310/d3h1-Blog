@@ -1,4 +1,4 @@
-import CategoryButton, { type CategoryOption } from "@/components/CategoryButton";
+import CategoryButton, { type CategoryOption } from "@/components/post-list/category-button";
 
 export default function CategoryFilter({
   options,

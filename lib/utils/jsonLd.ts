@@ -1,5 +1,5 @@
-import type { PostSummary } from "@/lib/utils/post";
-import { siteConfig, authorName } from "@/lib/config/site";
+import type { PostSummary } from "@/lib/types/post";
+import { siteConfig, authorName } from "@/lib/data/site";
 
 const WEBSITE_ID = `${siteConfig.url}/#website`;
 const PERSON_ID = `${siteConfig.url}/#person`;
