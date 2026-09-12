@@ -83,6 +83,44 @@ pipeline {
     post {
         always {
             sh 'docker rm -f "${CONTAINER_NAME}-candidate-${BUILD_TAG}" >/dev/null 2>&1 || true'
+            script {
+                def icon = [
+                    SUCCESS: '✅',
+                    FAILURE: '❌',
+                    ABORTED: '⚠️',
+                    UNSTABLE: '⚠️'
+                ].get(currentBuild.currentResult, 'ℹ️')
+
+                def message = """${icon} ${env.JOB_NAME} #${env.BUILD_NUMBER}: ${currentBuild.currentResult}
+Commit: ${(env.GIT_COMMIT ?: 'unknown').take(7)}
+Build: ${env.BUILD_URL}"""
+
+                try {
+                    withCredentials([
+                        string(credentialsId: 'Telegram-Token', variable: 'TELEGRAM_TOKEN'),
+                        string(credentialsId: 'Telegram-ID', variable: 'TELEGRAM_ID')
+                    ]) {
+                        withEnv(["TELEGRAM_MESSAGE=${message}"]) {
+                            def notified = sh(
+                                returnStatus: true,
+                                script: '''
+                                    set +x
+                                    curl --silent --show-error --fail --max-time 10 --output /dev/null \
+                                        --data-urlencode "chat_id=${TELEGRAM_ID}" \
+                                        --data-urlencode "text=${TELEGRAM_MESSAGE}" \
+                                        "${TELEGRAM_API_BASE:-https://api.telegram.org}/bot${TELEGRAM_TOKEN}/sendMessage"
+                                '''
+                            )
+
+                            if (notified != 0) {
+                                echo 'Telegram notification failed'
+                            }
+                        }
+                    }
+                } catch (Exception error) {
+                    echo "Telegram notification unavailable: ${error.class.simpleName}"
+                }
+            }
         }
     }
 }
