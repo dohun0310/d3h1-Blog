@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PostList from "@/components/PostList";
+import PostList from "@/components/post-list/list";
 import { getPostSummaries } from "@/lib/posts/service";
 import { categories, findCategoryBySlug } from "@/lib/data/categories";
 import { siteConfig } from "@/lib/data/site";

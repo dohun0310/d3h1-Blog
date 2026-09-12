@@ -1,5 +1,5 @@
-import CategoryFilter from "@/components/CategoryFilter";
-import PostCard from "@/components/PostCard";
+import CategoryFilter from "@/components/post-list/category-filter";
+import PostCard from "@/components/post-card";
 import { categories, ALL_CATEGORY_LABEL } from "@/lib/data/categories";
 import type { PostSummary } from "@/lib/posts/service";
 
