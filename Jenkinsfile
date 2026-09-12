@@ -19,6 +19,7 @@ pipeline {
         IMAGE_NAME = 'd3h1-blog'
         CONTAINER_NAME = 'd3h1-blog'
         APP_ENV_CREDENTIALS_ID = 'd3h1-blog-env'
+        DEPLOY_BRANCH = 'main'
         DEPLOY_URL = "${params.DEPLOY_URL ?: 'blog.d3h1.com'}"
         HOST_PORT = "${params.HOST_PORT ?: '2006'}"
     }
@@ -28,6 +29,12 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
+                script {
+                    def branch = (env.BRANCH_NAME ?: env.GIT_BRANCH ?: '').replaceFirst(/^origin\//, '')
+
+                    env.CURRENT_BRANCH = branch
+                    env.DEPLOY_TARGET = branch == env.DEPLOY_BRANCH ? 'true' : 'false'
+                }
             }
         }
 
@@ -35,7 +42,6 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    export DEPLOY_URL="${DEPLOY_URL}"
                     corepack yarn install --immutable
                     corepack yarn lint
                     corepack yarn build
@@ -47,7 +53,6 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    test -n "${DEPLOY_URL}"
                     docker build \
                         --build-arg "DEPLOY_URL=${DEPLOY_URL}" \
                         --tag "${IMAGE_NAME}:${GIT_COMMIT}" \
@@ -56,9 +61,25 @@ pipeline {
             }
         }
 
+        stage('Smoke test') {
+            when {
+                environment name: 'DEPLOY_TARGET', value: 'false'
+            }
+            steps {
+                withCredentials([file(credentialsId: env.APP_ENV_CREDENTIALS_ID, variable: 'APP_ENV_FILE')]) {
+                    sh '''
+                        set -eu
+                        RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
+                        CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
+                        ./scripts/deploy-container.sh smoke
+                    '''
+                }
+            }
+        }
+
         stage('Deploy') {
             when {
-                branch 'main'
+                environment name: 'DEPLOY_TARGET', value: 'true'
             }
             steps {
                 script {
@@ -66,17 +87,14 @@ pipeline {
                         withCredentials([file(credentialsId: env.APP_ENV_CREDENTIALS_ID, variable: 'APP_ENV_FILE')]) {
                             sh '''
                                 set -eu
-                                candidate_name="${CONTAINER_NAME}-candidate-${BUILD_TAG}"
-                                rollback_name="${CONTAINER_NAME}-rollback-${BUILD_TAG}"
-
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
-                                CANDIDATE_NAME="${candidate_name}" \
+                                CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
                                 ./scripts/deploy-container.sh smoke
 
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
                                 HOST_PORT="${HOST_PORT}" \
                                 CONTAINER_NAME="${CONTAINER_NAME}" \
-                                ROLLBACK_NAME="${rollback_name}" \
+                                ROLLBACK_NAME="${CONTAINER_NAME}-rollback-${BUILD_TAG}" \
                                 ./scripts/deploy-container.sh deploy
                             '''
                         }
@@ -98,6 +116,7 @@ pipeline {
                 ].get(currentBuild.currentResult, 'ℹ️')
 
                 def message = """${icon} ${env.JOB_NAME} #${env.BUILD_NUMBER}: ${currentBuild.currentResult}
+Branch: ${env.CURRENT_BRANCH ?: 'unknown'}
 Commit: ${(env.GIT_COMMIT ?: 'unknown').take(7)}
 Build: ${env.BUILD_URL}"""
 
