@@ -3,7 +3,14 @@ import Image from "next/image";
 import MeCard from "@/components/MeCard";
 import Comments from "@/components/Comments";
 import JsonLd from "@/components/JsonLd";
-import { getPost, getPostSummary, getPostList } from "@/lib/posts/service";
+import PostNavigation from "@/components/PostNavigation";
+import {
+  getAdjacentPosts,
+  getPost,
+  getPostList,
+  getPostSummary,
+  getRelatedPosts,
+} from "@/lib/posts/service";
 import { siteConfig, authorName } from "@/lib/config/site";
 import { buildPostJsonLd } from "@/lib/utils/jsonLd";
 
@@ -60,8 +67,13 @@ export default async function Post({
   const { slug } = await params;
 
   // dynamicParams=false라 미등록 slug는 여기 도달 전 404 — 로딩 실패는 그대로 드러낸다
-  const { Content } = await getPost(slug);
-  const summary = await getPostSummary(slug);
+  const [post, summary, adjacentPosts, relatedPosts] = await Promise.all([
+    getPost(slug),
+    getPostSummary(slug),
+    getAdjacentPosts(slug),
+    getRelatedPosts(slug),
+  ]);
+  const { Content } = post;
   const { title, date, category, teaser } = summary;
 
   return (
@@ -97,6 +109,11 @@ export default async function Post({
           <Content />
         </div>
       </div>
+      <PostNavigation
+        previous={adjacentPosts.previous}
+        next={adjacentPosts.next}
+        relatedPosts={relatedPosts}
+      />
       <Comments />
     </article>
   );
