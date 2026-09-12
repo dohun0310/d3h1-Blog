@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icon";
 import { buttonClassName } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/data/site";
 
 export default function Footer() {
   return (

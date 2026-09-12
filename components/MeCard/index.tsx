@@ -1,7 +1,7 @@
 import Image from "next/image";
-import type { Post } from "@/lib/utils/post";
+import type { Post } from "@/lib/types/post";
 import { formatDate } from "@/lib/utils/date";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/data/site";
 
 export interface MeCardProps {
   date: Post["date"];

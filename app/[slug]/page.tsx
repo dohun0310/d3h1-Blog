@@ -11,7 +11,7 @@ import {
   getPostSummary,
   getRelatedPosts,
 } from "@/lib/posts/service";
-import { siteConfig, authorName } from "@/lib/config/site";
+import { siteConfig, authorName } from "@/lib/data/site";
 import { buildPostJsonLd } from "@/lib/utils/jsonLd";
 
 export const dynamicParams = false;

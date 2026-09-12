@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostList from "@/components/PostList";
 import { getPostSummaries } from "@/lib/posts/service";
-import { categories, findCategoryBySlug } from "@/lib/config/categories";
-import { siteConfig } from "@/lib/config/site";
+import { categories, findCategoryBySlug } from "@/lib/data/categories";
+import { siteConfig } from "@/lib/data/site";
 
 export const dynamicParams = false;
 
