@@ -3,8 +3,10 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { SearchProvider } from "@/lib/contexts/SearchContext";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig, authorName } from "@/lib/config/site";
+import { buildSiteJsonLd } from "@/lib/utils/jsonLd";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -21,6 +23,15 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  authors: [{ name: authorName, url: siteConfig.url }],
+  creator: authorName,
+  publisher: authorName,
+  verification: {
+    google: "2GLfCTpT-ZqA7-HaWh-vUI51vF_IkhCRKWlDr14S4kI",
+    other: {
+      "naver-site-verification": "a46278a9d938469465e63605c156aca24db599d8",
+    },
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
@@ -55,7 +66,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={pretendard.variable}>
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={siteConfig.name}
+          href="/feed.xml"
+        />
+      </head>
       <body>
+        <JsonLd data={buildSiteJsonLd()} />
         <SearchProvider>
           <Header />
           <Search />

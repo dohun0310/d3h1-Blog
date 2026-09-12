@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPostList } from "@/lib/posts/service";
+import { categories } from "@/lib/config/categories";
 import { siteConfig } from "@/lib/config/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -7,9 +8,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteConfig.url}/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updated ?? post.date),
     changeFrequency: "weekly",
     priority: 0.8,
+  }));
+
+  const categoryRoutes: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${siteConfig.url}/category/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.5,
   }));
 
   return [
@@ -19,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 1.0,
     },
+    ...categoryRoutes,
     ...postRoutes,
   ];
 }

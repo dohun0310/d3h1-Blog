@@ -15,7 +15,7 @@ export default function CategoryButton({
 }) {
   return (
     <Link
-      href={option.slug ? `/?category=${option.slug}` : "/"}
+      href={option.slug ? `/category/${option.slug}` : "/"}
       className={buttonClass({
         size: "medium",
         variant: selected ? "filled" : "linear",

@@ -10,3 +10,7 @@ export const categories: Category[] = [
   { slug: "review", label: "후기" },
   { slug: "talk", label: "잡담" },
 ];
+
+export function findCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((category) => category.slug === slug);
+}
