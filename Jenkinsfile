@@ -35,7 +35,6 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    export DEPLOY_URL="${DEPLOY_URL}"
                     corepack yarn install --immutable
                     corepack yarn lint
                     corepack yarn build
@@ -47,7 +46,6 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    test -n "${DEPLOY_URL}"
                     docker build \
                         --build-arg "DEPLOY_URL=${DEPLOY_URL}" \
                         --tag "${IMAGE_NAME}:${GIT_COMMIT}" \
