@@ -4,17 +4,17 @@ import Image, { type StaticImageData } from "next/image"
 const components: MDXComponents = {
   // Headings
   h1: ({ children, ...props }) => (
-    <h1 className="text-2xl lg:text-3xl font-bold mt-6" {...props}>
+    <h1 className="text-2xl lg:text-3xl font-bold mt-6 scroll-mt-20" {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }) => (
-    <h2 className="text-xl lg:text-2xl font-bold mt-6" {...props}>
+    <h2 className="text-xl lg:text-2xl font-bold mt-6 scroll-mt-20" {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }) => (
-    <h3 className="text-lg lg:text-xl font-bold mt-6" {...props}>
+    <h3 className="text-lg lg:text-xl font-bold mt-6 scroll-mt-20" {...props}>
       {children}
     </h3>
   ),
