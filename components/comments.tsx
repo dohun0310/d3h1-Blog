@@ -1,7 +1,7 @@
 "use client";
 
 import Giscus from "@giscus/react";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/data/site";
 
 export default function Comments() {
   return (

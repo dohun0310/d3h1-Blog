@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import PostList from "@/components/PostList";
-import { siteConfig } from "@/lib/config/site";
+import PostList from "@/components/post-list/list";
+import { siteConfig } from "@/lib/data/site";
 import { getPostSummaries } from "@/lib/posts/service";
 
 export const metadata: Metadata = {

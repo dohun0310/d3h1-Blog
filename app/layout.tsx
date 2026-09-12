@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Header from "@/components/Header";
-import Search from "@/components/Search";
-import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
-import { SearchProvider } from "@/lib/contexts/SearchContext";
-import { siteConfig, authorName } from "@/lib/config/site";
+import Header from "@/components/header";
+import Search from "@/components/search/dialog";
+import Footer from "@/components/footer";
+import JsonLd from "@/components/json-ld";
+import { SearchProvider } from "@/lib/contexts/search";
+import { siteConfig, authorName } from "@/lib/data/site";
 import { buildSiteJsonLd } from "@/lib/utils/jsonLd";
 import "./globals.css";
 

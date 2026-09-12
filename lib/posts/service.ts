@@ -1,5 +1,6 @@
 import { cache } from "react";
-import { loadPost, readPostSummary, readSlugs, type Post, type PostSummary } from "@/lib/utils/post";
+import { loadPost, readPostSummary, readSlugs } from "@/lib/utils/post";
+import type { Post, PostSummary } from "@/lib/types/post";
 
 export interface AdjacentPosts {
   previous?: PostSummary;
@@ -7,7 +8,7 @@ export interface AdjacentPosts {
 }
 
 // 소비자는 이 파일만 import하면 되도록 타입 재노출
-export type { Post, PostMeta, PostSummary } from "@/lib/utils/post";
+export type { Post, PostMeta, PostSummary } from "@/lib/types/post";
 
 const byDateDesc = (a: Post, b: Post) =>
   new Date(b.date).getTime() - new Date(a.date).getTime();

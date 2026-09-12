@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils/cn";
-import svgPath from "./icons.json";
+import svgPath from "@/lib/data/icons.json";
 
 export type IconName = keyof typeof svgPath;
 
