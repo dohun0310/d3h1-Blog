@@ -5,7 +5,7 @@ import Logo from "@/components/ui/logo";
 import Icon from "@/components/ui/icon";
 import { buttonClassName } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
-import { useSearch } from "@/lib/contexts/SearchContext";
+import { useSearch } from "@/lib/contexts/search";
 
 export default function Header() {
   const { openSearch } = useSearch();
