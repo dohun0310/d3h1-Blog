@@ -14,6 +14,8 @@ const pretendard = localFont({
   variable: "--font-pretendard",
 })
 
+const author = `${siteConfig.author.lastName}${siteConfig.author.firstName}`;
+
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
@@ -21,6 +23,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  authors: [{ name: author, url: siteConfig.url }],
+  creator: author,
+  publisher: author,
   openGraph: {
     type: "website",
     url: siteConfig.url,
