@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import PostList from "@/components/PostList";
 import { getPostSummaries } from "@/lib/posts/service";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home() {
   const posts = await getPostSummaries();
