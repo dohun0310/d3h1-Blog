@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   authors: [{ name: author, url: siteConfig.url }],
   creator: author,
   publisher: author,
+  verification: {
+    google: "2GLfCTpT-ZqA7-HaWh-vUI51vF_IkhCRKWlDr14S4kI",
+    other: {
+      "naver-site-verification": "a46278a9d938469465e63605c156aca24db599d8",
+    },
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
