@@ -1,20 +1,45 @@
 import type { MDXComponents } from "mdx/types"
+import type { ComponentPropsWithoutRef } from "react"
 import Image, { type StaticImageData } from "next/image"
+import Icon from "@/components/Icon"
+
+type HeadingProps = ComponentPropsWithoutRef<"h1">;
+
+// rehype-slug가 부여한 id로 앵커를 만든다 — 호버(포인터 지원 환경)에서만 노출
+function HeadingAnchor({ id }: { id?: string }) {
+  if (!id) return null;
+
+  return (
+    <a
+      href={`#${id}`}
+      aria-label="이 제목으로 이동"
+      className="hidden lg:inline-flex absolute -left-7 top-1/2 -translate-y-1/2
+        p-1 rounded-md text-gray-400 dark:text-gray-500
+        opacity-0 transition-opacity duration-200
+        group-hover:opacity-100 focus-visible:opacity-100"
+    >
+      <Icon name="link" size={20} />
+    </a>
+  );
+}
 
 const components: MDXComponents = {
   // Headings
-  h1: ({ children, ...props }) => (
-    <h1 className="text-2xl lg:text-3xl font-bold mt-6 scroll-mt-20" {...props}>
+  h1: ({ children, ...props }: HeadingProps) => (
+    <h1 className="group relative text-2xl lg:text-3xl font-bold mt-6 scroll-mt-20" {...props}>
+      <HeadingAnchor id={props.id} />
       {children}
     </h1>
   ),
-  h2: ({ children, ...props }) => (
-    <h2 className="text-xl lg:text-2xl font-bold mt-6 scroll-mt-20" {...props}>
+  h2: ({ children, ...props }: HeadingProps) => (
+    <h2 className="group relative text-xl lg:text-2xl font-bold mt-6 scroll-mt-20" {...props}>
+      <HeadingAnchor id={props.id} />
       {children}
     </h2>
   ),
-  h3: ({ children, ...props }) => (
-    <h3 className="text-lg lg:text-xl font-bold mt-6 scroll-mt-20" {...props}>
+  h3: ({ children, ...props }: HeadingProps) => (
+    <h3 className="group relative text-lg lg:text-xl font-bold mt-6 scroll-mt-20" {...props}>
+      <HeadingAnchor id={props.id} />
       {children}
     </h3>
   ),
