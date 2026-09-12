@@ -116,6 +116,7 @@ pipeline {
                 ].get(currentBuild.currentResult, 'ℹ️')
 
                 def message = """${icon} ${env.JOB_NAME} #${env.BUILD_NUMBER}: ${currentBuild.currentResult}
+Branch: ${env.CURRENT_BRANCH ?: 'unknown'}
 Commit: ${(env.GIT_COMMIT ?: 'unknown').take(7)}
 Build: ${env.BUILD_URL}"""
 
