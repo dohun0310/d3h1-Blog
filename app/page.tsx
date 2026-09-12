@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import PostList from "@/components/PostList";
 import { getPostSummaries } from "@/lib/posts/service";
 
@@ -20,9 +19,7 @@ export default async function Home() {
         홈
       </h1>
       
-      <Suspense>
-        <PostList posts={posts} />
-      </Suspense>
+      <PostList posts={posts} />
     </div>
   );
 }
