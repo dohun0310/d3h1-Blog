@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import MeCard from "@/components/MeCard";
-import Comments from "@/components/Comments";
-import JsonLd from "@/components/JsonLd";
-import PostNavigation from "@/components/PostNavigation";
+import AuthorCard from "@/components/author-card";
+import Comments from "@/components/comments";
+import JsonLd from "@/components/json-ld";
+import PostNavigation from "@/components/post-navigation";
 import {
   getAdjacentPosts,
   getPost,
@@ -96,7 +96,7 @@ export default async function Post({
       <div className="flex flex-col-reverse gap-8
         lg:grid grid-cols-[100px_1fr] gap-x-7"
       >
-        <MeCard date={date} category={category} />
+        <AuthorCard date={date} category={category} />
         <div className="w-full max-w-full lg:max-w-217.5
           [&_a:hover]:underline [&_pre]:py-5 [&_pre]:my-4
           [&_pre::-webkit-scrollbar]:hidden [&_pre]:overflow-x-auto

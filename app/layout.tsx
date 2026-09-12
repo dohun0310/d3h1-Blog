@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import Search from "@/components/Search";
-import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
+import Footer from "@/components/footer";
+import JsonLd from "@/components/json-ld";
 import { SearchProvider } from "@/lib/contexts/SearchContext";
 import { siteConfig, authorName } from "@/lib/data/site";
 import { buildSiteJsonLd } from "@/lib/utils/jsonLd";
