@@ -6,6 +6,10 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     parameters {
         string(name: 'DEPLOY_URL', defaultValue: 'blog.d3h1.com', description: 'Public hostname used while building metadata')
         string(name: 'HOST_PORT', defaultValue: '2006', description: 'Loopback port exposed to the reverse proxy')
@@ -15,6 +19,8 @@ pipeline {
         IMAGE_NAME = 'd3h1-blog'
         CONTAINER_NAME = 'd3h1-blog'
         APP_ENV_CREDENTIALS_ID = 'd3h1-blog-env'
+        DEPLOY_URL = "${params.DEPLOY_URL ?: 'blog.d3h1.com'}"
+        HOST_PORT = "${params.HOST_PORT ?: '2006'}"
     }
 
     stages {
