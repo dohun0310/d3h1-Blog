@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Icon from "../Icon";
-import Button from "../Button";
+import Icon from "@/components/ui/icon";
+import Button from "@/components/ui/button";
 import PostCard from "../PostCard";
 import type { PostSummary } from "@/lib/utils/post";
 import useSearchDialog from "@/lib/hooks/search";

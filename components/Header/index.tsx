@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link";
-import Logo from "../Logo";
-import Icon from "../Icon";
-import { buttonClass } from "../Button";
+import Logo from "@/components/ui/logo";
+import Icon from "@/components/ui/icon";
+import { buttonClassName } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
 import { useSearch } from "@/lib/contexts/SearchContext";
 
@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
         <button
           onClick={openSearch}
-          className={cn(buttonClass({ size: "small", variant: "linear" }),
+          className={cn(buttonClassName({ size: "small", variant: "linear" }),
             "lg:w-78 justify-start border-0 lg:border lg:border-gray-100 p-1 lg:py-2 lg:px-4")}
           aria-label="search"
         >

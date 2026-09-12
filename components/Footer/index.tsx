@@ -1,5 +1,5 @@
-import Icon from "../Icon";
-import { buttonClass } from "../Button";
+import Icon from "@/components/ui/icon";
+import { buttonClassName } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
 import { siteConfig } from "@/lib/config/site";
 
@@ -17,7 +17,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            className={cn(buttonClass({ size: "small", variant: "linear" }), "p-2")}
+            className={cn(buttonClassName({ size: "small", variant: "linear" }), "p-2")}
           >
             <Icon
               name={link.name}

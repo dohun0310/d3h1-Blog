@@ -1,7 +1,7 @@
 import type { MDXComponents } from "mdx/types"
 import type { ComponentPropsWithoutRef } from "react"
 import Image, { type StaticImageData } from "next/image"
-import Icon from "@/components/Icon"
+import Icon from "@/components/ui/icon"
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 
