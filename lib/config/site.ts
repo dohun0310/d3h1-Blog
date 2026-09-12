@@ -49,3 +49,5 @@ export const siteConfig: SiteConfig = {
     categoryId: "DIC_kwDOJ-0RuM4CYGS5",
   },
 };
+
+export const authorName = `${siteConfig.author.lastName}${siteConfig.author.firstName}`;

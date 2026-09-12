@@ -3,8 +3,10 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { SearchProvider } from "@/lib/contexts/SearchContext";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig, authorName } from "@/lib/config/site";
+import { buildSiteJsonLd } from "@/lib/utils/jsonLd";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -14,8 +16,6 @@ const pretendard = localFont({
   variable: "--font-pretendard",
 })
 
-const author = `${siteConfig.author.lastName}${siteConfig.author.firstName}`;
-
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
-  authors: [{ name: author, url: siteConfig.url }],
-  creator: author,
-  publisher: author,
+  authors: [{ name: authorName, url: siteConfig.url }],
+  creator: authorName,
+  publisher: authorName,
   verification: {
     google: "2GLfCTpT-ZqA7-HaWh-vUI51vF_IkhCRKWlDr14S4kI",
     other: {
@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className={pretendard.variable}>
       <body>
+        <JsonLd data={buildSiteJsonLd()} />
         <SearchProvider>
           <Header />
           <Search />
