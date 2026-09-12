@@ -61,6 +61,22 @@ pipeline {
             }
         }
 
+        stage('Smoke test') {
+            when {
+                environment name: 'DEPLOY_TARGET', value: 'false'
+            }
+            steps {
+                withCredentials([file(credentialsId: env.APP_ENV_CREDENTIALS_ID, variable: 'APP_ENV_FILE')]) {
+                    sh '''
+                        set -eu
+                        RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
+                        CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
+                        ./scripts/deploy-container.sh smoke
+                    '''
+                }
+            }
+        }
+
         stage('Deploy') {
             when {
                 environment name: 'DEPLOY_TARGET', value: 'true'
