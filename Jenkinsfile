@@ -87,17 +87,14 @@ pipeline {
                         withCredentials([file(credentialsId: env.APP_ENV_CREDENTIALS_ID, variable: 'APP_ENV_FILE')]) {
                             sh '''
                                 set -eu
-                                candidate_name="${CONTAINER_NAME}-candidate-${BUILD_TAG}"
-                                rollback_name="${CONTAINER_NAME}-rollback-${BUILD_TAG}"
-
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
-                                CANDIDATE_NAME="${candidate_name}" \
+                                CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
                                 ./scripts/deploy-container.sh smoke
 
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
                                 HOST_PORT="${HOST_PORT}" \
                                 CONTAINER_NAME="${CONTAINER_NAME}" \
-                                ROLLBACK_NAME="${rollback_name}" \
+                                ROLLBACK_NAME="${CONTAINER_NAME}-rollback-${BUILD_TAG}" \
                                 ./scripts/deploy-container.sh deploy
                             '''
                         }
