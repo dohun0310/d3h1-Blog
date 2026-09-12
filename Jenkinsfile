@@ -19,6 +19,7 @@ pipeline {
         IMAGE_NAME = 'd3h1-blog'
         CONTAINER_NAME = 'd3h1-blog'
         APP_ENV_CREDENTIALS_ID = 'd3h1-blog-env'
+        DEPLOY_BRANCH = 'main'
         DEPLOY_URL = "${params.DEPLOY_URL ?: 'blog.d3h1.com'}"
         HOST_PORT = "${params.HOST_PORT ?: '2006'}"
     }
@@ -28,6 +29,12 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
+                script {
+                    def branch = (env.BRANCH_NAME ?: env.GIT_BRANCH ?: '').replaceFirst(/^origin\//, '')
+
+                    env.CURRENT_BRANCH = branch
+                    env.DEPLOY_TARGET = branch == env.DEPLOY_BRANCH ? 'true' : 'false'
+                }
             }
         }
 
@@ -56,7 +63,7 @@ pipeline {
 
         stage('Deploy') {
             when {
-                branch 'main'
+                environment name: 'DEPLOY_TARGET', value: 'true'
             }
             steps {
                 script {
