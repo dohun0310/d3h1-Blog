@@ -17,7 +17,8 @@ const withMDX = createMDX({
     ],
     rehypePlugins: [
       ["rehype-pretty-code", {theme: { dark: "slack-dark", light: "slack-ochin" }}],
-      "rehype-mdx-import-media"
+      "rehype-mdx-import-media",
+      "rehype-slug"
     ]
   }
 });

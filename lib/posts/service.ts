@@ -1,6 +1,11 @@
 import { cache } from "react";
 import { loadPost, readPostSummary, readSlugs, type Post, type PostSummary } from "@/lib/utils/post";
 
+export interface AdjacentPosts {
+  previous?: PostSummary;
+  next?: PostSummary;
+}
+
 // 소비자는 이 파일만 import하면 되도록 타입 재노출
 export type { Post, PostMeta, PostSummary } from "@/lib/utils/post";
 
@@ -38,4 +43,35 @@ export const getPostSummary = cache(async (slug: string): Promise<PostSummary> =
 export const getPostSummaries = cache(async (): Promise<PostSummary[]> => {
   const posts = await getPostList();
   return Promise.all(posts.map(readPostSummary));
+});
+
+// 최신순 목록에서 현재 글의 앞뒤 글 조회
+export const getAdjacentPosts = cache(async (slug: string): Promise<AdjacentPosts> => {
+  const posts = await getPostSummaries();
+  const currentIndex = posts.findIndex((post) => post.slug === slug);
+
+  if (currentIndex === -1) {
+    return {};
+  }
+
+  return {
+    previous: posts[currentIndex + 1],
+    next: posts[currentIndex - 1],
+  };
+});
+
+// 현재 글과 같은 카테고리의 다른 최신 글 조회
+export const getRelatedPosts = cache(async (
+  slug: string
+): Promise<PostSummary[]> => {
+  const posts = await getPostSummaries();
+  const current = posts.find((post) => post.slug === slug);
+
+  if (!current) {
+    return [];
+  }
+
+  return posts
+    .filter((post) => post.slug !== slug && post.category === current.category)
+    .slice(0, 3);
 });
