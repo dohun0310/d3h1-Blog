@@ -22,6 +22,10 @@ export function validatePostMeta(slug: string, meta: unknown): string[] {
     errors.push(`${post} meta.date은 반드시 유효한 날짜 문자열이어야 합니다.`);
   }
 
+  if (m.updated !== undefined && (typeof m.updated !== "string" || isNaN(Date.parse(m.updated)))) {
+    errors.push(`${post} meta.updated은 생략하거나 유효한 날짜 문자열이어야 합니다.`);
+  }
+
   const teaser = m.teaser;
   if (
     teaser === null ||

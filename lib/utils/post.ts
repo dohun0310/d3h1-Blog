@@ -10,6 +10,7 @@ export interface PostMeta {
   category: string;
   title: string;
   date: string;
+  updated?: string;
 }
 
 export interface Post extends PostMeta {
@@ -58,6 +59,7 @@ export async function readPostSummary(post: Post): Promise<PostSummary> {
     category: post.category,
     teaser: post.teaser,
     date: post.date,
+    updated: post.updated,
     content,
     excerpt: toExcerpt(content),
   };
