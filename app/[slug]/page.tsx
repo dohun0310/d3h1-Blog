@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import MeCard from "@/components/MeCard";
 import Comments from "@/components/Comments";
@@ -14,19 +15,25 @@ export async function generateMetadata({
   params
 }: { params: Promise<{
   slug: string
-}> }) {
+}> }): Promise<Metadata> {
   const { slug } = await params;
-  const { title, teaser, excerpt } = await getPostSummary(slug);
+  const { title, teaser, excerpt, date, category } = await getPostSummary(slug);
 
   return {
     title,
     description: excerpt,
+    alternates: {
+      canonical: `/${slug}`,
+    },
     openGraph: {
       type: "article",
       url: `${siteConfig.url}/${slug}`,
       title,
       description: excerpt,
       siteName: siteConfig.name,
+      publishedTime: date,
+      authors: [`${siteConfig.author.lastName}${siteConfig.author.firstName}`],
+      section: category,
       images: [{
         url: teaser.src,
       }],
