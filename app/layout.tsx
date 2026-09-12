@@ -66,6 +66,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={pretendard.variable}>
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={siteConfig.name}
+          href="/feed.xml"
+        />
+      </head>
       <body>
         <JsonLd data={buildSiteJsonLd()} />
         <SearchProvider>
