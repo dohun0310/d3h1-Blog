@@ -43,6 +43,7 @@ export function buildPostJsonLd(post: PostSummary): object {
     description: post.excerpt,
     image: [`${siteConfig.url}${post.teaser.src}`],
     datePublished: post.date,
+    ...(post.updated ? { dateModified: post.updated } : {}),
     articleSection: post.category,
     inLanguage: "ko-KR",
     isPartOf: { "@id": WEBSITE_ID },
