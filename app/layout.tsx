@@ -14,6 +14,8 @@ const pretendard = localFont({
   variable: "--font-pretendard",
 })
 
+const author = `${siteConfig.author.lastName}${siteConfig.author.firstName}`;
+
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
@@ -21,6 +23,15 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  authors: [{ name: author, url: siteConfig.url }],
+  creator: author,
+  publisher: author,
+  verification: {
+    google: "2GLfCTpT-ZqA7-HaWh-vUI51vF_IkhCRKWlDr14S4kI",
+    other: {
+      "naver-site-verification": "a46278a9d938469465e63605c156aca24db599d8",
+    },
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
