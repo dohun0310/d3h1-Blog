@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MeCard from "@/components/MeCard";
 import Comments from "@/components/Comments";
+import JsonLd from "@/components/JsonLd";
 import { getPost, getPostSummary, getPostList } from "@/lib/posts/service";
-import { siteConfig } from "@/lib/config/site";
+import { siteConfig, authorName } from "@/lib/config/site";
+import { buildPostJsonLd } from "@/lib/utils/jsonLd";
 
 export const dynamicParams = false;
 
@@ -32,7 +34,7 @@ export async function generateMetadata({
       description: excerpt,
       siteName: siteConfig.name,
       publishedTime: date,
-      authors: [`${siteConfig.author.lastName}${siteConfig.author.firstName}`],
+      authors: [authorName],
       section: category,
       images: [{
         url: teaser.src,
@@ -58,12 +60,15 @@ export default async function Post({
   const { slug } = await params;
 
   // dynamicParams=false라 미등록 slug는 여기 도달 전 404 — 로딩 실패는 그대로 드러낸다
-  const { title, Content, date, category, teaser } = await getPost(slug);
+  const { Content } = await getPost(slug);
+  const summary = await getPostSummary(slug);
+  const { title, date, category, teaser } = summary;
 
   return (
     <article className="mx-auto w-full max-w-247.5
       flex flex-col gap-8 break-keep"
     >
+      <JsonLd data={buildPostJsonLd(summary)} />
       <h1 className="text-2xl font-bold lg:text-3xl">
         {title}
       </h1>
