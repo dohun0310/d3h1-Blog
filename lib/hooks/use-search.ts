@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import type { PostSummary } from "@/lib/types/post";
+import type { SearchIndexEntry } from "@/lib/types/post";
 import { useSearch } from "@/lib/contexts/search";
 
-export default function useSearchDialog(summaries: PostSummary[]) {
+export default function useSearchDialog(summaries: SearchIndexEntry[]) {
   const router = useRouter();
 
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -18,11 +18,17 @@ export default function useSearchDialog(summaries: PostSummary[]) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [displayCount, setDisplayCount] = useState(6);
 
-  const filteredPosts = summaries.filter(
-    (post) =>
-      post.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-      post.content.toLowerCase().includes(searchKeyword.toLowerCase())
-  );
+  const normalizedKeyword = searchKeyword.toLowerCase();
+
+  const filteredPosts = summaries.filter((post) => {
+    const excerptContent = post.excerpt.endsWith("…")
+      ? post.excerpt.slice(0, -1)
+      : post.excerpt;
+    const content = `${excerptContent}${post.contentTail}`;
+
+    return post.title.toLowerCase().includes(normalizedKeyword)
+      || content.toLowerCase().includes(normalizedKeyword);
+  });
 
   const displayedPosts = filteredPosts.slice(0, displayCount);
   const hasMore = filteredPosts.length > displayCount;

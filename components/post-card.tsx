@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { PostSummary } from "@/lib/types/post";
+import type { PostSummary, SearchIndexEntry } from "@/lib/types/post";
 
 export type PostCardVariant = "default" | "compact";
 
 // 카드 렌더에 필요한 필드만 요구 — 검색 전문(content)은 불필요
-type PostCardPost = Omit<PostSummary, "content">;
+// teaser는 검색 인덱스가 전달하는 이미지 경로도 받는다.
+type PostCardPost = Omit<PostSummary, "content" | "teaser"> & {
+  teaser: PostSummary["teaser"] | SearchIndexEntry["teaser"];
+};
 
 export interface PostCardProps {
   post: PostCardPost;
