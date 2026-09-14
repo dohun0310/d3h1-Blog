@@ -9,6 +9,7 @@ pipeline {
     parameters {
         string(name: 'DEPLOY_URL', defaultValue: 'blog.d3h1.com', description: 'Public hostname used while building metadata')
         string(name: 'HOST_PORT', defaultValue: '2006', description: 'Loopback port exposed to the reverse proxy')
+        string(name: 'ALT_PORT', defaultValue: '2016', description: 'Alternate loopback port used while switching')
     }
 
     environment {
@@ -18,6 +19,7 @@ pipeline {
         DEPLOY_BRANCH = 'main'
         DEPLOY_URL = "${params.DEPLOY_URL ?: 'blog.d3h1.com'}"
         HOST_PORT = "${params.HOST_PORT ?: '2006'}"
+        ALT_PORT = "${params.ALT_PORT ?: '2016'}"
     }
 
     stages {
@@ -90,8 +92,9 @@ pipeline {
 
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
                                 HOST_PORT="${HOST_PORT}" \
+                                ALT_PORT="${ALT_PORT}" \
                                 CONTAINER_NAME="${CONTAINER_NAME}" \
-                                ROLLBACK_NAME="${CONTAINER_NAME}-rollback-${DOCKER_BUILD_TAG}" \
+                                NGINX_SERVICE="${CONTAINER_NAME}" \
                                 ./scripts/deploy-container.sh deploy
                             '''
                         }
