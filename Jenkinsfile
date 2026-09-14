@@ -6,10 +6,6 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-    triggers {
-        pollSCM('* * * * *')
-    }
-
     parameters {
         string(name: 'DEPLOY_URL', defaultValue: 'blog.d3h1.com', description: 'Public hostname used while building metadata')
         string(name: 'HOST_PORT', defaultValue: '2006', description: 'Loopback port exposed to the reverse proxy')
