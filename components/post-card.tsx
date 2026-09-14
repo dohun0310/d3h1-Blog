@@ -13,6 +13,12 @@ export interface PostCardProps {
   variant?: PostCardVariant;
 }
 
+// lg 이상은 2열 그리드라 카드 폭이 487px로 고정된다. 그 아래는 1열이므로 뷰포트 전체를 쓴다.
+const DEFAULT_CARD_SIZES = "(min-width: 60.25rem) 487px, 100vw";
+
+// 검색 결과 썸네일은 40px(lg 이상 48px) 고정이다.
+const COMPACT_CARD_SIZES = "(min-width: 60.25rem) 48px, 40px";
+
 function DefaultPostCard({
   post,
   priority
@@ -32,7 +38,7 @@ function DefaultPostCard({
           alt={post.title}
           width={640}
           height={360}
-          sizes="(max-width: 674px) 100vw, (max-width: 964px) 70vw, 33vw"
+          sizes={DEFAULT_CARD_SIZES}
           className="w-full h-auto rounded-lg mb-2"
           loading={priority ? "eager" : "lazy"}
           priority={priority}
@@ -59,6 +65,7 @@ function CompactPostCard({
         alt={post.title}
         width={480}
         height={480}
+        sizes={COMPACT_CARD_SIZES}
         className="w-10 lg:w-12 h-10 lg:h-12 object-cover rounded-lg"
       />
       <article className="flex-1 min-w-0">
