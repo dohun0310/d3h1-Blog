@@ -6,13 +6,10 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-    triggers {
-        pollSCM('* * * * *')
-    }
-
     parameters {
         string(name: 'DEPLOY_URL', defaultValue: 'blog.d3h1.com', description: 'Public hostname used while building metadata')
         string(name: 'HOST_PORT', defaultValue: '2006', description: 'Loopback port exposed to the reverse proxy')
+        string(name: 'ALT_PORT', defaultValue: '2016', description: 'Alternate loopback port used while switching')
     }
 
     environment {
@@ -22,6 +19,7 @@ pipeline {
         DEPLOY_BRANCH = 'main'
         DEPLOY_URL = "${params.DEPLOY_URL ?: 'blog.d3h1.com'}"
         HOST_PORT = "${params.HOST_PORT ?: '2006'}"
+        ALT_PORT = "${params.ALT_PORT ?: '2016'}"
     }
 
     stages {
@@ -34,6 +32,7 @@ pipeline {
 
                     env.CURRENT_BRANCH = branch
                     env.DEPLOY_TARGET = branch == env.DEPLOY_BRANCH ? 'true' : 'false'
+                    env.DOCKER_BUILD_TAG = (env.BUILD_TAG ?: "build-${env.BUILD_NUMBER}").replaceAll(/[^A-Za-z0-9_.-]/, '-')
                 }
             }
         }
@@ -70,7 +69,7 @@ pipeline {
                     sh '''
                         set -eu
                         RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
-                        CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
+                        CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${DOCKER_BUILD_TAG}" \
                         ./scripts/deploy-container.sh smoke
                     '''
                 }
@@ -88,13 +87,14 @@ pipeline {
                             sh '''
                                 set -eu
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
-                                CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${BUILD_TAG}" \
+                                CANDIDATE_NAME="${CONTAINER_NAME}-candidate-${DOCKER_BUILD_TAG}" \
                                 ./scripts/deploy-container.sh smoke
 
                                 RELEASE_IMAGE="${IMAGE_NAME}:${GIT_COMMIT}" \
                                 HOST_PORT="${HOST_PORT}" \
+                                ALT_PORT="${ALT_PORT}" \
                                 CONTAINER_NAME="${CONTAINER_NAME}" \
-                                ROLLBACK_NAME="${CONTAINER_NAME}-rollback-${BUILD_TAG}" \
+                                NGINX_SERVICE="${CONTAINER_NAME}" \
                                 ./scripts/deploy-container.sh deploy
                             '''
                         }
@@ -106,7 +106,7 @@ pipeline {
 
     post {
         always {
-            sh 'docker rm -f "${CONTAINER_NAME}-candidate-${BUILD_TAG}" >/dev/null 2>&1 || true'
+            sh 'docker rm -f "${CONTAINER_NAME}-candidate-${DOCKER_BUILD_TAG}" >/dev/null 2>&1 || true'
             script {
                 def icon = [
                     SUCCESS: '✅',

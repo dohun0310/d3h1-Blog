@@ -20,3 +20,11 @@ export interface PostSummary extends PostMeta {
   content: string;
   excerpt: string;
 }
+
+// 검색 인덱스로 전송되는 형태.
+// 썸네일은 40px로 렌더되고 blur placeholder를 쓰지 않으므로 경로만 전송한다.
+// 본문 앞부분은 excerpt와 중복되므로 나머지만 별도로 전송한다.
+export interface SearchIndexEntry extends Omit<PostSummary, "teaser" | "content"> {
+  teaser: string;
+  contentTail: string;
+}

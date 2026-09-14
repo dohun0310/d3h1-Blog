@@ -4,17 +4,17 @@ import { useState, useEffect, useCallback } from "react";
 import Icon from "@/components/ui/icon";
 import Button from "@/components/ui/button";
 import PostCard from "@/components/post-card";
-import type { PostSummary } from "@/lib/types/post";
+import type { SearchIndexEntry } from "@/lib/types/post";
 import useSearchDialog from "@/lib/hooks/use-search";
 import { useSearch } from "@/lib/contexts/search";
 
-let searchDocsCache: PostSummary[] | null = null;
+let searchDocsCache: SearchIndexEntry[] | null = null;
 
 type LoadState = "idle" | "loaded" | "error";
 
 export default function Search() {
   const { isOpen } = useSearch();
-  const [docs, setDocs] = useState<PostSummary[]>(searchDocsCache ?? []);
+  const [docs, setDocs] = useState<SearchIndexEntry[]>(searchDocsCache ?? []);
   const [loadState, setLoadState] = useState<LoadState>(searchDocsCache ? "loaded" : "idle");
 
   const loadDocs = useCallback(async () => {
@@ -29,7 +29,7 @@ export default function Search() {
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
       }
-      const data: PostSummary[] = await res.json();
+      const data: SearchIndexEntry[] = await res.json();
       searchDocsCache = data;
       setDocs(data);
       setLoadState("loaded");
