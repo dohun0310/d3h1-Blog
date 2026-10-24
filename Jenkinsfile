@@ -65,7 +65,7 @@ pipeline {
             steps {
                 sh '''
                     set -eu
-                    docker build \
+                    docker build --pull \
                         --build-arg "DEPLOY_URL=${DEPLOY_URL}" \
                         --tag "${IMAGE_NAME}:${GIT_COMMIT}" \
                         .
