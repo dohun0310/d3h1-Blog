@@ -84,7 +84,7 @@ const components: MDXComponents = {
   // Lists
   ul: ({ children, ...props }) => (
     <ul
-      className="mt-4 ml-4"
+      className="mt-4 ml-5 list-disc [li_&]:mt-1"
       {...props}
     >
       {children}
@@ -92,7 +92,7 @@ const components: MDXComponents = {
   ),
   ol: ({ children, ...props }) => (
     <ol
-      className="mt-4 ml-4"
+      className="mt-4 ml-5 list-decimal [li_&]:mt-1"
       {...props}
     >
       {children}
@@ -100,7 +100,7 @@ const components: MDXComponents = {
   ),
   li: ({ children, ...props }) => (
     <li
-      className="my-1"
+      className="my-1 text-sm lg:text-base"
       {...props}
     >
       {children}
