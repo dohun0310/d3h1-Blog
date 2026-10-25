@@ -25,10 +25,16 @@ export default function PostList({
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-5">
         {posts.map((post, index) => (
-          // 첫 화면에 실제로 보이는 카드만 미리 불러온다.
-          // lg 미만은 1열이라 4개를 모두 preload하면 보이지 않는 이미지가
-          // LCP 이미지와 대역폭을 나눠 쓴다.
-          <PostCard key={post.slug} post={post} preload={index < 2} />
+          // preload는 앞의 2개만 한다. lg 미만은 1열이라 더 많이 preload하면
+          // 보이지 않는 이미지가 LCP 이미지와 대역폭을 나눠 쓴다.
+          // lazy 로딩은 앞의 8개(lg 이상 2열 기준 4행)까지 끈다. 2560x1440 화면에서는
+          // 4행까지 첫 화면에 보이므로, lazy 이미지가 먼저 그려지면 LCP가 된다.
+          <PostCard
+            key={post.slug}
+            post={post}
+            preload={index < 2}
+            eager={index < 8}
+          />
         ))}
       </div>
     </>
