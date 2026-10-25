@@ -84,7 +84,7 @@ const components: MDXComponents = {
   // Lists
   ul: ({ children, ...props }) => (
     <ul
-      className="mt-4 ml-4"
+      className="mt-4 ml-5 list-disc [li_&]:mt-1"
       {...props}
     >
       {children}
@@ -92,7 +92,7 @@ const components: MDXComponents = {
   ),
   ol: ({ children, ...props }) => (
     <ol
-      className="mt-4 ml-4"
+      className="mt-4 ml-5 list-decimal [li_&]:mt-1"
       {...props}
     >
       {children}
@@ -100,7 +100,7 @@ const components: MDXComponents = {
   ),
   li: ({ children, ...props }) => (
     <li
-      className="my-1"
+      className="my-1 text-sm lg:text-base"
       {...props}
     >
       {children}
@@ -108,15 +108,18 @@ const components: MDXComponents = {
   ),
 
   // Table
+  // 가로 스크롤은 감싸는 div가 맡고, table은 본문 너비를 채운다
   table: ({ children, ...props }) => (
-    <table
-      className="block w-full overflow-x-auto
-        border border-gray-100 dark:border-gray-800
-        border-collapse border-spacing-0"
-      {...props}
-    >
-      {children}
-    </table>
+    <div className="mt-4 overflow-x-auto">
+      <table
+        className="w-full text-sm lg:text-base
+          border border-gray-100 dark:border-gray-800
+          border-collapse border-spacing-0"
+        {...props}
+      >
+        {children}
+      </table>
+    </div>
   ),
   thead: ({ children, ...props }) => (
     <thead
@@ -128,7 +131,7 @@ const components: MDXComponents = {
   ),
   th: ({ children, ...props }) => (
     <th
-      className="px-4 py-2 font-bold text-left bg-foreground/5
+      className="px-4 py-2 font-bold text-left
         border-b border-gray-100 dark:border-gray-800"
       {...props}
     >
@@ -137,7 +140,8 @@ const components: MDXComponents = {
   ),
   td: ({ children, ...props }) => (
     <td
-      className="px-4 py-1 border-b border-gray-100 dark:border-gray-800"
+      className="px-4 py-2 border-b border-gray-100 dark:border-gray-800
+        [tr:last-child_&]:border-b-0"
       {...props}
     >
       {children}

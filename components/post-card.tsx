@@ -12,7 +12,12 @@ type PostCardPost = Omit<PostSummary, "content" | "teaser"> & {
 
 export interface PostCardProps {
   post: PostCardPost;
-  priority?: boolean;
+  // 이미지를 미리 불러온다(<link rel="preload">). preload된 이미지는 lazy 로딩도 하지 않는다.
+  preload?: boolean;
+  // 미리 불러오지는 않고 lazy 로딩만 끈다. 첫 화면에 보일 수 있는 카드에 쓴다.
+  // fetchPriority를 low로 두어 React가 preload 링크를 만들지 않게 하고,
+  // preload된 이미지와 대역폭을 다투지 않게 한다.
+  eager?: boolean;
   variant?: PostCardVariant;
 }
 
@@ -24,10 +29,12 @@ const COMPACT_CARD_SIZES = "(min-width: 60.25rem) 48px, 40px";
 
 function DefaultPostCard({
   post,
-  priority
+  preload,
+  eager
 }: {
   post: PostCardPost;
-  priority: boolean
+  preload: boolean;
+  eager: boolean
 }) {
   return (
     <article className="flex flex-col">
@@ -43,8 +50,9 @@ function DefaultPostCard({
           height={360}
           sizes={DEFAULT_CARD_SIZES}
           className="w-full h-auto rounded-lg mb-2"
-          loading={priority ? "eager" : "lazy"}
-          priority={priority}
+          loading={preload || eager ? "eager" : "lazy"}
+          fetchPriority={!preload && eager ? "low" : undefined}
+          preload={preload}
         />
         <p className="text-2xs lg:text-xs pb-1">{post.category}</p>
         <h2 className="text-sm lg:text-base font-bold pb-1">{post.title}</h2>
@@ -88,9 +96,10 @@ function CompactPostCard({
 
 export default function PostCard({
   post,
-  priority = false,
+  preload = false,
+  eager = false,
   variant = "default",
 }: PostCardProps) {
   if (variant === "compact") return <CompactPostCard post={post} />;
-  return <DefaultPostCard post={post} priority={priority} />;
+  return <DefaultPostCard post={post} preload={preload} eager={eager} />;
 }
